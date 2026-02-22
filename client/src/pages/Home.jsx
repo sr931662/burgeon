@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Hero from '../components/Hero/Hero';
 import CountersSection from '../components/CountersSection/CountersSection';
 import MarqueeStrip from '../components/MarqueeStrip/MarqueeStrip';
