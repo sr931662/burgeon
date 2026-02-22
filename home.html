@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burgeon Engineering | Delivering Excellence</title>
-    <!-- Premium Corporate Typography -->
+    <title>Burgeon Engineering | Bubbly & Modern</title>
+    <!-- Premium & Playful Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
     
     <style>
         /* =========================================
-           PRODUCTION-GRADE DESIGN SYSTEM
+           BUBBLY & CREATIVE DESIGN SYSTEM
            ========================================= */
         :root {
-            /* Color Palette based on high-end industrial branding */
-            --bg-main: #FFFFFF;
-            --bg-surface: #F8FAFC;
-            --bg-dark: #0B1121;       /* Deep Industrial Navy */
-            --bg-darker: #050810;
+            /* Strict White, Green, Yellow Palette */
+            --bg-main: #ffffff;
+            --bg-alt: #f4fff9; /* Extremely pale green/white */
             
-            --brand-primary: #1E3A8A; /* Royal/Engineering Blue */
-            --brand-accent: #F97316;  /* High-visibility Industrial Orange */
-            --brand-accent-hover: #EA580C;
+            --brand-green: #00d084;      /* Vibrant Bubbly Green */
+            --brand-green-dark: #005a39; /* Deep Green for Text/Contrast */
+            --brand-green-light: #a3f0d1;
             
-            --text-heading: #0F172A;
-            --text-body: #475569;
-            --text-muted: #94A3B8;
-            --text-light: #F1F5F9;
-            
-            --border-light: #E2E8F0;
-            --border-dark: #1E293B;
+            --brand-yellow: #ffce00;     /* Sunny Yellow */
+            --brand-yellow-light: #fff5c2;
+            --brand-yellow-dark: #ccaa00;
 
+            --text-heading: #00422a;     /* Very Dark Green */
+            --text-body: #007a4e;        /* Medium Dark Green */
+            
             --font-main: 'Plus Jakarta Sans', sans-serif;
             
-            --transition-fast: 0.2s ease;
-            --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Bouncy Transitions */
+            --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --transition-smooth: 0.4s ease-in-out;
             
-            /* Grid system constraints */
-            --max-width: 1400px;
-            --section-pad: 8rem;
+            --radius-pill: 50px;
+            --radius-bubbly: 30px;
+            
+            --max-width: 1300px;
+            --section-pad: 7rem;
         }
 
         /* =========================================
@@ -62,38 +62,34 @@
             line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
             color: var(--text-heading);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
         .container {
             width: 100%;
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 5%;
+            position: relative;
+            z-index: 2;
         }
 
         .section {
             padding: var(--section-pad) 0;
+            position: relative;
         }
 
-        .text-accent { color: var(--brand-accent); }
-        .text-white { color: var(--bg-main); }
+        .text-yellow { color: var(--brand-yellow); }
+        .text-green { color: var(--brand-green); }
         
         /* =========================================
            BUTTONS & UI COMPONENTS
@@ -103,140 +99,157 @@
             align-items: center;
             justify-content: center;
             gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-radius: 2px;
+            padding: 1.2rem 2.8rem;
+            font-size: 1rem;
+            font-weight: 800;
+            border-radius: var(--radius-pill);
             cursor: pointer;
-            transition: var(--transition-smooth);
+            transition: var(--transition-bounce);
             position: relative;
-            overflow: hidden;
             z-index: 1;
+            border: none;
+            overflow: hidden;
         }
 
-        .btn-accent {
-            background: var(--brand-accent);
+        .btn-yellow {
+            background: var(--brand-yellow);
+            color: var(--brand-green-dark);
+            box-shadow: 0 10px 25px rgba(255, 206, 0, 0.4);
+        }
+
+        .btn-green {
+            background: var(--brand-green);
             color: var(--bg-main);
-            border: 1px solid var(--brand-accent);
+            box-shadow: 0 10px 25px rgba(0, 208, 132, 0.4);
         }
 
-        .btn-accent::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--brand-accent-hover);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: -1;
+        .btn:hover {
+            transform: translateY(-8px) scale(1.05);
         }
 
-        .btn-accent:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--bg-main);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-main);
-            color: var(--bg-dark);
-        }
+        .btn-yellow:hover { box-shadow: 0 20px 35px rgba(255, 206, 0, 0.6); }
+        .btn-green:hover { box-shadow: 0 20px 35px rgba(0, 208, 132, 0.6); }
 
         /* =========================================
            ANIMATION UTILITIES
            ========================================= */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.68, -0.2, 0.265, 1.1);
         }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active, .reveal-left.active {
+        .reveal.active {
             opacity: 1;
-            transform: translate(0);
+            transform: translateY(0) scale(1);
         }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
+
+        @keyframes morph {
+            0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+            100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes float-reverse {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(25px) rotate(-5deg); }
+        }
+
+        @keyframes bubbleUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
+        }
 
         /* =========================================
            HEADER / NAVIGATION
            ========================================= */
         header.site-header {
             position: fixed;
-            top: 0; left: 0; width: 100%;
-            padding: 1.5rem 0;
+            top: 20px; left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: var(--max-width);
+            padding: 0.8rem 2rem;
             z-index: 1000;
-            transition: var(--transition-smooth);
-            background: transparent;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-pill);
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.1);
+            transition: var(--transition-bounce);
+            border: 2px solid rgba(0, 208, 132, 0.1);
         }
 
         header.site-header.scrolled {
-            background: rgba(11, 17, 33, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 1rem 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            top: 10px;
+            width: 95%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 15px 40px rgba(0, 90, 57, 0.15);
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0;
         }
 
         .brand-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--bg-main);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--brand-green-dark);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            letter-spacing: -0.02em;
+        }
+
+        .brand-logo .logo-blob {
+            width: 36px; height: 36px;
+            background: var(--brand-yellow);
+            border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: morph 4s linear infinite;
         }
 
         .brand-logo svg {
-            width: 28px; height: 28px;
-            fill: var(--brand-accent);
+            width: 20px; height: 20px;
+            fill: var(--brand-green-dark);
+            position: relative;
+            z-index: 2;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
+            background: var(--brand-green-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-pill);
         }
 
         .nav-links a {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-            padding: 0.5rem 0;
+            color: var(--brand-green-dark);
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-pill);
+            transition: var(--transition-bounce);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: var(--brand-accent);
-            transition: var(--transition-smooth);
-        }
-
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
+        .nav-links a:hover {
+            background: var(--brand-green);
+            color: var(--bg-main);
+            transform: scale(1.1);
         }
 
         /* =========================================
@@ -247,70 +260,93 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background-color: var(--bg-dark);
+            background-color: var(--bg-main);
             overflow: hidden;
-            padding-top: 5rem;
+            padding-top: 8rem;
         }
 
-        /* Sophisticated Engineering Blueprint Background */
-        .hero-bg-grid {
+        /* Playful Background Bubbles */
+        .bubble-container {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            overflow: hidden;
             z-index: 0;
-            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-            animation: gridPan 20s linear infinite;
+            pointer-events: none;
         }
 
-        @keyframes gridPan {
-            0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
-            100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); }
-        }
-
-        .hero-gradient {
+        .bg-bubble {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(30,58,138,0.2) 0%, rgba(11,17,33,1) 70%);
-            z-index: 1;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand-green-light), transparent);
+            opacity: 0.4;
         }
+        .bg-bubble:nth-child(1) { width: 300px; height: 300px; left: -5%; top: 10%; animation: float 12s ease-in-out infinite; }
+        .bg-bubble:nth-child(2) { width: 500px; height: 500px; right: -10%; bottom: -10%; background: linear-gradient(135deg, var(--brand-yellow-light), transparent); animation: float-reverse 15s ease-in-out infinite; }
+        .bg-bubble:nth-child(3) { width: 150px; height: 150px; left: 40%; top: 20%; background: var(--brand-green); opacity: 0.1; animation: float 8s ease-in-out infinite; }
+        
+        .floating-particles span {
+            position: absolute;
+            bottom: -50px;
+            width: 20px; height: 20px;
+            background: var(--brand-yellow);
+            border-radius: 50%;
+            animation: bubbleUp 5s infinite ease-in;
+        }
+        .floating-particles span:nth-child(1) { left: 10%; animation-duration: 8s; }
+        .floating-particles span:nth-child(2) { left: 30%; width: 40px; height: 40px; animation-duration: 12s; animation-delay: 2s; background: var(--brand-green); }
+        .floating-particles span:nth-child(3) { left: 60%; animation-duration: 6s; animation-delay: 1s; }
+        .floating-particles span:nth-child(4) { left: 80%; width: 30px; height: 30px; animation-duration: 10s; animation-delay: 3s; }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 700px;
         }
 
         .hero-subtitle {
-            color: var(--brand-accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .hero-subtitle::before {
-            content: '';
-            width: 40px;
-            height: 2px;
-            background: var(--brand-accent);
+            display: inline-block;
+            background: var(--brand-yellow-light);
+            color: var(--brand-green-dark);
+            font-weight: 800;
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-pill);
+            margin-bottom: 2rem;
+            transform: rotate(-2deg);
         }
 
         .hero-title {
             font-size: clamp(3.5rem, 6vw, 5.5rem);
-            color: var(--bg-main);
+            color: var(--text-heading);
             margin-bottom: 1.5rem;
-            line-height: 1.05;
+            line-height: 1.1;
+        }
+
+        .highlight-blob {
+            position: relative;
+            display: inline-block;
+            color: var(--text-heading);
+            z-index: 1;
+        }
+        .highlight-blob::before {
+            content: '';
+            position: absolute;
+            bottom: 5px; left: -5px; right: -5px; height: 40%;
+            background: var(--brand-yellow);
+            z-index: -1;
+            border-radius: 20px;
+            transform: rotate(-1deg);
+            transition: var(--transition-bounce);
+        }
+        .highlight-blob:hover::before {
+            height: 90%;
+            transform: rotate(2deg);
+            background: var(--brand-green);
         }
 
         .hero-desc {
             font-size: 1.25rem;
-            color: var(--text-muted);
+            font-weight: 600;
+            color: var(--text-body);
             margin-bottom: 3rem;
             max-width: 600px;
         }
@@ -321,35 +357,69 @@
             align-items: center;
         }
 
-        /* Abstract Mechanical Graphic Right Side */
+        /* Bubbly Hero Graphic */
         .hero-graphic {
             position: absolute;
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
-            width: 500px;
-            height: 500px;
+            width: 550px;
+            height: 550px;
             z-index: 1;
-            opacity: 0.8;
-            pointer-events: none;
         }
 
-        .ring {
+        .hero-blob {
             position: absolute;
-            top: 50%; left: 50%;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
         }
-        .ring-1 { width: 300px; height: 300px; border-top-color: var(--brand-accent); animation: spin 10s linear infinite; }
-        .ring-2 { width: 400px; height: 400px; border-right-color: var(--brand-primary); animation: spin 15s linear infinite reverse; }
-        .ring-3 { width: 500px; height: 500px; border-bottom-color: rgba(255,255,255,0.2); animation: spin 20s linear infinite; }
 
-        @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        .hero-blob.green {
+            background: var(--brand-green);
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        .hero-blob.yellow {
+            background: var(--brand-yellow);
+            transform: scale(0.9) translate(10%, 10%);
+            animation: morph 10s ease-in-out infinite reverse;
+        }
+        
+        .hero-blob.outline {
+            background: transparent;
+            border: 8px dashed var(--brand-green-dark);
+            transform: scale(1.1) translate(-5%, -5%);
+            animation: spin-slow 20s linear infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes spin-slow { 100% { transform: scale(1.1) translate(-5%, -5%) rotate(360deg); } }
+
+        /* Wavy SVG Divider */
+        .wave-divider {
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 5;
+        }
+        .wave-divider svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 120px;
+        }
+        .wave-divider .shape-fill { fill: var(--bg-alt); }
 
         /* =========================================
            ABOUT / WHO WE ARE SECTION
            ========================================= */
+        .about-section {
+            background: var(--bg-alt);
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -358,258 +428,308 @@
         }
 
         .section-label {
-            color: var(--brand-accent);
-            font-weight: 700;
+            display: inline-block;
+            background: var(--brand-green);
+            color: var(--bg-main);
+            padding: 0.4rem 1.2rem;
+            border-radius: var(--radius-pill);
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 208, 132, 0.3);
         }
 
         .section-title {
             font-size: clamp(2.5rem, 4vw, 3.5rem);
             margin-bottom: 2rem;
+            line-height: 1.2;
         }
 
         .about-text p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .about-features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             margin-top: 3rem;
         }
 
-        .feature-item {
+        .feature-card {
+            background: var(--bg-main);
+            padding: 1.5rem;
+            border-radius: var(--radius-bubbly);
             display: flex;
-            gap: 1rem;
-            align-items: flex-start;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 90, 57, 0.05);
+            transition: var(--transition-bounce);
+            border: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateX(15px);
+            border-color: var(--brand-yellow);
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-light);
+            width: 60px; height: 60px;
+            background: var(--brand-yellow-light);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            color: var(--brand-accent);
+            color: var(--brand-green-dark);
+            font-size: 1.5rem;
         }
 
-        .feature-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
         }
 
+        /* Bubbly Image Placeholder */
         .about-visual {
             position: relative;
-            padding-left: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .about-image-placeholder {
+        .about-image-blob {
             width: 100%;
-            aspect-ratio: 4/5;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-light);
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--brand-green), var(--brand-yellow));
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 12s ease-in-out infinite;
             position: relative;
-            overflow: hidden;
-        }
-
-        /* Simulating an industrial image */
-        .about-image-placeholder::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, rgba(30,58,138,0.05) 25%, transparent 25%), 
-                        linear-gradient(-45deg, rgba(30,58,138,0.05) 25%, transparent 25%);
-            background-size: 20px 20px;
+            box-shadow: inset 0 0 50px rgba(255,255,255,0.5);
         }
 
         .exp-badge {
             position: absolute;
-            bottom: -2rem;
-            left: 0;
-            background: var(--bg-dark);
-            color: var(--bg-main);
+            bottom: 5%;
+            left: -10%;
+            background: var(--bg-main);
+            color: var(--brand-green-dark);
             padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 50%;
+            width: 200px; height: 200px;
+            box-shadow: 0 20px 40px rgba(0, 90, 57, 0.15);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
-            z-index: 2;
+            justify-content: center;
+            text-align: center;
+            animation: float 6s ease-in-out infinite;
+            border: 5px dashed var(--brand-yellow);
         }
 
         .exp-number {
             font-size: 4rem;
-            font-weight: 800;
+            font-weight: 900;
             line-height: 1;
-            color: var(--brand-accent);
+            color: var(--brand-green);
         }
 
         .exp-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            line-height: 1.3;
-            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
         }
+
+        /* Wavy Divider - White */
+        .wave-divider-top {
+            position: absolute;
+            top: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+            z-index: 5;
+        }
+        .wave-divider-top svg { display: block; width: calc(100% + 1.3px); height: 80px; }
+        .wave-divider-top .shape-fill { fill: var(--bg-alt); }
 
         /* =========================================
            SERVICES SECTION
            ========================================= */
         .services-section {
-            background: var(--bg-surface);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            background: var(--bg-main);
+            padding-bottom: 12rem; /* Extra padding for wave */
         }
 
         .services-header {
+            text-align: center;
+            margin-bottom: 5rem;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 4rem;
+            flex-direction: column;
+            align-items: center;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .service-card {
-            background: var(--bg-main);
-            border: 1px solid var(--border-light);
-            padding: 3rem 2.5rem;
-            transition: var(--transition-smooth);
+            background: var(--brand-green-light);
+            border-radius: var(--radius-bubbly);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition-bounce);
             position: relative;
             z-index: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 4px solid transparent;
         }
 
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 4px;
-            background: var(--brand-accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition-smooth);
+        .service-card:nth-child(2) {
+            background: var(--brand-yellow-light);
+            transform: translateY(-20px);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border-color: transparent;
+            transform: translateY(-20px) scale(1.03);
+            background: var(--bg-main);
+            border-color: var(--brand-green);
+            box-shadow: 0 30px 50px rgba(0, 208, 132, 0.2);
         }
 
-        .service-card:hover::after {
-            transform: scaleX(1);
+        .service-card:nth-child(2):hover {
+            border-color: var(--brand-yellow);
+            box-shadow: 0 30px 50px rgba(255, 206, 0, 0.2);
         }
 
         .srv-icon {
-            width: 64px; height: 64px;
-            margin-bottom: 2rem;
-            position: relative;
+            width: 90px; height: 90px;
+            background: var(--bg-main);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: var(--transition-bounce);
         }
 
         .srv-icon svg {
-            width: 100%; height: 100%;
+            width: 40px; height: 40px;
             fill: none;
-            stroke: var(--brand-primary);
-            stroke-width: 1.5;
-            transition: var(--transition-smooth);
+            stroke: var(--brand-green-dark);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .service-card:hover .srv-icon svg {
-            stroke: var(--brand-accent);
-            transform: scale(1.1);
+        .service-card:hover .srv-icon {
+            transform: scale(1.2) rotate(10deg);
+            background: var(--brand-yellow);
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .service-card p {
             margin-bottom: 2rem;
-            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .srv-link {
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--brand-primary);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition-fast);
+            justify-content: center;
+            width: 50px; height: 50px;
+            background: var(--brand-green-dark);
+            color: var(--bg-main);
+            border-radius: 50%;
+            transition: var(--transition-bounce);
         }
 
         .service-card:hover .srv-link {
-            color: var(--brand-accent);
-            gap: 1rem;
+            width: 100%;
+            border-radius: var(--radius-pill);
+            background: var(--brand-green);
+            gap: 10px;
+        }
+        
+        .srv-link::after {
+            content: 'Explore';
+            display: none;
+            font-weight: 800;
         }
 
+        .service-card:hover .srv-link::after {
+            display: block;
+        }
+
+        /* Wave to Green Section */
+        .wave-bottom {
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 5;
+        }
+        .wave-bottom svg { display: block; width: calc(100% + 1.3px); height: 150px; }
+        .wave-bottom .shape-fill { fill: var(--brand-green); }
+
         /* =========================================
-           STRATEGY / VISION SECTION
+           STRATEGY & STATS SECTION (Combined Bubbly Area)
            ========================================= */
+        .strategy-stats {
+            background: var(--brand-green);
+            color: var(--bg-main);
+            padding: 4rem 0 8rem;
+        }
+
         .strategy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 4rem;
+            gap: 2rem;
+            margin-bottom: 6rem;
         }
 
         .strategy-item {
-            padding: 2.5rem;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-bubbly);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-bounce);
         }
 
-        .strategy-item::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            transform: translate(50%, -50%);
+        .strategy-item:hover {
+            transform: translateY(-10px);
+            background: var(--brand-yellow);
+            color: var(--brand-green-dark);
+            border-color: var(--brand-yellow);
         }
 
         .strategy-item h4 {
             color: var(--bg-main);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .strategy-item h4::before {
-            content: '';
-            display: block;
-            width: 8px; height: 8px;
-            background: var(--brand-accent);
-        }
+        .strategy-item:hover h4 { color: var(--brand-green-dark); }
 
         .strategy-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* =========================================
-           STATS SECTION
-           ========================================= */
-        .stats-section {
-            background: var(--brand-accent);
-            padding: 6rem 0;
-            color: var(--bg-main);
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .stats-grid {
@@ -619,37 +739,59 @@
             text-align: center;
         }
 
+        .stat-card {
+            background: var(--bg-main);
+            color: var(--brand-green-dark);
+            padding: 3rem 1rem;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0, 90, 57, 0.3);
+            border: 8px solid var(--brand-yellow);
+            transition: var(--transition-bounce);
+        }
+
+        .stat-card:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
         .stat-val {
-            font-size: 4.5rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 900;
             line-height: 1;
             margin-bottom: 0.5rem;
-            font-family: var(--font-main);
+            color: var(--brand-green);
         }
 
         .stat-label {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+
+        /* Wave to Yellow CTA */
+        .wave-to-cta {
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 5;
+        }
+        .wave-to-cta svg { display: block; width: calc(100% + 1.3px); height: 120px; }
+        .wave-to-cta .shape-fill { fill: var(--brand-yellow); }
 
         /* =========================================
            CTA / CONTACT BANNER
            ========================================= */
         .cta-section {
-            position: relative;
-            background: var(--bg-darker);
-            padding: 8rem 0;
+            background: var(--brand-yellow);
+            padding: 6rem 0 8rem;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 5px;
-            background: var(--brand-accent);
         }
 
         .cta-content {
@@ -658,24 +800,37 @@
         }
 
         .cta-content h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            color: var(--bg-main);
+            font-size: clamp(2.5rem, 4.5vw, 4rem);
+            color: var(--brand-green-dark);
             margin-bottom: 1.5rem;
         }
 
         .cta-content p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
+            color: var(--brand-green-dark);
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 3rem;
         }
+
+        /* Wave to Footer */
+        .wave-to-footer {
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 5;
+        }
+        .wave-to-footer svg { display: block; width: calc(100% + 1.3px); height: 100px; }
+        .wave-to-footer .shape-fill { fill: var(--brand-green-dark); }
 
         /* =========================================
            FOOTER
            ========================================= */
         .site-footer {
-            background: var(--bg-dark);
-            color: var(--text-muted);
-            padding: 6rem 0 2rem;
+            background: var(--brand-green-dark);
+            color: var(--bg-main);
+            padding: 4rem 0 2rem;
         }
 
         .footer-grid {
@@ -686,20 +841,22 @@
         }
 
         .footer-brand {
-            color: var(--bg-main);
-            font-size: 1.5rem;
-            font-weight: 800;
+            color: var(--brand-yellow);
+            font-size: 1.8rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .footer-brand svg { fill: var(--brand-accent); width: 24px; height: 24px; }
+        .footer-brand svg { fill: var(--brand-yellow); width: 28px; height: 28px; }
+
+        .footer-col p { color: var(--brand-green-light); font-weight: 600; }
 
         .footer-col h4 {
-            color: var(--bg-main);
-            font-size: 1.1rem;
+            color: var(--brand-yellow);
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -708,264 +865,311 @@
         .footer-links li { margin-bottom: 0.75rem; }
         
         .footer-links a {
-            transition: var(--transition-fast);
+            color: var(--brand-green-light);
+            font-weight: 600;
+            transition: var(--transition-bounce);
+            display: inline-block;
         }
 
         .footer-links a:hover {
-            color: var(--brand-accent);
-            padding-left: 5px;
+            color: var(--brand-yellow);
+            transform: translateX(10px);
         }
 
         .contact-info li {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             align-items: flex-start;
+            color: var(--brand-green-light);
+            font-weight: 600;
         }
 
         .contact-info svg {
-            width: 20px; height: 20px;
+            width: 24px; height: 24px;
             flex-shrink: 0;
-            stroke: var(--brand-accent);
+            stroke: var(--brand-yellow);
             fill: none;
-            stroke-width: 2;
+            stroke-width: 2.5;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 2px dashed rgba(255,255,255,0.2);
             padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-green-light);
         }
 
         /* =========================================
            RESPONSIVE DESIGN
            ========================================= */
         @media (max-width: 1024px) {
-            .about-grid, .services-header, .strategy-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .services-header { flex-direction: column; align-items: flex-start; }
+            .about-grid, .strategy-grid { grid-template-columns: 1fr; gap: 3rem; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 4rem 2rem; }
+            .service-card:nth-child(2) { transform: translateY(0); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-            .exp-badge { position: relative; bottom: 0; margin-top: -2rem; }
-            .hero-graphic { display: none; }
+            .hero-graphic { width: 400px; height: 400px; opacity: 0.3; right: -10%; }
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; /* Mobile menu hidden for simplicity in this prototype */ }
+            .nav-links { display: none; } /* Mobile menu hidden for simplicity */
             .hero-title { font-size: 2.8rem; }
             .hero-actions { flex-direction: column; align-items: stretch; }
             .services-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
             :root { --section-pad: 5rem; }
+            .stat-card { border-radius: var(--radius-bubbly); aspect-ratio: auto; padding: 2rem; }
+            .exp-badge { position: relative; left: 0; bottom: 0; margin-top: -3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- BUBBLY HEADER -->
     <header class="site-header" id="header">
         <div class="container nav-inner">
             <a href="#" class="brand-logo">
-                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM12 22v-10M12 12L2.5 6.5M12 12l9.5-5.5"/></svg>
+                <div class="logo-blob">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM12 22v-10M12 12L2.5 6.5M12 12l9.5-5.5"/></svg>
+                </div>
                 BURGEON
             </a>
             <nav class="nav-links">
-                <a href="#about">About Us</a>
+                <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#strategy">Strategy</a>
-                <a href="#contact">Contact</a>
             </nav>
-            <a href="#contact" class="btn btn-accent" style="padding: 0.75rem 1.5rem; font-size: 0.85rem;">Enquire Now</a>
+            <a href="#contact" class="btn btn-green">Enquire Now</a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- FLOATING HERO SECTION -->
     <section class="hero" id="home">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-gradient"></div>
+        <!-- Animated Background Bubbles -->
+        <div class="bubble-container">
+            <div class="bg-bubble"></div>
+            <div class="bg-bubble"></div>
+            <div class="bg-bubble"></div>
+            <div class="floating-particles">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
         
-        <!-- Abstract Rotating Graphic -->
+        <!-- Bubbly Abstract Graphic -->
         <div class="hero-graphic">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div>
+            <div class="hero-blob green"></div>
+            <div class="hero-blob yellow"></div>
+            <div class="hero-blob outline"></div>
         </div>
 
         <div class="container hero-content">
-            <div class="hero-subtitle reveal">Delivering Excellence Since 2015</div>
-            <h1 class="hero-title reveal delay-100">Design Engineering &amp; Manufacturing of High-End Systems.</h1>
+            <div class="hero-subtitle reveal">🚀 Delivering Excellence Since 2015</div>
+            <h1 class="hero-title reveal delay-100">
+                Design <span class="text-green">Engineering</span> &amp; <br>
+                <span class="highlight-blob">Manufacturing</span> Systems.
+            </h1>
             <p class="hero-desc reveal delay-200">
-                We are a fast-growing organization driven by experienced professionals providing cost-effective, customized industrial solutions and surface treatment plants tailored to meet global standards.
+                We bring custom, cost-effective industrial solutions and surface treatment plants to life with a fresh, dynamic, and eco-friendly approach.
             </p>
             <div class="hero-actions reveal delay-300">
-                <a href="#services" class="btn btn-accent">Our Solutions</a>
-                <a href="#contact" class="btn btn-outline">Contact Us</a>
+                <a href="#services" class="btn btn-yellow">Our Solutions</a>
+                <a href="#contact" class="btn btn-green" style="background: var(--bg-main); color: var(--brand-green-dark);">Contact Us</a>
             </div>
+        </div>
+
+        <!-- Wavy transition to About -->
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C79.44,115.54,166.42,109.11,241.24,84.42,269.87,74.95,296.65,65.34,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="section" id="about">
+    <!-- BUBBLY ABOUT SECTION -->
+    <section class="section about-section" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-text reveal-left">
+                <div class="about-text reveal">
                     <span class="section-label">Who We Are</span>
-                    <h2 class="section-title">A Company Built on Tradition &amp; Innovation</h2>
-                    <p>Burgeon Engineering is driven by highly experienced professionals with a rich history in the paint shop industry spanning over 18 years. Our vision is to deliver quality jobs ensuring the absolute best performance of industrial equipment.</p>
-                    <p>All projects are executed with uncompromising safety, desirable quality, competitive cost, and strict adherence to on-time delivery schedules.</p>
+                    <h2 class="section-title">Built on <span class="text-green">Tradition</span> &amp; <span class="text-yellow">Innovation</span></h2>
+                    <p>Burgeon Engineering is driven by highly experienced professionals with a rich history in the paint shop industry spanning over 18 years. Our vision is to deliver quality jobs ensuring the absolute best performance.</p>
                     
                     <div class="about-features">
-                        <div class="feature-item">
+                        <div class="feature-card">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div>
                                 <h4>Unmatched Safety</h4>
-                                <p style="font-size: 0.9rem; margin:0;">Zero-compromise approach to site safety.</p>
+                                <p style="font-size: 0.95rem; margin:0;">Zero-compromise approach to site safety.</p>
                             </div>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: var(--brand-green-light);">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                             </div>
                             <div>
                                 <h4>On-Time Delivery</h4>
-                                <p style="font-size: 0.9rem; margin:0;">Strict adherence to project timelines.</p>
+                                <p style="font-size: 0.95rem; margin:0;">Strict adherence to project timelines.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-visual reveal delay-200">
-                    <div class="about-image-placeholder"></div>
+                    <div class="about-image-blob"></div>
                     <div class="exp-badge">
                         <div class="exp-number">18</div>
-                        <div class="exp-text">Years Of<br>Team Experience</div>
+                        <div class="exp-text">Years Of<br>Experience</div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Wave to Services -->
+        <div class="wave-divider-top" style="top: auto; bottom: -1px; transform: rotate(0deg);">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill" style="fill: var(--bg-main);"></path>
+            </svg>
+        </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- PLAYFUL SERVICES SECTION -->
     <section class="section services-section" id="services">
         <div class="container">
             <div class="services-header reveal">
-                <div>
-                    <span class="section-label">Our Services</span>
-                    <h2 class="section-title" style="margin-bottom:0;">Delivering Nothing But Excellence</h2>
-                </div>
-                <a href="#contact" class="btn btn-outline" style="color: var(--text-heading); border-color: var(--border-dark);">View All Capabilities</a>
+                <span class="section-label" style="background: var(--brand-yellow); color: var(--brand-green-dark);">Our Services</span>
+                <h2 class="section-title">Delivering Nothing But <span class="text-green">Excellence</span></h2>
             </div>
 
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card reveal">
                     <div class="srv-icon">
-                        <!-- Paint/Spray Icon -->
                         <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
-                    <h3>Paint Shop &amp; Surface Treatment</h3>
-                    <p>Comprehensive solutions including Liquid Paint Booths, CED Plants, Pretreatment Systems, Bake Ovens, and Powder Coating Plants.</p>
-                    <a href="#" class="srv-link">Explore Systems <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <h3>Paint Shop Systems</h3>
+                    <p>Custom solutions including Liquid Paint Booths, CED Plants, and Pretreatment Systems.</p>
+                    <a href="#" class="srv-link"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="service-card reveal delay-100">
                     <div class="srv-icon">
-                        <!-- Automation Icon -->
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
                     </div>
-                    <h3>Electrical &amp; Automation Panels</h3>
-                    <p>High-end PLC-based control panels, automation integrations, and process piping tailored for robust manufacturing environments.</p>
-                    <a href="#" class="srv-link">Explore Automation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <h3>Automation Panels</h3>
+                    <p>High-end PLC-based control panels tailored for robust manufacturing environments.</p>
+                    <a href="#" class="srv-link"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="service-card reveal delay-200">
                     <div class="srv-icon">
-                        <!-- Maintenance Icon -->
                         <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                     </div>
                     <h3>AMC &amp; Refurbishing</h3>
-                    <p>Annual Maintenance Contracts to ensure zero downtime. We refurbish and upgrade existing setups to global quality standards.</p>
-                    <a href="#" class="srv-link">Explore Maintenance <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <p>Annual Maintenance Contracts and upgrades ensuring zero downtime and top performance.</p>
+                    <a href="#" class="srv-link"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
         </div>
+
+        <!-- Wave down to Strategy/Stats -->
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C79.44,115.54,166.42,109.11,241.24,84.42,269.87,74.95,296.65,65.34,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
     </section>
 
-    <!-- STRATEGY SECTION -->
-    <section class="section" id="strategy">
+    <!-- GREEN BUBBLY STRATEGY & STATS SECTION -->
+    <section class="strategy-stats" id="strategy">
         <div class="container">
-            <div class="text-center reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <span class="section-label">Our Strategy</span>
-                <h2 class="section-title">Driven by Core Values &amp; Vision</h2>
+            <div class="text-center reveal" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <span class="section-label" style="background: var(--bg-main); color: var(--brand-green-dark);">Our Vision</span>
+                <h2 class="section-title" style="color: var(--bg-main);">Driven by <span class="text-yellow">Core Values</span></h2>
             </div>
             
             <div class="strategy-grid">
                 <div class="strategy-item reveal">
-                    <h4>Core Values</h4>
-                    <p>Total satisfaction of customers by understanding their exact requirements, delivering the highest value addition possible, and establishing strong, long-standing relationships for mutual benefit.</p>
+                    <h4><div style="width:15px; height:15px; background:var(--brand-yellow); border-radius:50%;"></div> Core Values</h4>
+                    <p>Total satisfaction of customers by understanding exact requirements and delivering the highest value possible.</p>
                 </div>
                 
                 <div class="strategy-item reveal delay-100">
-                    <h4>Business Vision</h4>
-                    <p>Design, engineering & manufacturing of high-end products by adopting global standards to deliver high-quality plants and machinery. We strive for continuous improvement and zero defect operations.</p>
+                    <h4><div style="width:15px; height:15px; background:var(--bg-main); border-radius:50%;"></div> Business Vision</h4>
+                    <p>Design & manufacturing of high-end products by adopting global standards to deliver high-quality plants.</p>
                 </div>
                 
                 <div class="strategy-item reveal delay-200">
-                    <h4>Company Policy</h4>
-                    <p>Establishing a company that grows perpetually along with employees while ensuring strict compliance with safety & environment. We foster a disciplined, harmonious work culture.</p>
+                    <h4><div style="width:15px; height:15px; background:var(--brand-yellow); border-radius:50%;"></div> Company Policy</h4>
+                    <p>Establishing a company that grows perpetually along with employees while ensuring strict safety compliance.</p>
+                </div>
+            </div>
+
+            <!-- Bubbly Stats -->
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-val"><span class="counter" data-target="2015">0</span></div>
+                    <div class="stat-label">Established</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val"><span class="counter" data-target="18">0</span>+</div>
+                    <div class="stat-label">Years Exp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val"><span class="counter" data-target="100">0</span>%</div>
+                    <div class="stat-label">Quality</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val"><span class="counter" data-target="24">0</span>/7</div>
+                    <div class="stat-label">Support</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- STATS COUNTER -->
-    <section class="stats-section">
-        <div class="container stats-grid reveal">
-            <div>
-                <div class="stat-val"><span class="counter" data-target="2015">0</span></div>
-                <div class="stat-label">Year Established</div>
-            </div>
-            <div>
-                <div class="stat-val"><span class="counter" data-target="18">0</span>+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div>
-                <div class="stat-val"><span class="counter" data-target="100">0</span>%</div>
-                <div class="stat-label">Quality Assurance</div>
-            </div>
-            <div>
-                <div class="stat-val"><span class="counter" data-target="24">0</span>/7</div>
-                <div class="stat-label">Client Support</div>
-            </div>
+        
+        <!-- Wave to CTA -->
+        <div class="wave-to-cta">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
+    <!-- YELLOW CTA SECTION -->
     <section class="cta-section" id="contact">
         <div class="container cta-content reveal">
-            <h2>Ready to build a world-class manufacturing facility?</h2>
-            <p>Connect with our experienced engineering team to discuss your next big project and get customized solutions.</p>
-            <a href="mailto:info@burgeonengineering.com" class="btn btn-accent">Request a Consultation</a>
+            <h2>Let's build something <span class="text-green" style="background:var(--bg-main); padding:0 1rem; border-radius:30px; display:inline-block; transform:rotate(-2deg);">amazing</span> together.</h2>
+            <p>Connect with our experienced engineering team to discuss your next big project and get bouncy, fresh, customized solutions.</p>
+            <a href="mailto:info@burgeonengineering.com" class="btn btn-green" style="font-size: 1.2rem; padding: 1.5rem 3rem;">Request a Consultation 🚀</a>
+        </div>
+        
+        <!-- Wave to Footer -->
+        <div class="wave-to-footer">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- BUBBLY FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid reveal">
                 <div class="footer-col">
                     <div class="footer-brand">
-                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM12 22v-10M12 12L2.5 6.5M12 12l9.5-5.5"/></svg>
+                        <div class="logo-blob" style="width:30px; height:30px; background:var(--brand-green); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                            <svg viewBox="0 0 24 24" style="fill:var(--bg-main); width:16px; height:16px;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM12 22v-10M12 12L2.5 6.5M12 12l9.5-5.5"/></svg>
+                        </div>
                         BURGEON
                     </div>
-                    <p style="margin-bottom: 1.5rem; max-width: 300px;">Fast-growing organization driven by experienced professionals providing cost-effective and customized engineering solutions.</p>
+                    <p style="margin-bottom: 1.5rem; max-width: 300px;">Fresh, dynamic, and providing cost-effective customized engineering solutions with a modern touch.</p>
                 </div>
                 
                 <div class="footer-col">
@@ -973,9 +1177,8 @@
                     <ul class="footer-links">
                         <li><a href="#">Liquid Paint Booths</a></li>
                         <li><a href="#">CED Plants</a></li>
-                        <li><a href="#">Powder Coating Systems</a></li>
+                        <li><a href="#">Powder Coating</a></li>
                         <li><a href="#">Automation Panels</a></li>
-                        <li><a href="#">AMC & Refurbishing</a></li>
                     </ul>
                 </div>
                 
@@ -983,9 +1186,7 @@
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#">Our Strategy</a></li>
-                        <li><a href="#">Turnover & Factory</a></li>
-                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#strategy">Our Vision</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -995,24 +1196,21 @@
                     <ul class="contact-info">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Unit No.-510, Eros Corporate Park, Sector-2, NH-8 IMT Manesar, Gurgaon-122052 INDIA
+                            Sector-2, NH-8 IMT Manesar, Gurgaon-122052 INDIA
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <div>
-                                +91 8527754455<br>
-                                +91 9999688621
-                            </div>
+                            <div>+91 8527754455<br>+91 9999688621</div>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div>&copy; <span id="year"></span> Burgeon Engineering Pvt. Ltd. | All Rights Reserved.</div>
+                <div>&copy; <span id="year"></span> Burgeon Engineering | Bubbly Edition</div>
                 <div style="display:flex; gap:1.5rem;">
-                    <a href="#" style="transition: color 0.2s; color: var(--text-muted);" onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-                    <a href="#" style="transition: color 0.2s; color: var(--text-muted);" onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+                    <a href="#" style="color: var(--brand-yellow);">Privacy Policy</a>
+                    <a href="#" style="color: var(--brand-yellow);">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -1027,7 +1225,7 @@
             // Set current year
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Navbar Scrolled State
+            // Bubbly Navbar Scrolled State
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1037,7 +1235,7 @@
                 }
             });
 
-            // Intersection Observer for Animations
+            // Intersection Observer for Bouncy Animations
             const revealOptions = {
                 threshold: 0.1,
                 rootMargin: "0px 0px -50px 0px"
@@ -1051,7 +1249,7 @@
                 });
             }, revealOptions);
 
-            document.querySelectorAll('.reveal, .reveal-left').forEach(el => {
+            document.querySelectorAll('.reveal').forEach(el => {
                 revealObserver.observe(el);
             });
 
@@ -1062,7 +1260,7 @@
             const animateCounters = () => {
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
-                    const duration = 2500; // 2.5s
+                    const duration = 2500; 
                     const increment = target / (duration / 16); 
                     let current = 0;
 
@@ -1079,7 +1277,7 @@
                 });
             };
 
-            const statsSection = document.querySelector('.stats-section');
+            const statsSection = document.querySelector('.stats-grid');
             if (statsSection) {
                 const statsObserver = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting && !hasCounted) {

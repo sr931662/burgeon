@@ -1,0 +1,194 @@
+.introSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-hi);
+  margin-bottom: 16px;
+}
+
+.sectionEyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-hi);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.sectionLead {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+
+.introTagStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.introTag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: border-color 0.3s;
+}
+
+.introTag:hover {
+  border-color: var(--accent-hi);
+}
+
+.introTagIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.introTagIcon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent-hi);
+}
+
+.introTagText strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.introTagText span {
+  font-size: 0.8rem;
+  color: #4a5568;
+}
+
+.yearPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  color: var(--accent-hi);
+  font-weight: 500;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 0.1;
+}
+
+.btnOutline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnOutline:hover {
+  border-color: var(--accent-hi);
+  color: var(--accent-hi);
+  transform: translateY(-2px);
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.btn:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+.fadeUp {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.fadeUpActive {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .introSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}

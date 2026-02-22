@@ -1,0 +1,546 @@
+/* ============================================================
+   PAINT SHOP PAGE STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface2: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --text: #212529;
+  --muted: #6c757d;
+  --accent: #2b8c3e;
+  --accent-lo: rgba(43,140,62,0.08);
+  --accent-hi: #2b8c3e;
+  --yellow: #fbbf24;
+  --white: #ffffff;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 40px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.bgSurface {
+  background: var(--surface);
+}
+
+/* ─── PAGE HERO ───────────────────────────────────────── */
+.pageHero {
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 30%, transparent 100%);
+}
+
+.pageHeroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.pageHeroEyebrow a {
+  color: var(--muted);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.pageHeroEyebrow a:hover {
+  color: var(--accent-hi);
+}
+
+.pageHeroEyebrow .sep {
+  color: var(--border);
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.pageTitle .accent {
+  color: var(--accent-hi);
+}
+
+.pageSubtitle {
+  font-size: 1.15rem;
+  color: #4a5568;
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ─── INTRO SECTION ──────────────────────────────────── */
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-hi);
+  margin-bottom: 16px;
+}
+
+.sectionEyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-hi);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.sectionLead {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Feature List */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.featureList li::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: var(--accent-lo);
+  border: 1px solid rgba(37,99,255,0.3);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d84ff' stroke-width='2.5'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 2px;
+}
+
+/* Stats Card */
+.statsCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 48px;
+  text-align: center;
+}
+
+.statsNumber {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.statsNumber span {
+  color: var(--accent-hi);
+}
+
+.statsLabel {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.statsList {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.statItem span:first-child {
+  color: var(--muted);
+}
+
+.statItem span:last-child {
+  color: var(--accent-hi);
+  font-weight: 600;
+}
+
+/* ─── PRODUCTS LIST ───────────────────────────────────── */
+.productsHeader {
+  margin-bottom: 48px;
+}
+
+.productsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.productRow {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 32px;
+  background: var(--surface);
+  padding: 28px 36px;
+  transition: background 0.3s, padding-left 0.3s;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.productRow:hover {
+  background: var(--surface2);
+  padding-left: 44px;
+}
+
+.productRow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.3s;
+}
+
+.productRow:hover::after {
+  transform: scaleY(1);
+}
+
+.productRowNum {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-hi);
+  opacity: 0.5;
+}
+
+.productRowName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.productRowTag {
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-top: 4px;
+}
+
+.productRowArrow {
+  color: var(--accent-hi);
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.productRow:hover .productRowArrow {
+  transform: translateX(4px);
+}
+
+/* ─── CTA BAND ────────────────────────────────────────── */
+.ctaBand {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBand::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.ctaBandPattern {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to left, black, transparent);
+}
+
+.ctaBandTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.ctaBandSub {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.ctaBandActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.ctaContactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.ctaContactItem a {
+  color: inherit;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.ctaContactItem a:hover {
+  color: var(--accent-hi);
+}
+
+/* ─── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 0.1;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 0 0 rgba(43,140,62,0.4);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(43,140,62,0.4);
+}
+
+.btnOutline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnOutline:hover {
+  border-color: var(--accent-hi);
+  color: var(--accent-hi);
+  transform: translateY(-2px);
+}
+
+.btnLg {
+  padding: 18px 40px;
+  font-size: 1rem;
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.btn:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+/* ─── FADE-UP ANIMATION ───────────────────────────────── */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── LOADING & ERROR STATES ──────────────────────────── */
+.loadingContainer {
+  padding: 80px;
+  text-align: center;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+.errorContainer {
+  padding: 80px;
+  text-align: center;
+  color: #ff5050;
+  font-size: 1rem;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .ctaBand {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .pageHero {
+    padding: 120px 0 60px;
+  }
+
+  .productsList .productRow {
+    grid-template-columns: 40px 1fr 24px;
+    gap: 16px;
+    padding: 20px 20px;
+  }
+
+  .ctaBand {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsNumber {
+    font-size: 3.5rem;
+  }
+  
+  .statsCard {
+    padding: 32px 24px;
+  }
+}

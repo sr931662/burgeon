@@ -1,0 +1,369 @@
+/* ============================================================
+   NAVBAR STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface2: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --text: #212529;
+  --muted: #6c757d;
+  --accent: #2b8c3e;
+  --accent-lo: rgba(43,140,62,0.08);
+  --accent-hi: #2b8c3e;
+  --white: #ffffff;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── UTILITY ───────────────────────────────────────────── */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ─── HEADER ──────────────────────────────────────────── */
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  transition: all 0.4s var(--ease);
+}
+
+.siteHeader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background 0.4s var(--ease), border-bottom 0.4s;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+.scrolled::before {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.headerInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* ─── LOGO ────────────────────────────────────────────── */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logoDot {
+  color: var(--accent-hi);
+}
+
+.logoSub {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+  font-family: var(--font-body);
+}
+
+/* ─── DESKTOP NAV ─────────────────────────────────────── */
+.mainNav {
+  display: block;
+}
+
+.mainNav ul {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mainNav a {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.mainNav a:hover,
+.mainNav a.active {
+  color: var(--accent-hi);
+  background: var(--surface2);
+}
+
+.mainNav .navCta {
+  background: var(--accent);
+  color: var(--white);
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.mainNav .navCta:hover {
+  background: var(--accent-hi);
+  color: var(--white);
+}
+
+/* ─── DROPDOWN ────────────────────────────────────────── */
+.hasDropdown {
+  position: relative;
+}
+
+.hasDropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hasDropdown > a::after {
+  content: '▾';
+  font-size: 0.7rem;
+  opacity: 0.5;
+  transition: transform 0.2s;
+}
+
+.hasDropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 8px;
+  min-width: 240px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ADDED: Invisible bridge to fix the hover gap */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -20px; 
+  left: 0;
+  right: 0;
+  height: 20px; 
+}
+
+.hasDropdown:hover .dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: var(--accent-lo);
+  color: var(--accent-hi);
+}
+
+/* ─── HAMBURGER MENU ──────────────────────────────────── */
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--text);
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─── MOBILE NAV ──────────────────────────────────────── */
+.mobileNav {
+  position: fixed;
+  inset: 0;
+  background: var(--surface);
+  z-index: 490;
+  padding: 100px 32px 40px;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+  overflow-y: auto;
+}
+
+.mobileNav.open {
+  transform: translateX(0);
+}
+
+.mobileNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNav a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  transition: color 0.2s, padding-left 0.2s;
+  text-decoration: none;
+}
+
+.mobileNav a:hover {
+  color: var(--accent-hi);
+  padding-left: 8px;
+}
+
+.mobileNav .subItem a {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--muted);
+  padding-left: 20px;
+}
+
+.mobileCta {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.mobileCta:hover {
+  background: var(--accent-hi);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .mainNav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .logoImg {
+    height: 32px;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .mobileNav a {
+    font-size: 1.4rem;
+  }
+
+  .mobileNav .subItem a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText .logoSub {
+    display: none;
+  }
+}

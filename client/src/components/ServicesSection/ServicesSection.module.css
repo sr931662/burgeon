@@ -1,0 +1,368 @@
+/* ============================================================
+   SERVICES SECTION STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface2: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --text: #212529;
+  --muted: #6c757d;
+  --accent: #2b8c3e;
+  --accent-lo: rgba(43,140,62,0.08);
+  --accent-hi: #2b8c3e;
+  --white: #ffffff;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 40px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.bgSurface {
+  background: var(--surface);
+}
+
+/* ─── SECTION HEADER ─────────────────────────────────── */
+.servicesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-hi);
+  margin-bottom: 16px;
+}
+
+.sectionEyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-hi);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.accent {
+  color: var(--accent-hi);
+}
+
+/* ─── SERVICES MEGA GRID ───────────────────────────────── */
+.servicesMegaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.serviceTile {
+  background: var(--surface);
+  padding: 40px 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background 0.4s var(--ease);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.serviceTile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-lo) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.serviceTile:hover {
+  background: var(--surface2);
+}
+
+.serviceTile:hover::before {
+  opacity: 1;
+}
+
+.serviceTileNum {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--accent-hi);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.serviceTileIcon {
+  font-size: 2rem;
+  transition: transform 0.3s var(--ease-bounce);
+  margin-bottom: 8px;
+}
+
+.serviceTile:hover .serviceTileIcon {
+  transform: scale(1.2);
+}
+
+.serviceTileName {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.serviceTileDesc {
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.serviceTileArrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--accent-hi);
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s, transform 0.3s;
+  margin-top: auto;
+}
+
+.serviceTile:hover .serviceTileArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Featured wide tile */
+.serviceTile.wide {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.serviceTile.wide .tileContent {
+  flex: 1;
+}
+
+.serviceTile.wide .tileVisual {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--accent-lo);
+  border: 1px solid rgba(37,99,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  flex-shrink: 0;
+  transition: transform 0.4s var(--ease-bounce);
+}
+
+.serviceTile.wide:hover .tileVisual {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Service specs list */
+.serviceSpecs {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #4a5568;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.serviceSpecs li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serviceSpecs li::before {
+  content: '•';
+  color: var(--accent-hi);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ─── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 0.1;
+}
+
+.btnOutline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnOutline:hover {
+  border-color: var(--accent-hi);
+  color: var(--accent-hi);
+  transform: translateY(-2px);
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.btn:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+/* ─── FADE-UP ANIMATION ───────────────────────────────── */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── LOADING & ERROR STATES ──────────────────────────── */
+.loadingContainer {
+  padding: 40px;
+  text-align: center;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+.errorContainer {
+  padding: 40px;
+  text-align: center;
+  color: #ff5050;
+  font-size: 1rem;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .servicesMegaGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .serviceTile.wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .servicesMegaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceTile.wide {
+    grid-column: span 1;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .serviceTile.wide .tileVisual {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+
+  .servicesHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceTile {
+    padding: 30px 24px;
+  }
+}

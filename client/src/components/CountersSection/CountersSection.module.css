@@ -1,0 +1,70 @@
+.countersRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.counterCell {
+  background: var(--surface);
+  padding: 48px 36px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.counterCell:hover {
+  background: var(--surface2);
+}
+
+.counterVal {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.counterVal .suf {
+  color: var(--accent-hi);
+}
+
+.counterLbl {
+  font-size: 0.8rem;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 8px;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.bgSurface {
+  background: var(--surface);
+}
+
+@media (max-width: 768px) {
+  .countersRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .counterCell {
+    padding: 36px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countersRow {
+    grid-template-columns: 1fr;
+  }
+}

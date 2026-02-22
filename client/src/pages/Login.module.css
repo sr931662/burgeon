@@ -1,0 +1,436 @@
+/* ============================================================
+   LOGIN PAGE STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface2: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --text: #212529;
+  --muted: #6c757d;
+  --accent: #2b8c3e;
+  --accent-lo: rgba(43,140,62,0.08);
+  --accent-hi: #2b8c3e;
+  --error: #dc2626;
+  --error-lo: rgba(220,38,38,0.08);
+  --white: #ffffff;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 40px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── LOGIN CONTAINER ─────────────────────────────────── */
+.loginContainer {
+  box-sizing: border-box; /* ADDED */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Background pattern */
+.loginContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 100%);
+  z-index: 1;
+}
+
+/* ─── LOGIN CARD ──────────────────────────────────────── */
+.loginCard {
+  box-sizing: border-box; /* ADDED */
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 48px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s var(--ease);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loginCard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+}
+
+/* ─── LOGO SECTION ────────────────────────────────────── */
+.logoSection {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.logoDot {
+  color: var(--accent-hi);
+}
+
+.logoSub {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+  font-family: var(--font-body);
+}
+
+.logoTagline {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-top: 4px;
+}
+
+/* ─── FORM HEADER ─────────────────────────────────────── */
+.formHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* ─── FORM ────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroup {
+  box-sizing: border-box; /* ADDED */
+  width: 100%; /* ADDED */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formLabel span {
+  color: var(--accent-hi);
+  font-size: 0.7rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.formInput {
+  box-sizing: border-box; /* ADDED: Prevents input from breaking outside the card */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  width: 100%;
+}
+
+.formInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(43,140,62,0.15);
+}
+
+.formInput.error {
+  border-color: var(--error);
+}
+
+.formInput.error:focus {
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.15);
+}
+
+.errorMessage {
+  font-size: 0.8rem;
+  color: var(--error);
+  margin-top: 4px;
+}
+
+/* Password field with toggle */
+.passwordField {
+  position: relative;
+  width: 100%; /* ADDED */
+}
+
+/* ADDED: Prevents the typed password from overlapping the eye icon */
+.passwordInput {
+  padding-right: 46px; 
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1rem;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.passwordToggle:hover {
+  color: var(--accent-hi);
+}
+
+/* Form options */
+.formOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  width: 100%; /* ADDED */
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.rememberMe input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.rememberMe span {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.forgotPassword {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.forgotPassword:hover {
+  color: var(--accent-hi);
+  text-decoration: underline;
+}
+
+/* Submit button */
+.submitButton {
+  box-sizing: border-box; /* ADDED */
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 32px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.submitButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.submitButton:hover:not(:disabled)::after {
+  opacity: 0.1;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(43,140,62,0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form footer */
+.formFooter {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.formFooter a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.formFooter a:hover {
+  color: var(--accent-hi);
+  text-decoration: underline;
+}
+
+/* Alert messages */
+.alert {
+  box-sizing: border-box; /* ADDED */
+  width: 100%; /* ADDED */
+  padding: 16px 20px;
+  border-radius: var(--r-md);
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alertSuccess {
+  background: rgba(43,140,62,0.1);
+  border: 1px solid rgba(43,140,62,0.2);
+  color: var(--accent);
+}
+
+.alertError {
+  background: var(--error-lo);
+  border: 1px solid rgba(220,38,38,0.2);
+  color: var(--error);
+}
+
+.alertIcon {
+  font-size: 1.2rem;
+}
+
+/* ─── BACK TO HOME LINK ───────────────────────────────── */
+.backLink {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+}
+
+.backLink a {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.backLink a:hover {
+  color: var(--accent-hi);
+}
+
+.backIcon {
+  font-size: 1rem;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .loginCard {
+    padding: 32px 24px;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .logoSub {
+    display: none;
+  }
+
+  .formOptions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
