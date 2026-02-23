@@ -76,19 +76,19 @@ const PaintShopPage = () => {
       id: 1,
       name: "Liquid Paint Booth",
       tag: "Downdraft · Semi-downdraft · Crossflow",
-      slug: "/liquid-paint-booth"
+      slug: "/services/liquid-paint-booth"
     },
     {
       id: 2,
       name: "Wet & Dry Paint Booth",
       tag: "Water wash or dry filter — switchable configurations",
-      slug: "/wet-dry-booth"
+      slug: "/services/wet-dry-booth"
     },
     {
       id: 3,
       name: "Compact Paint Booth",
       tag: "Space-saving · Bench-top and walk-in designs",
-      slug: "/compact-paint-booth"
+      slug: "/services/compact-paint-booth"
     },
     {
       id: 4,
@@ -100,13 +100,13 @@ const PaintShopPage = () => {
       id: 5,
       name: "Dry-off Oven",
       tag: "Post-pretreatment moisture removal · 80–150°C",
-      slug: "/dry-off-oven"
+      slug: "/services/dry-off-oven"
     },
     {
       id: 6,
       name: "Pretreatment System",
       tag: "3–9 stages · Spray or immersion · SS or PP construction",
-      slug: "/pretreatment-system"
+      slug: "/services/pretreatment-system"
     }
   ];
 

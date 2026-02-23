@@ -116,7 +116,14 @@ const Navbar = () => {
                 </NavLink>
                 <div className={styles.dropdown}>
                   {serviceItems.map((item, index) => (
-                    <Link key={index} to={item.path}>{item.name}</Link>
+                    /* ADDED: NavLink for active dropdown styling */
+                    <NavLink 
+                      key={index} 
+                      to={item.path}
+                      className={({ isActive }) => isActive ? styles.activeDropdownItem : ''}
+                    >
+                      {item.name}
+                    </NavLink>
                   ))}
                 </div>
               </li>
@@ -176,7 +183,14 @@ const Navbar = () => {
           {/* Service sub-items */}
           {mobileServiceItems.map((item, index) => (
             <li key={index} className={styles.subItem}>
-              <Link to={item.path} onClick={closeMobileMenu}>→ {item.name}</Link>
+              {/* ADDED: NavLink for active mobile sub-item styling */}
+              <NavLink 
+                to={item.path} 
+                onClick={closeMobileMenu}
+                className={({ isActive }) => isActive ? styles.activeMobileSub : ''}
+              >
+                → {item.name}
+              </NavLink>
             </li>
           ))}
           <li>

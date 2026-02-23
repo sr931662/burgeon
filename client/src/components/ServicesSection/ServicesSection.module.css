@@ -28,13 +28,17 @@
 }
 
 .container {
+  box-sizing: border-box; /* ADDED */
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 32px;
+  width: 100%; /* ADDED */
 }
 
 .section {
+  box-sizing: border-box; /* ADDED */
   padding: 120px 0;
+  width: 100%; /* ADDED */
 }
 
 .bgSurface {
@@ -43,11 +47,13 @@
 
 /* ─── SECTION HEADER ─────────────────────────────────── */
 .servicesHeader {
+  box-sizing: border-box; /* ADDED */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 60px;
   gap: 40px;
+  width: 100%; /* ADDED */
 }
 
 .sectionEyebrow {
@@ -79,6 +85,7 @@
   letter-spacing: -0.02em;
   margin-top: 16px;
   margin-bottom: 28px;
+  overflow-wrap: break-word; /* ADDED */
 }
 
 .accent {
@@ -87,6 +94,7 @@
 
 /* ─── SERVICES MEGA GRID ───────────────────────────────── */
 .servicesMegaGrid {
+  box-sizing: border-box; /* ADDED */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5px;
@@ -95,9 +103,12 @@
   border-radius: var(--r-lg);
   overflow: hidden;
   margin-top: 60px;
+  width: 100%; /* ADDED */
 }
 
 .serviceTile {
+  box-sizing: border-box; /* ADDED */
+  width: 100%; /* ADDED */
   background: var(--surface);
   padding: 40px 36px;
   position: relative;
@@ -192,10 +203,12 @@
 }
 
 .serviceTile.wide .tileContent {
+  box-sizing: border-box; /* ADDED */
   flex: 1;
 }
 
 .serviceTile.wide .tileVisual {
+  box-sizing: border-box; /* ADDED */
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -240,6 +253,7 @@
 
 /* ─── BUTTONS ─────────────────────────────────────────── */
 .btn {
+  box-sizing: border-box; /* ADDED */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -305,6 +319,8 @@
 
 /* ─── LOADING & ERROR STATES ──────────────────────────── */
 .loadingContainer {
+  box-sizing: border-box; /* ADDED */
+  width: 100%; /* ADDED */
   padding: 40px;
   text-align: center;
   color: #4a5568;
@@ -312,6 +328,8 @@
 }
 
 .errorContainer {
+  box-sizing: border-box; /* ADDED */
+  width: 100%; /* ADDED */
   padding: 40px;
   text-align: center;
   color: #ff5050;
@@ -319,6 +337,8 @@
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
+
+/* Tablets & Small Laptops */
 @media (max-width: 1024px) {
   .servicesMegaGrid {
     grid-template-columns: 1fr 1fr;
@@ -329,6 +349,7 @@
   }
 }
 
+/* Large Phones & Small Tablets */
 @media (max-width: 768px) {
   .section {
     padding: 80px 0;
@@ -359,8 +380,15 @@
     align-items: flex-start;
     gap: 20px;
   }
+
+  /* ADDED: Full width button on smaller screens for easier tapping */
+  .servicesHeader .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
+/* Mobile Phones */
 @media (max-width: 480px) {
   .serviceTile {
     padding: 30px 24px;

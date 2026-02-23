@@ -45,11 +45,11 @@ const Footer = () => {
           <div>
             <div className={styles.footerNavTitle}>Products</div>
             <ul className={styles.footerNavList}>
-              <li><Link to="/liquid-paint-booth">Liquid Paint Booth</Link></li>
-              <li><Link to="/wet-dry-booth">Wet & Dry Booth</Link></li>
-              <li><Link to="/pretreatment-system">Pretreatment System</Link></li>
-              <li><Link to="/ced-plant">CED Plant</Link></li>
-              <li><Link to="/powder-coating-plant">Powder Coating Plant</Link></li>
+              <li><Link to="/services/liquid-paint-booth">Liquid Paint Booth</Link></li>
+              <li><Link to="/services/wet-dry-booth">Wet & Dry Booth</Link></li>
+              <li><Link to="/services/pretreatment-system">Pretreatment System</Link></li>
+              <li><Link to="/services/ced-plant">CED Plant</Link></li>
+              <li><Link to="/services/powder-coating-plant">Powder Coating Plant</Link></li>
             </ul>
           </div>
 
@@ -57,11 +57,11 @@ const Footer = () => {
           <div>
             <div className={styles.footerNavTitle}>More Products</div>
             <ul className={styles.footerNavList}>
-              <li><Link to="/bake-oven">Bake Oven</Link></li>
-              <li><Link to="/dry-off-oven">Dry-off Oven</Link></li>
-              <li><Link to="/compact-paint-booth">Compact Paint Booth</Link></li>
-              <li><Link to="/component-washing-machine">Component Washing</Link></li>
-              <li><Link to="/utility-process-piping">Utility Piping</Link></li>
+              <li><Link to="/services/bake-oven">Bake Oven</Link></li>
+              <li><Link to="/services/dry-off-oven">Dry-off Oven</Link></li>
+              <li><Link to="/services/compact-paint-booth">Compact Paint Booth</Link></li>
+              <li><Link to="/services/component-washing-machine">Component Washing</Link></li>
+              <li><Link to="/services/utility-process-piping">Utility Piping</Link></li>
             </ul>
           </div>
 
