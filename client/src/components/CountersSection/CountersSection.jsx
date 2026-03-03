@@ -53,25 +53,25 @@ const CountersSection = () => {
     <section className={`${styles.section} ${styles.bgSurface}`}>
       <div className={styles.container}>
         <div className={styles.countersRow}>
-          <div className={styles.counterCell} ref={el => countersRef.current[0] = el} data-target="500">
+          <div className={styles.counterCell}>
             <div className={styles.counterVal}>
               <span className={styles.counter}>500</span><span className={styles.suf}>+</span>
             </div>
             <div className={styles.counterLbl}>Projects Delivered</div>
           </div>
-          <div className={styles.counterCell} ref={el => countersRef.current[1] = el} data-target="45">
+          <div className={styles.counterCell}>
             <div className={styles.counterVal}>
               <span className={styles.counter}>45</span><span className={styles.suf}>+</span>
             </div>
             <div className={styles.counterLbl}>Specialist Engineers</div>
           </div>
-          <div className={styles.counterCell} ref={el => countersRef.current[2] = el} data-target="12">
+          <div className={styles.counterCell}>
             <div className={styles.counterVal}>
-              <span className={styles.counter}>12</span>
+              <span className={styles.counter}>20+</span>
             </div>
-            <div className={styles.counterLbl}>Countries Served</div>
+            <div className={styles.counterLbl}>States Served</div>
           </div>
-          <div className={styles.counterCell} ref={el => countersRef.current[3] = el} data-target="9">
+          <div className={styles.counterCell}>
             <div className={styles.counterVal}>
               <span className={styles.counter}>9</span><span className={styles.suf}>+</span>
             </div>

@@ -2,23 +2,29 @@
    CONTACT PAGE STYLES - BURGEON ENGINEERING
    ============================================================ */
 
-/* ─── VARIABLES ─────────────────────────────────────── */
+/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
 :root {
-  --bg: #ffffff;
-  --surface: #f8f9fa;
-  --surface2: #f1f3f5;
-  --border: rgba(0,0,0,0.08);
-  --text: #212529;
-  --muted: #6c757d;
-  --accent: #2b8c3e;
-  --accent-lo: rgba(43,140,62,0.08);
-  --accent-hi: #2b8c3e;
+  --bg: #FDFBF7; /* Off-white background */
+  --surface: #FFFFFF; /* Pure white surface */
+  --surface2: rgba(225, 173, 1, 0.05); /* Light Mustard for hover */
+  
+  --text: #1A365D; /* Deep Navy Blue */
+  --muted: #5C6877; /* Muted Blue-Grey */
+  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
+  
+  --accent-mustard: #E1AD01; /* Mustard Yellow */
+  --accent-mustard-lo: rgba(225, 173, 1, 0.15); /* Light Mustard for badges */
+  
+  --accent-green: #1E5631; /* Forest Green for main buttons/links/icons */
+  --accent-green-hi: #143D22; /* Darker Forest Green for hover state */
+  --accent-green-lo: rgba(30, 86, 49, 0.08); /* Light Forest Green */
+
+  /* Validation Colors */
   --error: #dc2626;
   --error-lo: rgba(220,38,38,0.08);
   --success: #10b981;
   --success-lo: rgba(16,185,129,0.08);
-  --white: #ffffff;
-
+  
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
 
@@ -39,6 +45,7 @@
 
 .section {
   padding: 120px 0;
+  background-color: var(--bg); /* Keep off-white bg flowing */
 }
 
 /* ─── PAGE HERO ───────────────────────────────────────── */
@@ -46,6 +53,7 @@
   padding: 160px 0 80px;
   position: relative;
   overflow: hidden;
+  background-color: var(--bg); /* Keep off-white bg flowing */
 }
 
 .pageHero::before {
@@ -64,7 +72,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--muted);
@@ -72,24 +80,24 @@
 }
 
 .pageHeroEyebrow a {
-  color: var(--muted);
+  color: var(--text); /* Navy Text */
   transition: color 0.2s;
   text-decoration: none;
 }
 
 .pageHeroEyebrow a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard hover */
 }
 
 .pageHeroEyebrow .sep {
-  color: var(--border);
+  color: var(--accent-mustard); /* Mustard slash */
 }
 
 .pageTitle {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 800;
-  color: var(--text);
+  color: var(--text); /* Navy Title */
   line-height: 1.0;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
@@ -97,13 +105,13 @@
 }
 
 .pageTitle .accent {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard highlight */
 }
 
 .pageSubtitle {
   font-size: 1.15rem;
-  color: #4a5568;
-  font-weight: 300;
+  color: var(--muted);
+  font-weight: 400;
   max-width: 560px;
   line-height: 1.7;
 }
@@ -124,9 +132,9 @@
 }
 
 .contactCard {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
-  background: var(--surface);
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--surface); /* White Card */
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   padding: 24px;
@@ -134,17 +142,18 @@
   gap: 20px;
   align-items: flex-start;
   transition: border-color 0.3s;
+  box-shadow: 0 5px 20px rgba(26, 54, 93, 0.02);
 }
 
 .contactCard:hover {
-  border-color: var(--accent-hi);
+  border-color: var(--accent-mustard); /* Mustard hover */
 }
 
 .contactCardIcon {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: var(--accent-lo);
+  background: var(--surface2); /* Light Mustard icon bg */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +165,8 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
+  /* Filter makes standard icons match the Navy Theme */
+  filter: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(1750%) hue-rotate(193deg) brightness(96%) contrast(96%);
 }
 
 .contactCardLabel {
@@ -170,43 +181,58 @@
 .contactCardVal {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--text);
+  color: var(--text); /* Navy Text */
 }
 
 .contactCardVal a {
   color: inherit;
   transition: color 0.2s;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contactCardVal a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-green); /* Forest green hover on links */
 }
 
 /* WhatsApp special card */
 .whatsappCard {
-  background: var(--accent-lo);
-  border-color: rgba(43,140,62,0.2);
+  background: var(--accent-green-lo); /* Light Green BG */
+  border-color: rgba(30, 86, 49, 0.2);
+}
+
+.whatsappCard:hover {
+  border-color: var(--accent-green); /* Green border on hover instead of mustard */
+}
+
+.whatsappCard .contactCardIcon {
+   background: transparent;
+}
+
+.whatsappCard .contactCardIcon img {
+    /* Resets icon to match Forest Green */
+    filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%);
 }
 
 .whatsappCard .contactCardVal a {
-  color: var(--accent-hi);
-  font-weight: 600;
+  color: var(--accent-green);
+  font-weight: 700;
 }
 
 .whatsappCard .contactCardVal span {
-  color: var(--muted);
+  color: var(--text);
   font-size: 0.85rem;
 }
 
 /* Map */
 .mapWrap {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
+  box-sizing: border-box;
+  width: 100%;
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid var(--border);
   margin-top: 8px;
+  background: var(--surface);
 }
 
 .mapWrap iframe {
@@ -218,14 +244,15 @@
 
 /* Contact Form */
 .contactFormWrap {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
-  background: var(--surface);
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--surface); /* Pure White */
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
   padding: 48px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.05); /* Soft navy shadow */
 }
 
 .contactFormWrap::before {
@@ -234,22 +261,22 @@
   top: -2px;
   left: 10%;
   right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-mustard), transparent);
 }
 
 .formTitle {
   font-family: var(--font-display);
   font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text);
+  font-weight: 800;
+  color: var(--text); /* Navy Title */
   margin-bottom: 32px;
 }
 
 /* Alert Messages */
 .alert {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
+  box-sizing: border-box;
+  width: 100%;
   padding: 16px 20px;
   border-radius: var(--r-md);
   margin-bottom: 24px;
@@ -257,6 +284,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  font-weight: 500;
 }
 
 .alertSuccess {
@@ -289,8 +317,8 @@
 }
 
 .formGroup {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -302,32 +330,33 @@
 
 .formLabel {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--muted);
+  color: var(--text); /* Navy Blue labels */
 }
 
 .formLabel span {
-  color: var(--accent-hi);
-  font-size: 0.7rem;
+  color: var(--accent-mustard); /* Mustard required star */
+  font-size: 0.9rem;
   text-transform: none;
   letter-spacing: normal;
-  font-weight: 400;
+  font-weight: 700;
   margin-left: 4px;
 }
 
 .formInput,
 .formSelect,
 .formTextarea {
-  box-sizing: border-box; /* ADDED: Prevents inputs from overflowing */
-  background: var(--bg);
-  border: 1px solid var(--border);
+  box-sizing: border-box;
+  background: var(--bg); /* Off-white background inside inputs */
+  border: 1px solid var(--border); /* Navy border */
   border-radius: 10px;
   padding: 14px 18px;
-  color: var(--text);
+  color: var(--text); /* Navy text */
   font-family: var(--font-body);
   font-size: 0.95rem;
+  font-weight: 500;
   transition: border-color 0.3s, box-shadow 0.3s;
   outline: none;
   width: 100%;
@@ -336,8 +365,8 @@
 .formInput:focus,
 .formSelect:focus,
 .formTextarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(43,140,62,0.15);
+  border-color: var(--text); /* Navy blue on focus */
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
 }
 
 .formInput.error,
@@ -354,7 +383,7 @@
 
 .formSelect {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231A365D' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 18px center;
   background-size: 16px;
@@ -362,7 +391,7 @@
 }
 
 .formSelect option {
-  background: var(--surface2);
+  background: var(--surface);
   color: var(--text);
 }
 
@@ -375,21 +404,22 @@
   font-size: 0.8rem;
   color: var(--error);
   margin-top: 4px;
+  font-weight: 500;
 }
 
 /* Submit Button */
 .formSubmit {
-  box-sizing: border-box; /* ADDED */
+  box-sizing: border-box;
   margin-top: 8px;
   width: 100%;
   padding: 16px;
-  background: var(--accent);
+  background: var(--accent-green); /* Forest Green Button */
   color: white;
   border: none;
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s var(--ease);
   display: flex;
@@ -414,9 +444,9 @@
 }
 
 .formSubmit:hover:not(:disabled) {
-  background: var(--accent-hi);
+  background: var(--accent-green-hi); /* Dark Forest Green on hover */
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(43,140,62,0.4);
+  box-shadow: 0 10px 30px rgba(30, 86, 49, 0.4);
 }
 
 .formSubmit:disabled {

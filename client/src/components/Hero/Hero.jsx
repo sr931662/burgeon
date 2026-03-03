@@ -52,8 +52,8 @@ const Hero = () => {
                 <div className={styles.statLabel}>Specialist Engineers</div>
               </div>
               <div className={styles.statBlock}>
-                <div className={styles.statNum}>12</div>
-                <div className={styles.statLabel}>Countries Served</div>
+                <div className={styles.statNum}>20+</div>
+                <div className={styles.statLabel}>States Served</div>
               </div>
               <div className={styles.statBlock}>
                 <div className={styles.statNum}>9<span className={styles.plus}>+</span></div>

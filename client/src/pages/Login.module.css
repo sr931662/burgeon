@@ -2,19 +2,26 @@
    LOGIN PAGE STYLES - BURGEON ENGINEERING
    ============================================================ */
 
-/* ─── VARIABLES ─────────────────────────────────────── */
+/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
 :root {
-  --bg: #ffffff;
-  --surface: #f8f9fa;
-  --surface2: #f1f3f5;
-  --border: rgba(0,0,0,0.08);
-  --text: #212529;
-  --muted: #6c757d;
-  --accent: #2b8c3e;
-  --accent-lo: rgba(43,140,62,0.08);
-  --accent-hi: #2b8c3e;
+  --bg: #FDFBF7; /* Off-white background */
+  --surface: #FFFFFF; /* Pure white for the login card */
+  --surface2: rgba(225, 173, 1, 0.05); /* Light mustard hover */
+  
+  --text: #1A365D; /* Deep Navy Blue */
+  --muted: #5C6877; /* Muted Blue-Grey */
+  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
+  
+  --accent-mustard: #E1AD01; /* Mustard Yellow */
+  --accent-mustard-lo: rgba(225, 173, 1, 0.15); /* Light Mustard */
+  
+  --accent-green: #1E5631; /* Forest Green for buttons and links */
+  --accent-green-hi: #143D22; /* Darker Forest Green for hover */
+
   --error: #dc2626;
   --error-lo: rgba(220,38,38,0.08);
+  --success: #10b981;
+  --success-lo: rgba(16,185,129,0.08);
   --white: #ffffff;
 
   --font-display: 'Plus Jakarta Sans', sans-serif;
@@ -30,12 +37,12 @@
 
 /* ─── LOGIN CONTAINER ─────────────────────────────────── */
 .loginContainer {
-  box-sizing: border-box; /* ADDED */
+  box-sizing: border-box;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--surface);
+  background: var(--bg); /* Off-white background */
   position: relative;
   overflow: hidden;
   padding: 20px;
@@ -56,16 +63,16 @@
 
 /* ─── LOGIN CARD ──────────────────────────────────────── */
 .loginCard {
-  box-sizing: border-box; /* ADDED */
+  box-sizing: border-box;
   width: 100%;
   max-width: 480px;
-  background: var(--bg);
+  background: var(--surface); /* Pure white card */
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
   padding: 48px;
   position: relative;
   z-index: 2;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(26, 54, 93, 0.08); /* Soft Navy shadow */
   animation: slideUp 0.6s var(--ease);
 }
 
@@ -86,8 +93,8 @@
   top: -2px;
   left: 10%;
   right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-mustard), transparent); /* Mustard top line */
   border-radius: var(--r-xl) var(--r-xl) 0 0;
 }
 
@@ -102,7 +109,7 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--text); /* Navy Text */
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -111,11 +118,11 @@
 }
 
 .logoDot {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard Dot */
 }
 
 .logoSub {
-  font-weight: 400;
+  font-weight: 500;
   color: var(--muted);
   font-size: 0.85rem;
   letter-spacing: 0.12em;
@@ -128,7 +135,7 @@
 
 .logoTagline {
   font-size: 0.9rem;
-  color: #4a5568;
+  color: var(--muted);
   margin-top: 4px;
 }
 
@@ -142,13 +149,13 @@
   font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--text); /* Navy Text */
   margin-bottom: 8px;
 }
 
 .formSubtitle {
   font-size: 0.9rem;
-  color: #4a5568;
+  color: var(--muted);
 }
 
 /* ─── FORM ────────────────────────────────────────────── */
@@ -159,8 +166,8 @@
 }
 
 .formGroup {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -168,40 +175,41 @@
 
 .formLabel {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--muted);
+  color: var(--text); /* Navy labels */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .formLabel span {
-  color: var(--accent-hi);
-  font-size: 0.7rem;
+  color: var(--accent-mustard); /* Mustard required tag */
+  font-size: 0.75rem;
   text-transform: none;
   letter-spacing: normal;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .formInput {
-  box-sizing: border-box; /* ADDED: Prevents input from breaking outside the card */
-  background: var(--surface);
+  box-sizing: border-box;
+  background: var(--bg); /* Off-white input background */
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px 18px;
   color: var(--text);
   font-family: var(--font-body);
   font-size: 0.95rem;
+  font-weight: 500;
   transition: border-color 0.3s, box-shadow 0.3s;
   outline: none;
   width: 100%;
 }
 
 .formInput:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(43,140,62,0.15);
+  border-color: var(--text); /* Navy border on focus */
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
 }
 
 .formInput.error {
@@ -216,15 +224,15 @@
   font-size: 0.8rem;
   color: var(--error);
   margin-top: 4px;
+  font-weight: 500;
 }
 
 /* Password field with toggle */
 .passwordField {
   position: relative;
-  width: 100%; /* ADDED */
+  width: 100%;
 }
 
-/* ADDED: Prevents the typed password from overlapping the eye icon */
 .passwordInput {
   padding-right: 46px; 
 }
@@ -247,7 +255,7 @@
 }
 
 .passwordToggle:hover {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard hover on eye icon */
 }
 
 /* Form options */
@@ -256,7 +264,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 8px 0;
-  width: 100%; /* ADDED */
+  width: 100%;
 }
 
 .rememberMe {
@@ -270,17 +278,19 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: var(--accent);
+  accent-color: var(--accent-green); /* Forest green checkbox */
 }
 
 .rememberMe span {
   font-size: 0.85rem;
-  color: #4a5568;
+  color: var(--text);
+  font-weight: 500;
 }
 
 .forgotPassword {
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--text); /* Navy text */
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
   background: none;
@@ -289,21 +299,21 @@
 }
 
 .forgotPassword:hover {
-  color: var(--accent-hi);
+  color: var(--accent-green); /* Forest green hover */
   text-decoration: underline;
 }
 
 /* Submit button */
 .submitButton {
-  box-sizing: border-box; /* ADDED */
-  background: var(--accent);
+  box-sizing: border-box;
+  background: var(--accent-green); /* Forest Green Button */
   color: white;
   border: none;
   border-radius: 999px;
   padding: 16px 32px;
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s var(--ease);
   position: relative;
@@ -327,7 +337,8 @@
 
 .submitButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(43,140,62,0.4);
+  box-shadow: 0 8px 30px rgba(30, 86, 49, 0.4);
+  background: var(--accent-green-hi);
 }
 
 .submitButton:disabled {
@@ -342,25 +353,25 @@
   padding-top: 24px;
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
-  color: #4a5568;
+  color: var(--muted);
 }
 
 .formFooter a {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: color 0.2s;
 }
 
 .formFooter a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-green); /* Forest green hover */
   text-decoration: underline;
 }
 
 /* Alert messages */
 .alert {
-  box-sizing: border-box; /* ADDED */
-  width: 100%; /* ADDED */
+  box-sizing: border-box;
+  width: 100%;
   padding: 16px 20px;
   border-radius: var(--r-md);
   margin-bottom: 24px;
@@ -368,12 +379,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  font-weight: 500;
 }
 
 .alertSuccess {
-  background: rgba(43,140,62,0.1);
-  border: 1px solid rgba(43,140,62,0.2);
-  color: var(--accent);
+  background: rgba(30, 86, 49, 0.08); /* Light Forest Green */
+  border: 1px solid rgba(30, 86, 49, 0.2);
+  color: var(--accent-green);
 }
 
 .alertError {
@@ -394,16 +406,17 @@
 }
 
 .backLink a {
-  color: #4a5568;
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-weight: 500;
 }
 
 .backLink a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard hover */
 }
 
 .backIcon {

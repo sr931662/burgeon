@@ -53,51 +53,6 @@ const AboutPage = () => {
     };
   }, []);
 
-  // Animated counters
-  useEffect(() => {
-    if (!isVisible.counters) return;
-
-    const counters = document.querySelectorAll(`.${styles.counter}`);
-    const counterIO = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          const target = parseInt(el.dataset.target, 10);
-          const duration = 1800;
-          const start = performance.now();
-
-          const update = (now) => {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease out quad
-            const eased = 1 - (1 - progress) * (1 - progress);
-            el.textContent = Math.round(eased * target);
-            if (progress < 1) {
-              requestAnimationFrame(update);
-            } else {
-              el.textContent = target;
-            }
-          };
-
-          requestAnimationFrame(update);
-          counterIO.unobserve(el);
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    counters.forEach(c => {
-      if (c) counterIO.observe(c);
-    });
-
-    return () => {
-      counters.forEach(c => {
-        if (c) counterIO.unobserve(c);
-      });
-    };
-  }, [isVisible.counters]);
-
   // Vision tiles data
   const visionTiles = [
     {
@@ -150,7 +105,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* COUNTERS SECTION */}
+      {/* COUNTERS SECTION (STATIC CONTENT) */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
@@ -159,25 +114,25 @@ const AboutPage = () => {
           >
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="500">0</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>500</span><span className={styles.suf}>+</span>
               </div>
               <div className={styles.counterLbl}>Projects completed</div>
             </div>
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="45">0</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>45</span><span className={styles.suf}>+</span>
               </div>
               <div className={styles.counterLbl}>Specialist engineers</div>
             </div>
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="12">0</span>
+                <span className={styles.counter}>20</span><span className={styles.suf}>+</span>
               </div>
-              <div className={styles.counterLbl}>Countries served</div>
+              <div className={styles.counterLbl}>States served</div>
             </div>
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="9">0</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>10</span><span className={styles.suf}>+</span>
               </div>
               <div className={styles.counterLbl}>Years of excellence</div>
             </div>

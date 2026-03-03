@@ -1,3 +1,27 @@
+/* ============================================================
+   ABOUT SECTION STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
+:root {
+  --bg: #FDFBF7; /* Off-white background */
+  --surface: #FFFFFF; /* Pure white for cards to pop slightly */
+  
+  --text: #1A365D; /* Deep Navy Blue */
+  --muted: #5C6877; /* Muted Blue-Grey */
+  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
+  
+  --accent-mustard: #E1AD01; /* Mustard Yellow */
+  --accent-mustard-lo: rgba(225, 173, 1, 0.15); /* Light Mustard for eyebrow badge */
+  
+  --accent-green: #1E5631; /* Forest Green for main buttons/links */
+  --accent-green-hi: #143D22; /* Darker Forest Green for hover state */
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .introSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,33 +37,41 @@
 
 .section {
   padding: 120px 0;
+  background-color: var(--bg); /* Ensure the off-white background carries down */
 }
 
+/* ─── TYPOGRAPHY & HIGHLIGHTS ────────────────────────── */
 .sectionEyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 700; /* Bumped weight for better visibility */
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--accent-hi);
+  color: var(--text); /* Navy text looks sharper here */
   margin-bottom: 16px;
+  padding: 6px 14px;
+  background: var(--accent-mustard-lo); /* Added mustard pill background */
+  border: 1px solid rgba(225, 173, 1, 0.3);
+  border-radius: 999px;
 }
 
+/* Replaced the simple line with the dot styling to match the Hero section */
 .sectionEyebrow::before {
   content: '';
   display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--accent-hi);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-mustard);
 }
 
 .sectionTitle {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: var(--text);
+  color: var(--text); /* Navy Blue */
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-top: 16px;
@@ -48,13 +80,14 @@
 
 .sectionLead {
   font-size: 1.05rem;
-  color: #4a5568;
+  color: var(--muted);
   line-height: 1.8;
-  font-weight: 300;
+  font-weight: 400; /* Bumped slightly for off-white contrast */
   max-width: 600px;
   margin-bottom: 28px;
 }
 
+/* ─── INFO TAGS (RIGHT COLUMN) ───────────────────────── */
 .introTagStack {
   display: flex;
   flex-direction: column;
@@ -62,18 +95,20 @@
 }
 
 .introTag {
-  background: var(--surface);
+  background: var(--surface); /* Pure white cards */
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 14px;
-  transition: border-color 0.3s;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 5px 15px rgba(26, 54, 93, 0.02); /* Soft navy shadow */
 }
 
 .introTag:hover {
-  border-color: var(--accent-hi);
+  border-color: var(--accent-mustard); /* Hover reveals Mustard Yellow border */
+  transform: translateX(4px); /* Slight nudge interaction */
 }
 
 .introTagIcon {
@@ -85,7 +120,7 @@
 .introTagIcon svg {
   width: 24px;
   height: 24px;
-  stroke: var(--accent-hi);
+  stroke: var(--accent-green); /* Icons changed to Forest Green */
 }
 
 .introTagText strong {
@@ -97,23 +132,29 @@
 
 .introTagText span {
   font-size: 0.8rem;
-  color: #4a5568;
+  color: var(--muted);
 }
 
+/* ─── YEAR PILL (BOTTOM LEFT) ────────────────────────── */
 .yearPill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--surface);
+  background: var(--surface); /* Pure white */
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 8px 20px;
   font-size: 0.85rem;
-  color: var(--accent-hi);
-  font-weight: 500;
+  color: var(--text); /* Navy text */
+  font-weight: 600;
   margin-top: 24px;
 }
 
+.yearPill svg {
+    stroke: var(--accent-green); /* Forest green icon */
+}
+
+/* ─── BUTTONS ────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -122,7 +163,7 @@
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   border: none;
   transition: all 0.3s var(--ease);
@@ -145,14 +186,15 @@
 }
 
 .btnOutline {
-  background: transparent;
-  color: var(--text);
+  background: var(--surface); /* White bg over off-white page */
+  color: var(--text); /* Navy text */
   border: 1px solid var(--border);
 }
 
+/* Hovering the outline button shifts it to Forest Green */
 .btnOutline:hover {
-  border-color: var(--accent-hi);
-  color: var(--accent-hi);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
   transform: translateY(-2px);
 }
 
@@ -166,6 +208,7 @@
   transform: translateX(4px);
 }
 
+/* ─── ANIMATIONS & MEDIA QUERIES ─────────────────────── */
 .fadeUp {
   opacity: 0;
   transform: translateY(32px);
@@ -180,6 +223,7 @@
 @media (max-width: 1024px) {
   .introSection {
     grid-template-columns: 1fr;
+    gap: 60px; /* Reduced gap for single column */
   }
 }
 

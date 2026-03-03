@@ -1,3 +1,19 @@
+/* ============================================================
+   MARQUEE STRIP STYLES - BURGEON ENGINEERING
+   ============================================================ */
+
+/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
+:root {
+  --bg: #FDFBF7; /* Off-white background */
+  --surface: var(--bg); /* Keep the strip matching the background */
+  
+  --text: #1A365D; /* Deep Navy Blue */
+  --muted: #5C6877; /* Muted Blue-Grey */
+  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
+  
+  --accent-mustard: #E1AD01; /* Mustard Yellow */
+}
+
 .marqueeStrip {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -19,15 +35,15 @@
   gap: 24px;
   padding: 0 32px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700; /* Bumped slightly for better readability of navy text */
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #4a5568;
+  color: var(--text); /* Navy Blue */
   white-space: nowrap;
 }
 
 .marqueeItem .sep {
-  color: var(--accent-hi);
+  color: var(--accent-mustard); /* Mustard Yellow separator stars */
   font-size: 1.2rem;
 }
 

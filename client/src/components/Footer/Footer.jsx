@@ -26,7 +26,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className={styles.footerDesc}>
-              Precision industrial finishing systems. Delivered across India and 12 countries since 2015.
+              Precision industrial finishing systems. Delivered across India and 20+ states since 2015.
             </p>
             <div className={styles.footerContactMini}>
               <a href="tel:+918527754455">

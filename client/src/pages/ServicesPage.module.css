@@ -2,19 +2,22 @@
    SERVICES PAGE STYLES - BURGEON ENGINEERING
    ============================================================ */
 
-/* ─── VARIABLES ─────────────────────────────────────── */
+/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
 :root {
-  --bg: #ffffff;
-  --surface: #f8f9fa;
-  --surface2: #f1f3f5;
-  --border: rgba(0,0,0,0.08);
-  --text: #212529;
-  --muted: #6c757d;
-  --accent: #2b8c3e;
-  --accent-lo: rgba(43,140,62,0.08);
-  --accent-hi: #2b8c3e;
-  --gold: #fbbf24;
-  --yellow: #fbbf24;
+  --bg: #FDFBF7; /* Off-white background */
+  --surface: #FFFFFF; /* Pure white surface */
+  --surface2: rgba(225, 173, 1, 0.05); /* Light Mustard hover */
+  
+  --text: #1A365D; /* Deep Navy Blue */
+  --muted: #5C6877; /* Muted Blue-Grey */
+  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
+  
+  --accent-mustard: #E1AD01; /* Mustard Yellow */
+  --accent-mustard-lo: rgba(225, 173, 1, 0.15); /* Light Mustard for badges */
+  
+  --accent-green: #1E5631; /* Forest Green for buttons and links */
+  --accent-green-hi: #143D22; /* Darker Forest Green for hover */
+
   --white: #ffffff;
 
   --font-display: 'Plus Jakarta Sans', sans-serif;
@@ -38,10 +41,11 @@
 
 .section {
   padding: 120px 0;
+  background-color: var(--bg);
 }
 
 .bgSurface {
-  background: var(--surface);
+  background: var(--bg);
 }
 
 /* ─── PAGE HERO ───────────────────────────────────────── */
@@ -49,6 +53,7 @@
   padding: 160px 0 80px;
   position: relative;
   overflow: hidden;
+  background-color: var(--bg);
 }
 
 .pageHero::before {
@@ -67,7 +72,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--muted);
@@ -75,17 +80,17 @@
 }
 
 .pageHeroEyebrow a {
-  color: var(--muted);
+  color: var(--text);
   transition: color 0.2s;
   text-decoration: none;
 }
 
 .pageHeroEyebrow a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-mustard);
 }
 
 .pageHeroEyebrow .sep {
-  color: var(--border);
+  color: var(--accent-mustard);
 }
 
 .pageTitle {
@@ -100,13 +105,13 @@
 }
 
 .pageTitle .accent {
-  color: var(--accent-hi);
+  color: var(--accent-mustard);
 }
 
 .pageSubtitle {
   font-size: 1.15rem;
-  color: #4a5568;
-  font-weight: 300;
+  color: var(--muted);
+  font-weight: 400;
   max-width: 560px;
   line-height: 1.7;
 }
@@ -117,7 +122,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5px;
   background: var(--border);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
 }
@@ -139,7 +144,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent-lo) 0%, transparent 60%);
+  background: linear-gradient(135deg, var(--accent-mustard-lo) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -155,7 +160,7 @@
 .serviceTileNum {
   font-family: var(--font-display);
   font-size: 0.7rem;
-  color: var(--accent-hi);
+  color: var(--text);
   font-weight: 700;
   letter-spacing: 0.15em;
   opacity: 0.6;
@@ -163,19 +168,30 @@
 }
 
 .serviceTileIcon {
-  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s var(--ease-bounce);
   margin-bottom: 8px;
 }
 
 .serviceTileIcon img {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  /* Filters image to match Navy Blue initially, switch to Forest Green on hover if desired */
+  filter: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(1750%) hue-rotate(193deg) brightness(96%) contrast(96%);
 }
 
 .serviceTile:hover .serviceTileIcon {
   transform: scale(1.2);
+}
+
+.serviceTile:hover .serviceTileIcon img {
+  /* Shifts icon to Forest Green on hover */
+  filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%);
 }
 
 .serviceTileName {
@@ -189,7 +205,7 @@
 
 .serviceTileDesc {
   font-size: 0.85rem;
-  color: #4a5568;
+  color: var(--muted);
   line-height: 1.6;
   flex: 1;
 }
@@ -197,7 +213,7 @@
 .serviceSpecs {
   margin-top: 12px;
   font-size: 0.8rem;
-  color: #4a5568;
+  color: var(--muted);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -213,7 +229,7 @@
 
 .serviceSpecs li::before {
   content: '•';
-  color: var(--accent-hi);
+  color: var(--accent-mustard);
   font-weight: 700;
   font-size: 1rem;
 }
@@ -223,8 +239,8 @@
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  color: var(--accent-hi);
-  font-weight: 600;
+  color: var(--accent-mustard);
+  font-weight: 700;
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity 0.3s, transform 0.3s;
@@ -252,8 +268,8 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: var(--accent-lo);
-  border: 1px solid rgba(37,99,255,0.2);
+  background: var(--accent-mustard-lo);
+  border: 1px solid rgba(225, 173, 1, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,9 +278,11 @@
 }
 
 .serviceTile.wide .tileVisual img {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
+  /* Matches Forest Green for the primary visual */
+  filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%);
 }
 
 .serviceTile.wide:hover .tileVisual {
@@ -283,6 +301,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.05);
 }
 
 .ctaBand::before {
@@ -291,8 +310,8 @@
   top: -2px;
   left: 10%;
   right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-mustard), transparent);
 }
 
 .ctaBandPattern {
@@ -320,7 +339,7 @@
 
 .ctaBandSub {
   font-size: 1rem;
-  color: #4a5568;
+  color: var(--muted);
 }
 
 .ctaBandActions {
@@ -337,6 +356,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text);
 }
 
@@ -347,7 +367,7 @@
 }
 
 .ctaContactItem a:hover {
-  color: var(--accent-hi);
+  color: var(--accent-green);
 }
 
 /* ─── BUTTONS ─────────────────────────────────────────── */
@@ -359,7 +379,7 @@
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   border: none;
   transition: all 0.3s var(--ease);
@@ -382,25 +402,26 @@
 }
 
 .btnPrimary {
-  background: var(--accent);
+  background: var(--accent-green);
   color: white;
-  box-shadow: 0 0 0 0 rgba(43,140,62,0.4);
+  box-shadow: 0 0 0 0 rgba(30, 86, 49, 0.4);
 }
 
 .btnPrimary:hover {
+  background: var(--accent-green-hi);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(43,140,62,0.4);
+  box-shadow: 0 8px 30px rgba(30, 86, 49, 0.4);
 }
 
 .btnOutline {
-  background: transparent;
+  background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border);
 }
 
 .btnOutline:hover {
-  border-color: var(--accent-hi);
-  color: var(--accent-hi);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
   transform: translateY(-2px);
 }
 
@@ -426,7 +447,6 @@
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-/* CHANGED: Renamed from .fadeUpActive to .fadeUpVisible to match JSX */
 .fadeUpVisible {
   opacity: 1;
   transform: translateY(0);
@@ -436,14 +456,14 @@
 .loadingContainer {
   padding: 80px;
   text-align: center;
-  color: #4a5568;
+  color: var(--muted);
   font-size: 1rem;
 }
 
 .errorContainer {
   padding: 80px;
   text-align: center;
-  color: #ff5050;
+  color: var(--error);
   font-size: 1rem;
 }
 

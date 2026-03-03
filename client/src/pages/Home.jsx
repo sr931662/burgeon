@@ -5,6 +5,7 @@ import MarqueeStrip from '../components/MarqueeStrip/MarqueeStrip';
 import AboutSection from '../components/AboutSection/AboutSection';
 // Import other components as you create them
 import ServicesSection from '../components/ServicesSection/ServicesSection';
+import GallerySection from '../components/Gallery/GallerySection';
 // import ProductsList from '../components/ProductsList/ProductsList';
 // import ProcessSection from '../components/ProcessSection/ProcessSection';
 // import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
@@ -50,6 +51,7 @@ const Home = () => {
       
       {/* Other sections will be added here as components */}
       <ServicesSection />
+      <GallerySection />
       {/* <ProductsList /> */}
       {/* <ProcessSection /> */}
       {/* <ProjectsSection /> */}
