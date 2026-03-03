@@ -41,11 +41,11 @@
 
 .section {
   padding: 120px 0;
-  background-color: var(--bg);
+  background-color: var(--bg); /* Maintain off-white background */
 }
 
 .bgSurface {
-  background: var(--bg);
+  background: var(--bg); /* Ensure sections flow seamlessly */
 }
 
 /* ─── PAGE HERO ───────────────────────────────────────── */
@@ -80,24 +80,24 @@
 }
 
 .pageHeroEyebrow a {
-  color: var(--text);
+  color: var(--text); /* Navy Text */
   transition: color 0.2s;
   text-decoration: none;
 }
 
 .pageHeroEyebrow a:hover {
-  color: var(--accent-mustard);
+  color: var(--accent-mustard); /* Mustard hover */
 }
 
 .pageHeroEyebrow .sep {
-  color: var(--accent-mustard);
+  color: var(--accent-mustard); /* Mustard slash */
 }
 
 .pageTitle {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 800;
-  color: var(--text);
+  color: var(--text); /* Navy Title */
   line-height: 1.0;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
@@ -105,7 +105,7 @@
 }
 
 .pageTitle .accent {
-  color: var(--accent-mustard);
+  color: var(--accent-mustard); /* Mustard highlight */
 }
 
 .pageSubtitle {
@@ -121,14 +121,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5px;
-  background: var(--border);
+  background: var(--border); /* Provides the grid lines */
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
 }
 
 .serviceTile {
-  background: var(--surface);
+  background: var(--surface); /* Pure White Tiles */
   padding: 40px 36px;
   position: relative;
   display: flex;
@@ -144,13 +144,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent-mustard-lo) 0%, transparent 60%);
+  background: linear-gradient(135deg, var(--accent-mustard-lo) 0%, transparent 60%); /* Soft mustard gradient */
   opacity: 0;
   transition: opacity 0.4s;
 }
 
 .serviceTile:hover {
-  background: var(--surface2);
+  background: var(--surface2); /* Soft mustard tint on hover */
 }
 
 .serviceTile:hover::before {
@@ -160,7 +160,7 @@
 .serviceTileNum {
   font-family: var(--font-display);
   font-size: 0.7rem;
-  color: var(--text);
+  color: var(--text); /* Navy Blue numbers */
   font-weight: 700;
   letter-spacing: 0.15em;
   opacity: 0.6;
@@ -168,37 +168,28 @@
 }
 
 .serviceTileIcon {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 2rem;
   transition: transform 0.3s var(--ease-bounce);
   margin-bottom: 8px;
 }
 
 .serviceTileIcon img {
-  width: 100%;
-  height: 100%;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-  /* Filters image to match Navy Blue initially, switch to Forest Green on hover if desired */
-  filter: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(1750%) hue-rotate(193deg) brightness(96%) contrast(96%);
+  /* Filter makes standard image icons match Forest Green */
+  /* filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%); */
 }
 
 .serviceTile:hover .serviceTileIcon {
   transform: scale(1.2);
 }
 
-.serviceTile:hover .serviceTileIcon img {
-  /* Shifts icon to Forest Green on hover */
-  filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%);
-}
-
 .serviceTileName {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text); /* Navy Blue Titles */
   line-height: 1.3;
   margin-bottom: 8px;
 }
@@ -229,7 +220,7 @@
 
 .serviceSpecs li::before {
   content: '•';
-  color: var(--accent-mustard);
+  color: var(--accent-mustard); /* Mustard bullets */
   font-weight: 700;
   font-size: 1rem;
 }
@@ -239,7 +230,7 @@
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  color: var(--accent-mustard);
+  color: var(--accent-mustard); /* Mustard arrow */
   font-weight: 700;
   opacity: 0;
   transform: translateX(-8px);
@@ -268,8 +259,8 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: var(--accent-mustard-lo);
-  border: 1px solid rgba(225, 173, 1, 0.3);
+  background: var(--accent-mustard-lo); /* Soft Mustard circle */
+  border: 1px solid rgba(225, 173, 1, 0.3); /* Mustard border */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,11 +269,11 @@
 }
 
 .serviceTile.wide .tileVisual img {
-  width: 64px;
+  width: 64px; /* Increased slightly for better visual balance */
   height: 64px;
   object-fit: contain;
-  /* Matches Forest Green for the primary visual */
-  filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%);
+  /* Filter makes standard image icons match Forest Green */
+  /* filter: brightness(0) saturate(100%) invert(29%) sepia(35%) saturate(795%) hue-rotate(85deg) brightness(97%) contrast(93%); */
 }
 
 .serviceTile.wide:hover .tileVisual {
@@ -291,7 +282,7 @@
 
 /* ─── CTA BAND ────────────────────────────────────────── */
 .ctaBand {
-  background: var(--surface);
+  background: var(--surface); /* Pure White */
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
   padding: 80px;
@@ -301,7 +292,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.05);
+  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.05); /* Soft navy shadow */
 }
 
 .ctaBand::before {
@@ -331,7 +322,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
-  color: var(--text);
+  color: var(--text); /* Navy Title */
   line-height: 1.1;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
@@ -357,7 +348,7 @@
   gap: 10px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--text); /* Navy text */
 }
 
 .ctaContactItem a {
@@ -367,7 +358,7 @@
 }
 
 .ctaContactItem a:hover {
-  color: var(--accent-green);
+  color: var(--accent-green); /* Forest green hover on link */
 }
 
 /* ─── BUTTONS ─────────────────────────────────────────── */
@@ -402,20 +393,20 @@
 }
 
 .btnPrimary {
-  background: var(--accent-green);
+  background: var(--accent-green); /* Forest Green Button */
   color: white;
   box-shadow: 0 0 0 0 rgba(30, 86, 49, 0.4);
 }
 
 .btnPrimary:hover {
-  background: var(--accent-green-hi);
+  background: var(--accent-green-hi); /* Dark Forest Green on hover */
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(30, 86, 49, 0.4);
 }
 
 .btnOutline {
-  background: var(--surface);
-  color: var(--text);
+  background: var(--surface); /* White bg over off-white page */
+  color: var(--text); /* Navy Blue text */
   border: 1px solid var(--border);
 }
 

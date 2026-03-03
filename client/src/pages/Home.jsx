@@ -6,8 +6,9 @@ import AboutSection from '../components/AboutSection/AboutSection';
 // Import other components as you create them
 import ServicesSection from '../components/ServicesSection/ServicesSection';
 import GallerySection from '../components/Gallery/GallerySection';
-// import ProductsList from '../components/ProductsList/ProductsList';
-// import ProcessSection from '../components/ProcessSection/ProcessSection';
+import FeaturedInstallation from '../components/FeaturedInstallations/FeaturedInstallations';
+import ProductsList from '../components/ProductsList/ProductsList';
+import ProcessSection from '../components/ProcessSection/ProcessSection';
 // import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
 // import CTABand from '../components/CTABand/CTABand';
 
@@ -52,8 +53,9 @@ const Home = () => {
       {/* Other sections will be added here as components */}
       <ServicesSection />
       <GallerySection />
-      {/* <ProductsList /> */}
-      {/* <ProcessSection /> */}
+      <FeaturedInstallation />
+      <ProductsList />
+      <ProcessSection />
       {/* <ProjectsSection /> */}
       {/* <CTABand /> */}
     </>

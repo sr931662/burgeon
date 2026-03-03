@@ -361,15 +361,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--accent); /* Forest green button */
-  color: var(--white);
+  
+  /* COLOR SETTINGS */
+  background-color: var(--accent) !important; /* Forest green background */
+  color: #FFFFFF !important;                  /* Explicit pure white text */
+  
   padding: 16px 28px;
   border-radius: 999px;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
   width: 100%;
-  transition: background 0.2s;
+  transition: background 0.3s var(--ease), transform 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(30, 86, 49, 0.3); /* Subtle green shadow for depth */
 }
 
 .mobileCta:hover {

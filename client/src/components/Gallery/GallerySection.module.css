@@ -61,22 +61,26 @@
 /* Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 350px 350px;
-  gap: 2px; /* Thin industrial lines between segments */
-  background-color: rgba(26, 54, 93, 0.1); /* Line color */
-  border: 1px solid rgba(26, 54, 93, 0.1);
+  /* Creates 3 equal columns */
+  grid-template-columns: repeat(3, 1fr); 
+  /* 'auto' allows the grid to grow if text is long, 
+     but 400px provides a solid base height */
+  grid-auto-rows: 400px; 
+  gap: 15px; /* Increased gap for a cleaner, modern look */
+  background-color: transparent; /* Remove the background line color */
 }
 
 .card {
   position: relative;
   overflow: hidden;
+  border-radius: 8px; /* Soften the industrial look slightly */
   background: #1A365D;
 }
 
 /* Large Card spans two rows on the left */
 .large {
   grid-row: span 2;
+  height: 100%;
 }
 
 .imageWrapper {
@@ -96,12 +100,17 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(26, 54, 93, 0.9) 0%, rgba(26, 54, 93, 0.4) 50%, transparent 100%);
+  background: linear-gradient(
+    to top, 
+    rgba(26, 54, 93, 0.95) 0%, 
+    rgba(26, 54, 93, 0.2) 60%, 
+    transparent 100%
+  );
   display: flex;
-  align-items: flex-end;
-  padding: 40px;
-  opacity: 0.8;
-  transition: all 0.4s ease;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content {
@@ -128,11 +137,11 @@
 
 .itemDesc {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
-  max-width: 280px;
-  /* Initially hidden, shown on hover */
-  height: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  /* Prevent layout shift: use max-height instead of height */
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -161,8 +170,11 @@
 .card:hover .content {
   transform: translateY(0);
 }
-
-.card:hover .itemDesc,
+.card:hover .itemDesc {
+  max-height: 100px; /* Adjust based on text length */
+  opacity: 1;
+  margin-top: 10px;
+}
 .card:hover .exploreLink {
   height: auto;
   opacity: 1;

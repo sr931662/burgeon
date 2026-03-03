@@ -127,7 +127,7 @@
   height: 16px;
   object-fit: contain;
   /* Filter makes standard icons match the Navy theme */
-  filter: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(1750%) hue-rotate(193deg) brightness(96%) contrast(96%);
+  /* filter: brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(1750%) hue-rotate(193deg) brightness(96%) contrast(96%); */
 }
 
 /* Navigation Columns */

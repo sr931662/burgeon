@@ -2,22 +2,18 @@
    LIQUID PAINT BOOTH PAGE STYLES - BURGEON ENGINEERING
    ============================================================ */
 
-/* ─── VARIABLES (MATCHING NEW PALETTE) ───────────────── */
+/* ─── VARIABLES ─────────────────────────────────────── */
 :root {
-  --bg: #FDFBF7; /* Off-white background */
-  --surface: #FFFFFF; /* Pure white surface */
-  --surface2: rgba(225, 173, 1, 0.05); /* Light Mustard hover */
-  
-  --text: #1A365D; /* Deep Navy Blue */
-  --muted: #5C6877; /* Muted Blue-Grey */
-  --border: rgba(26, 54, 93, 0.1); /* Navy-tinted soft border */
-  
-  --accent-mustard: #E1AD01; /* Mustard Yellow */
-  --accent-mustard-lo: rgba(225, 173, 1, 0.15); /* Light Mustard */
-  
-  --accent-green: #1E5631; /* Forest Green for buttons */
-  --accent-green-hi: #143D22; /* Darker Forest Green for hover */
-
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --surface2: #f1f3f5;
+  --border: rgba(0,0,0,0.08);
+  --text: #212529;
+  --muted: #6c757d;
+  --accent: #2b8c3e;
+  --accent-lo: rgba(43,140,62,0.08);
+  --accent-hi: #2b8c3e;
+  --yellow: #fbbf24;
   --white: #ffffff;
 
   --font-display: 'Plus Jakarta Sans', sans-serif;
@@ -40,11 +36,10 @@
 
 .section {
   padding: 120px 0;
-  background-color: var(--bg); /* Maintain off-white background */
 }
 
 .bgSurface {
-  background: var(--bg); /* Ensure sections flow seamlessly */
+  background: var(--surface);
 }
 
 /* ─── PAGE HERO ───────────────────────────────────────── */
@@ -52,7 +47,6 @@
   padding: 160px 0 80px;
   position: relative;
   overflow: hidden;
-  background-color: var(--bg);
 }
 
 .pageHero::before {
@@ -71,7 +65,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--muted);
@@ -79,24 +73,24 @@
 }
 
 .pageHeroEyebrow a {
-  color: var(--text); /* Navy Text */
+  color: var(--muted);
   transition: color 0.2s;
   text-decoration: none;
 }
 
 .pageHeroEyebrow a:hover {
-  color: var(--accent-mustard); /* Mustard hover */
+  color: var(--accent-hi);
 }
 
 .pageHeroEyebrow .sep {
-  color: var(--accent-mustard); /* Mustard slash */
+  color: var(--border);
 }
 
 .pageTitle {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 800;
-  color: var(--text); /* Navy Title */
+  color: var(--text);
   line-height: 1.0;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
@@ -104,13 +98,13 @@
 }
 
 .pageTitle .accent {
-  color: var(--accent-mustard); /* Mustard highlight */
+  color: var(--accent-hi);
 }
 
 .pageSubtitle {
   font-size: 1.15rem;
-  color: var(--muted);
-  font-weight: 400;
+  color: #4a5568;
+  font-weight: 300;
   max-width: 560px;
   line-height: 1.7;
 }
@@ -131,28 +125,23 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--text); /* Navy Text */
+  color: var(--accent-hi);
   margin-bottom: 16px;
-  padding: 6px 14px;
-  background: var(--accent-mustard-lo); /* Added mustard pill background */
-  border: 1px solid rgba(225, 173, 1, 0.3);
-  border-radius: 999px;
 }
 
 .sectionEyebrow::before {
   content: '';
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-mustard);
+  width: 24px;
+  height: 1px;
+  background: var(--accent-hi);
 }
 
 .sectionTitle {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: var(--text); /* Navy Text */
+  color: var(--text);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-top: 16px;
@@ -161,19 +150,19 @@
 
 .productOverview {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: #4a5568;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 40px;
 }
 
 .productFeaturesTitle {
   font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text); /* Navy text */
+  color: var(--accent-hi);
   margin-bottom: 20px;
 }
 
@@ -193,24 +182,20 @@
   gap: 12px;
   font-size: 0.95rem;
   color: var(--text);
-  font-weight: 500;
 }
 
-/* Styled checkmark to match other layout updates */
 .featureList li::before {
-  content: '✓';
-  color: var(--accent-mustard); /* Mustard check */
-  font-weight: 800;
-  font-size: 0.8rem;
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  background: var(--accent-mustard-lo);
+  content: '';
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: var(--accent-lo);
+  border: 1px solid rgba(43,140,62,0.3);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b8c3e' stroke-width='2.5'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-top: 2px;
 }
 
@@ -228,17 +213,15 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--muted);
+  color: #4a5568;
   transition: all 0.2s;
   text-decoration: none;
   display: inline-block;
 }
 
 .appChip:hover {
-  border-color: var(--accent-mustard);
-  color: var(--text); /* Navy Text on hover */
-  background: var(--surface2);
+  border-color: var(--accent-hi);
+  color: var(--accent-hi);
 }
 
 /* Product Aside */
@@ -254,7 +237,6 @@
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.03); /* Soft Navy shadow */
 }
 
 .specTableHead {
@@ -265,7 +247,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--text); /* Navy Text */
+  color: var(--muted);
 }
 
 .specTable {
@@ -287,41 +269,39 @@
 }
 
 .specTable td:first-child {
-  color: var(--muted);
+  color: #4a5568;
   width: 50%;
-  font-weight: 500;
 }
 
 .specTable td:last-child {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .specTable tr:hover td {
-  background: var(--surface2); /* Light Mustard hover */
+  background: var(--surface2);
 }
 
 /* Product CTA */
 .productCta {
-  background: linear-gradient(135deg, var(--accent-mustard-lo) 0%, var(--surface) 100%);
-  border: 1px solid rgba(225, 173, 1, 0.3); /* Mustard border */
+  background: linear-gradient(135deg, var(--accent-lo) 0%, var(--surface) 100%);
+  border: 1px solid rgba(43,140,62,0.2);
   border-radius: var(--r-lg);
   padding: 32px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(26, 54, 93, 0.03);
 }
 
 .productCta h3 {
   font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
 }
 
 .productCta p {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: #4a5568;
   margin-bottom: 24px;
 }
 
@@ -337,7 +317,6 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.05); /* Soft navy shadow */
 }
 
 .ctaBand::before {
@@ -346,8 +325,8 @@
   top: -2px;
   left: 10%;
   right: 10%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent-mustard), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .ctaBandPattern {
@@ -367,7 +346,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
-  color: var(--text); /* Navy Title */
+  color: var(--text);
   line-height: 1.1;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
@@ -375,7 +354,7 @@
 
 .ctaBandSub {
   font-size: 1rem;
-  color: var(--muted);
+  color: #4a5568;
 }
 
 .ctaBandActions {
@@ -392,8 +371,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text); /* Navy Blue */
+  color: var(--text);
 }
 
 .ctaContactItem a {
@@ -403,7 +381,7 @@
 }
 
 .ctaContactItem a:hover {
-  color: var(--accent-green); /* Forest green hover on link */
+  color: var(--accent-hi);
 }
 
 /* ─── BUTTONS ─────────────────────────────────────────── */
@@ -415,7 +393,7 @@
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   border: none;
   transition: all 0.3s var(--ease);
@@ -438,26 +416,25 @@
 }
 
 .btnPrimary {
-  background: var(--accent-green); /* Forest Green Button */
+  background: var(--accent);
   color: white;
-  box-shadow: 0 0 0 0 rgba(30, 86, 49, 0.4);
+  box-shadow: 0 0 0 0 rgba(43,140,62,0.4);
 }
 
 .btnPrimary:hover {
-  background: var(--accent-green-hi); /* Dark Forest Green on hover */
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(30, 86, 49, 0.4);
+  box-shadow: 0 8px 30px rgba(43,140,62,0.4);
 }
 
 .btnOutline {
-  background: var(--surface); /* White bg over off-white page */
-  color: var(--text); /* Navy text */
+  background: transparent;
+  color: var(--text);
   border: 1px solid var(--border);
 }
 
 .btnOutline:hover {
-  border-color: var(--accent-green);
-  color: var(--accent-green);
+  border-color: var(--accent-hi);
+  color: var(--accent-hi);
   transform: translateY(-2px);
 }
 
