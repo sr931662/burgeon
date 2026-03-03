@@ -6,8 +6,6 @@ import { fetchProductBySlug } from '../../api/products';
 const PaintShopPage = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState({
     intro: false,
     equipment: false,
@@ -21,19 +19,11 @@ const PaintShopPage = () => {
   useEffect(() => {
     const loadProduct = async () => {
       try {
-        setLoading(true);
-        // If slug is provided, fetch that specific product
-        // Otherwise, fetch the paint-shop product by default
         const productSlug = slug || 'paint-shop';
         const response = await fetchProductBySlug(productSlug);
         setProduct(response.data.data);
-        setError(null);
       } catch (err) {
         console.error('Error loading product:', err);
-        setError(err.response?.data?.message || 'Failed to load product details');
-        // Don't set error state, just log it - we'll use default content
-      } finally {
-        setLoading(false);
       }
     };
 
