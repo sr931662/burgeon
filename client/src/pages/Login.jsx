@@ -12,7 +12,7 @@ const Login = () => {
   const [formErrors, setFormErrors] = useState({});
   const [alertMessage, setAlertMessage] = useState({ type: '', message: '' });
   
-  const { login, isLoading, error: authError } = useAuth();
+  const { login, isLoading} = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
