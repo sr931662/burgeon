@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Factory.module.css';
+import FactoryGallery from '../components/FactoryGallery/FactoryGallery'; // Import the gallery component
 
 const Factory = () => {
   const [isVisible, setIsVisible] = useState({
     factory: false,
+    gallery: false,   // Added for gallery
     process: false,
     cta: false
   });
   
   const factoryRef = useRef(null);
+  const galleryRef = useRef(null);   // Ref for gallery
   const processRef = useRef(null);
   const ctaRef = useRef(null);
 
@@ -40,6 +43,7 @@ const Factory = () => {
     };
 
     setupObserver(factoryRef, 'factory');
+    setupObserver(galleryRef, 'gallery');   // Observe gallery
     setupObserver(processRef, 'process');
     setupObserver(ctaRef, 'cta');
 
@@ -145,6 +149,18 @@ const Factory = () => {
                 <div className={styles.specCellKey}>Press brake length</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FACTORY GALLERY SECTION */}
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div
+            ref={galleryRef}
+            className={`${styles.fadeUp} ${isVisible.gallery ? styles.fadeUpVisible : ''}`}
+          >
+            <FactoryGallery />
           </div>
         </div>
       </section>
