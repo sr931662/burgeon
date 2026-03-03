@@ -34,6 +34,10 @@ const Contact = () => {
 
   // Intersection Observer for fade-up animation
   useEffect(() => {
+    const currentRef = formRef.current;
+
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,14 +48,10 @@ const Contact = () => {
       { threshold: 0.12 }
     );
 
-    if (formRef.current) {
-      observer.observe(formRef.current);
-    }
+    observer.observe(currentRef);
 
     return () => {
-      if (formRef.current) {
-        observer.unobserve(formRef.current);
-      }
+      observer.unobserve(currentRef);
     };
   }, []);
 
