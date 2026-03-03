@@ -6,8 +6,8 @@ import { fetchProductBySlug } from '../../api/products';
 const PaintShopPage = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
-  const [setLoading] = useState(true);
-  const [setError] = useState(null);
+  // const [setLoading] = useState(true);
+  // const [setError] = useState(null);
   const [isVisible, setIsVisible] = useState({
     intro: false,
     equipment: false,
