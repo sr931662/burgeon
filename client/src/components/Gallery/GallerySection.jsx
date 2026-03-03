@@ -47,7 +47,7 @@ const GallerySection = () => {
       title: "Powder Coating Line",
       desc: "Automated recovery booth for high-volume production efficiency.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1565439380843-5872dfc15520?auto=format&fit=crop&q=80"
+      image: "https://industrialcoatingsltd.com/cdn/shop/files/spraying_paint_banner_image.jpg?v=1669201684&width=1500"
     },
     {
       id: 4,
@@ -63,7 +63,7 @@ const GallerySection = () => {
       title: "Industrial Bake Ovens",
       desc: "Multi-zone curing systems with high-efficiency heat exchangers.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1534423839368-1791a1df279f?auto=format&fit=crop&q=80"
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Industrial_oven.jpg"
     }
   ];
 
