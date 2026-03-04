@@ -4,8 +4,8 @@ import styles from './ServicesSection.module.css';
 
 // Professional CDN Icon URLs
 const paintIcon = "https://cdn-icons-png.flaticon.com/512/2942/2942789.png";
-const waterIcon = "https://cdn-icons-png.flaticon.com/512/3105/3105818.png";
-const electricIcon = "https://cdn-icons-png.flaticon.com/512/2942/2942792.png";
+// const waterIcon = "https://cdn-icons-png.flaticon.com/512/3105/3105818.png";
+// const electricIcon = "https://cdn-icons-png.flaticon.com/512/2942/2942792.png";
 const powderIcon = "https://cdn-icons-png.flaticon.com/512/10433/10433058.png";
 const ovenIcon = "https://cdn-icons-png.flaticon.com/512/2163/2163820.png";
 const brushIcon = "https://cdn-icons-png.flaticon.com/512/815/815523.png";

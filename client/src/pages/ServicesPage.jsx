@@ -11,7 +11,7 @@ const ovenIcon = "https://cdn-icons-png.flaticon.com/512/2163/2163820.png"; // I
 const brushIcon = "https://cdn-icons-png.flaticon.com/512/815/815523.png"; // Spray/Liquid
 const washingIcon = "https://cdn-icons-png.flaticon.com/512/2954/2954881.png"; // Cleaning/Washing
 const gearsIcon = "https://cdn-icons-png.flaticon.com/512/3039/3039343.png"; // Equipment/Gears
-const pipingIcon = "https://cdn-icons-png.flaticon.com/512/3251/3251508.png"; // Piping/Plumbing
+// const pipingIcon = "https://cdn-icons-png.flaticon.com/512/3251/3251508.png"; // Piping/Plumbing
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState({
