@@ -57,76 +57,76 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: "Paint Shop & Surface Treatment Systems",
-      description: "Complete, integrated paint finishing lines engineered around your parts, volumes, and space. From pretreatment through curing — PLC-controlled, energy-efficient, fully expandable.",
+      title: "Conveyorised Painting Lines",
+      description: "Complete automated painting lines for metal and plastic components including washing, coating, curing ovens, and conveyorised material handling systems.",
       icon: paintIcon,
-      slug: "/paint-shop",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"],
+      slug: "/services/conveyorised-painting-lines",
+      specs: ["Turnkey Project Execution", "Custom Production Capacity", "Automotive & Industrial Applications"],
       isWide: true
     },
     {
       id: 2,
-      title: "Pretreatment Systems",
-      description: "3–9 stage spray or immersion systems. Alkaline degreasing, phosphate conversion, passivation, and DI water rinse. The foundation of any coating process.",
-      icon: waterIcon,
-      slug: "/pretreatment-system",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "Industrial Paint Booth Systems",
+      description: "Robotic, wet-type, and dry-type paint booths designed for controlled coating environments and consistent finishing quality.",
+      icon: brushIcon,
+      slug: "/services/industrial-paint-booth-systems",
+      specs: ["Robotic Paint Booths", "Wet & Dry Booth Options", "High-Efficiency Filtration"]
     },
     {
       id: 3,
-      title: "CED / Cataphoretic Plants",
-      description: "Automated electrodeposition coating lines. Uniform 15–30μm film on all surfaces including recesses. 5,000–50,000L tank capacity for automotive and industrial use.",
-      icon: electricIcon,
-      slug: "/ced-plant",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "Industrial Washing Machines",
+      description: "Heavy-duty washing systems for cleaning and surface preparation of metal components before coating or finishing processes.",
+      icon: washingIcon,
+      slug: "/services/industrial-washing-machines",
+      specs: ["Rotary Washing Systems", "Conveyorised Washing Lines", "Industrial Degreasing Solutions"]
     },
     {
       id: 4,
-      title: "Powder Coating Plants",
-      description: "Complete powder lines from pretreatment to curing. High transfer efficiency, rapid colour change, consistent film build. 50 to 1,000+ parts per shift.",
+      title: "Powder Coating Systems",
+      description: "Complete powder coating setups including spray booths, recovery systems, curing ovens, and integrated material handling.",
       icon: powderIcon,
-      slug: "/powder-coating-plant",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      slug: "/services/powder-coating-systems",
+      specs: ["High Transfer Efficiency", "Consistent Film Thickness", "Industrial Production Ready"]
     },
     {
       id: 5,
       title: "Industrial Ovens",
-      description: "Bake ovens (50–300°C) and dry-off ovens for every curing and drying application. Batch or continuous, gas/electric/oil, with PLC control and data logging.",
+      description: "Electric heater and IR lamp type ovens designed for curing, drying, and heating processes in coating and manufacturing lines.",
       icon: ovenIcon,
-      slug: "/bake-oven",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      slug: "/services/industrial-ovens",
+      specs: ["Electric Heater Ovens", "IR Lamp Ovens", "Continuous & Batch Systems"]
     },
     {
       id: 6,
-      title: "Liquid Paint Booths",
-      description: "Downdraft, semi-downdraft, and crossflow booths with advanced filtration. Wet/dry and compact configurations available for every application and budget.",
-      icon: brushIcon,
-      slug: "/liquid-paint-booth",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "SPM Machines",
+      description: "Special purpose machines engineered for custom industrial processes and automated manufacturing operations.",
+      icon: gearsIcon,
+      slug: "/services/spm-machines",
+      specs: ["Custom Industrial Machinery", "Automation Integration", "Process-Specific Engineering"]
     },
     {
       id: 7,
-      title: "Component Washing Machines",
-      description: "Spray, immersion, rotating basket, and ultrasonic washing machines. 1 to 6 stages, heated to 80°C. For precision parts cleaning before any coating process.",
-      icon: washingIcon,
-      slug: "/component-washing-machine",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "Industrial Conveyor Systems",
+      description: "Material handling conveyor systems designed to integrate seamlessly with automated manufacturing and finishing lines.",
+      icon: electricIcon,
+      slug: "/services/industrial-conveyor-systems",
+      specs: ["Overhead Conveyors", "Production Line Integration", "Custom Layout Design"]
     },
     {
       id: 8,
-      title: "ED Equipment",
-      description: "Individual CED system components: rectifiers, UF modules, anodes, heat exchangers, and control panels. For new builds or upgrading existing electrodeposition lines.",
-      icon: gearsIcon,
-      slug: "/ed-equipment",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "Automation & Control Systems",
+      description: "Industrial automation solutions including electrical control panels and system integration for efficient production processes.",
+      icon: electricIcon,
+      slug: "/services/automation-and-control-systems",
+      specs: ["Control Panels", "System Integration", "Industrial Automation"]
     },
     {
       id: 9,
-      title: "Utility & Process Piping",
-      description: "Complete piping solutions for paint circulation, compressed air, cooling water, steam, and chemical lines. SS304/316L, carbon steel, PP — design through commissioning.",
-      icon: pipingIcon,
-      slug: "/utility-process-piping",
-      specs: ["Turnkey Execution", "Custom Capacity Design", "Automotive Grade Standards"]
+      title: "Surface Treatment Lines",
+      description: "Integrated surface finishing systems designed for industrial components requiring reliable coating and finishing processes.",
+      icon: waterIcon,
+      slug: "/services/surface-treatment-lines",
+      specs: ["Industrial Finishing Lines", "Production Line Integration", "High-Performance Coating"]
     }
   ];
 

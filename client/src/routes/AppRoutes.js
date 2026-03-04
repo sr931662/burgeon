@@ -39,19 +39,19 @@ const AppRoutes = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/login" element={<Login />} /> {/* Add this route */}
       <Route path="/about" element={<About />} />
-      <Route path="/services/bake-oven" element={<BakeOvenPage />} />
-      <Route path="/services/paint-shop" element={<PaintShopPage />} />
-      <Route path="/services/ced-plant" element={<CEDPlantPage />} /> 
+      <Route path="/services/powder-coating-systems" element={<BakeOvenPage />} />
+      <Route path="/services/conveyorised-painting-lines" element={<PaintShopPage />} />
+      <Route path="/services/industrial-conveyor-systems" element={<CEDPlantPage />} /> 
       <Route path="/services/compact-paint-booth" element={<CompactPaintBoothPage />} /> 
       <Route path="/services/component-washing-machine" element={<ComponentWashingPage />} /> 
-      <Route path="/services/dry-off-oven" element={<DryOffOvenPage />} /> 
+      <Route path="/services/industrial-ovens" element={<DryOffOvenPage />} /> 
       <Route path="/services/ed-equipment" element={<EDEquipmentPage />} /> 
-      <Route path="/services/liquid-paint-booth" element={<LiquidPaintBoothPage />} /> 
-      <Route path="/services/powder-coating-booth" element={<PowderCoatingBoothPage />} /> 
-      <Route path="/services/powder-coating-plant" element={<PowderCoatingPlantPage />} /> 
-      <Route path="/services/pretreatment-system" element={<PretreatmentSystemPage />} /> 
+      <Route path="/services/industrial-paint-booth-systems" element={<LiquidPaintBoothPage />} /> 
+      <Route path="/services/surface-treatment-lines" element={<PowderCoatingBoothPage />} /> 
+      <Route path="/services/automation-and-control-systems" element={<PowderCoatingPlantPage />} /> 
+      <Route path="/services/spm-machines" element={<PretreatmentSystemPage />} /> 
       <Route path="/services/utility-process-piping" element={<UtilityPipingPage />} /> 
-      <Route path="/services/wet-dry-booth" element={<WetDryBoothPage />} /> 
+      <Route path="/services/industrial-washing-machines" element={<WetDryBoothPage />} /> 
       <Route path="/factory" element={<Factory />} />
       <Route path="/turnover" element={<Turnover />} />
       <Route path="/contact" element={<Contact />} />

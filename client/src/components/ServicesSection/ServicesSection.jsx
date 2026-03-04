@@ -9,6 +9,8 @@ const electricIcon = "https://cdn-icons-png.flaticon.com/512/2942/2942792.png";
 const powderIcon = "https://cdn-icons-png.flaticon.com/512/10433/10433058.png";
 const ovenIcon = "https://cdn-icons-png.flaticon.com/512/2163/2163820.png";
 const brushIcon = "https://cdn-icons-png.flaticon.com/512/815/815523.png";
+const washingIcon = "https://cdn-icons-png.flaticon.com/512/2954/2954881.png"; // Cleaning/Washing
+const gearsIcon = "https://cdn-icons-png.flaticon.com/512/3039/3039343.png"; // Equipment/Gears
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,46 +44,52 @@ const ServicesSection = () => {
   const displayServices = [
     {
       id: 1,
-      title: "Paint Shop & Surface Treatment Systems",
-      description: "Complete, integrated paint finishing lines. From pretreatment to curing — designed around your parts, your volumes, and your space. PLC-controlled, energy-efficient, expandable.",
+      title: "Conveyorised Painting Lines",
+      description: "Complete automated painting lines for metal and plastic components including washing, coating, curing ovens, and conveyorised material handling systems.",
       icon: paintIcon,
-      slug: "/services/paint-shop",
+      slug: "/services/conveyorised-painting-lines",
+      specs: ["Turnkey Project Execution", "Custom Production Capacity", "Automotive & Industrial Applications"],
       isWide: true
     },
     {
       id: 2,
-      title: "Pretreatment Systems",
-      description: "3–9 stage spray or immersion systems. Alkaline cleaning, phosphate, passivation, and DI water rinse for maximum coating adhesion.",
-      icon: waterIcon,
-      slug: "/services/pretreatment-system"
+      title: "Industrial Paint Booth Systems",
+      description: "Robotic, wet-type, and dry-type paint booths designed for controlled coating environments and consistent finishing quality.",
+      icon: brushIcon,
+      slug: "/services/industrial-paint-booth-systems",
+      specs: ["Robotic Paint Booths", "Wet & Dry Booth Options", "High-Efficiency Filtration"]
     },
     {
       id: 3,
-      title: "CED / Cataphoretic Plants",
-      description: "Automated electrodeposition coating lines. Uniform 15–30μm film on all surfaces including recesses. 5,000–50,000L tank capacity.",
-      icon: electricIcon,
-      slug: "/services/ced-plant"
+      title: "Industrial Washing Machines",
+      description: "Heavy-duty washing systems for cleaning and surface preparation of metal components before coating or finishing processes.",
+      icon: washingIcon,
+      slug: "/services/industrial-washing-machines",
+      specs: ["Rotary Washing Systems", "Conveyorised Washing Lines", "Industrial Degreasing Solutions"]
     },
     {
       id: 4,
-      title: "Powder Coating Plants",
-      description: "Complete powder lines from pretreatment to curing. High transfer efficiency, rapid colour change, consistent film build.",
+      title: "Powder Coating Systems",
+      description: "Complete powder coating setups including spray booths, recovery systems, curing ovens, and integrated material handling.",
       icon: powderIcon,
-      slug: "/services/powder-coating-plant"
+      slug: "/services/powder-coating-systems",
+      specs: ["High Transfer Efficiency", "Consistent Film Thickness", "Industrial Production Ready"]
     },
     {
       id: 5,
       title: "Industrial Ovens",
-      description: "Bake ovens (50–300°C) and dry-off ovens for every curing and drying application. Batch or continuous, gas/electric/oil.",
+      description: "Electric heater and IR lamp type ovens designed for curing, drying, and heating processes in coating and manufacturing lines.",
       icon: ovenIcon,
-      slug: "/services/bake-oven"
+      slug: "/services/industrial-ovens",
+      specs: ["Electric Heater Ovens", "IR Lamp Ovens", "Continuous & Batch Systems"]
     },
     {
       id: 6,
-      title: "Liquid Paint Booths",
-      description: "Downdraft, semi-downdraft, and crossflow booths with advanced filtration. Wet/dry and compact configurations available.",
-      icon: brushIcon,
-      slug: "/services/liquid-paint-booth"
+      title: "SPM Machines",
+      description: "Special purpose machines engineered for custom industrial processes and automated manufacturing operations.",
+      icon: gearsIcon,
+      slug: "/services/spm-machines",
+      specs: ["Custom Industrial Machinery", "Automation Integration", "Process-Specific Engineering"]
     }
   ];
 

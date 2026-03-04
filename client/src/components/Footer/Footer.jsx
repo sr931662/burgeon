@@ -26,7 +26,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className={styles.footerDesc}>
-              Precision industrial finishing systems. Delivered across India and 20+ states since 2015.
+              Burgeon Engineering designs and manufactures industrial finishing systems including paint shops, powder coating lines, industrial ovens, washing machines, conveyors, and automation systems for modern manufacturing industries.
             </p>
             <div className={styles.footerContactMini}>
               <a href="tel:+918527754455">
@@ -45,23 +45,58 @@ const Footer = () => {
           <div>
             <div className={styles.footerNavTitle}>Products</div>
             <ul className={styles.footerNavList}>
-              <li><Link to="/services/liquid-paint-booth">Liquid Paint Booth</Link></li>
-              <li><Link to="/services/wet-dry-booth">Wet & Dry Booth</Link></li>
-              <li><Link to="/services/pretreatment-system">Pretreatment System</Link></li>
-              <li><Link to="/services/ced-plant">CED Plant</Link></li>
-              <li><Link to="/services/powder-coating-plant">Powder Coating Plant</Link></li>
+              <li>
+                <Link to="/services/conveyorised-painting-lines">
+                  Conveyorised Painting Lines
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/industrial-paint-booth-systems">
+                  Industrial Paint Booth Systems
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/industrial-washing-machines">
+                  Industrial Washing Machines
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/powder-coating-systems">
+                  Powder Coating Systems
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/industrial-ovens">
+                  Industrial Ovens
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* More Products Column */}
           <div>
-            <div className={styles.footerNavTitle}>More Products</div>
+            <div className={styles.footerNavTitle}>Engineering Systems</div>
             <ul className={styles.footerNavList}>
-              <li><Link to="/services/bake-oven">Bake Oven</Link></li>
-              <li><Link to="/services/dry-off-oven">Dry-off Oven</Link></li>
-              <li><Link to="/services/compact-paint-booth">Compact Paint Booth</Link></li>
-              <li><Link to="/services/component-washing-machine">Component Washing</Link></li>
-              <li><Link to="/services/utility-process-piping">Utility Piping</Link></li>
+              <li>
+                <Link to="/services/spm-machines">
+                  SPM Machines
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/industrial-conveyor-systems">
+                  Industrial Conveyor Systems
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/automation-and-control-systems">
+                  Automation & Control Systems
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/surface-treatment-lines">
+                  Surface Treatment Lines
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -77,9 +112,9 @@ const Footer = () => {
             
             <div className={styles.footerNavTitle} style={{ marginTop: '32px' }}>Address</div>
             <p className={styles.addressText}>
-              Unit No.-510, Eros Corporate Park,<br />
-              Sector-2, NH-8 IMT Manesar,<br />
-              Gurgaon-122052, India
+              1406, 14th Floor, 83 Metrostreet,<br />
+              Sector-83, Gurugram – 122004,<br />
+              Haryana, India
             </p>
           </div>
         </div>

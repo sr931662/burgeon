@@ -5,39 +5,39 @@ const FeaturedInstallation = ({
   eyebrow = 'Track record',
   title = 'Featured ',
   accentWord = 'installations',
-  allProjectsLink = '/turnover.html',
+  allProjectsLink = '/turnover',
   projects = [
     {
-      year: '2025 · Delhi NCR',
-      name: 'Automotive CED Plant',
-      location: '50,000 L tank · Full pretreatment · Rectifier & controls',
+      year: '2025 · Haryana',
+      name: 'Conveyorised Painting Line',
+      location: 'Automated line for heavy components · Integrated washing, painting & curing systems',
     },
     {
       year: '2024 · Gujarat',
-      name: 'Powder Coating Line',
-      location: '6-stage pretreatment · Cartridge recovery booth · Curing oven',
+      name: 'Powder Coating System',
+      location: 'Complete powder coating setup with spray booth, curing oven, and conveyor automation',
     },
     {
       year: '2024 · Pune',
-      name: 'Paint Shop Upgrade',
-      location: '4 booths + curing ovens · Overhead conveyor integration',
+      name: 'Industrial Paint Booth Installation',
+      location: 'Robotic paint booth with controlled airflow and filtration systems',
+    },
+    {
+      year: '2023 · Delhi NCR',
+      name: 'Industrial Oven System',
+      location: 'Electric heater type curing ovens for continuous production line operations',
     },
     {
       year: '2023 · Rajasthan',
-      name: 'Utility Piping — Chemical Plant',
-      location: 'SS316L & PPH piping · Steam & chemical dosing lines',
+      name: 'Industrial Washing Machine',
+      location: 'Rotary and conveyorised washing system for metal component surface preparation',
     },
     {
       year: '2023 · Haryana',
-      name: '8-Stage Pretreatment Line',
-      location: 'Full immersion · Zinc phosphate · DI water rinse',
+      name: 'Automation & Conveyor System',
+      location: 'Material handling conveyors with integrated control panels for automated production',
     },
-    {
-      year: '2023 · Bangladesh (Export)',
-      name: 'Complete Paint Shop',
-      location: 'International turnkey delivery · Full commissioning',
-    },
-  ],
+  ]
 }) => {
   return (
     <section className={styles.section}>

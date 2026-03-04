@@ -50,37 +50,40 @@ const CountersSection = () => {
   }, []);
 
   return (
-    <section className={`${styles.section} ${styles.bgSurface}`}>
-      <div className={styles.container}>
-        <div className={styles.countersRow}>
-          <div className={styles.counterCell}>
-            <div className={styles.counterVal}>
-              <span className={styles.counter}>500</span><span className={styles.suf}>+</span>
-            </div>
-            <div className={styles.counterLbl}>Projects Delivered</div>
+  <section className={`${styles.section} ${styles.bgSurface}`}>
+    <div className={styles.container}>
+      <div className={styles.countersRow}>
+        <div className={styles.counterCell}>
+          <div className={styles.counterVal}>
+            <span className={styles.counter}>3</span><span className={styles.suf}>+</span>
           </div>
-          <div className={styles.counterCell}>
-            <div className={styles.counterVal}>
-              <span className={styles.counter}>45</span><span className={styles.suf}>+</span>
-            </div>
-            <div className={styles.counterLbl}>Specialist Engineers</div>
+          <div className={styles.counterLbl}>Manufacturing Units</div>
+        </div>
+
+        <div className={styles.counterCell}>
+          <div className={styles.counterVal}>
+            <span className={styles.counter}>22</span><span className={styles.suf}>+</span>
           </div>
-          <div className={styles.counterCell}>
-            <div className={styles.counterVal}>
-              <span className={styles.counter}>20+</span>
-            </div>
-            <div className={styles.counterLbl}>States Served</div>
+          <div className={styles.counterLbl}>Years of Engineering Expertise</div>
+        </div>
+
+        <div className={styles.counterCell}>
+          <div className={styles.counterVal}>
+            <span className={styles.counter}>20</span><span className={styles.suf}>+</span>
           </div>
-          <div className={styles.counterCell}>
-            <div className={styles.counterVal}>
-              <span className={styles.counter}>9</span><span className={styles.suf}>+</span>
-            </div>
-            <div className={styles.counterLbl}>Years Experience</div>
+          <div className={styles.counterLbl}>Major Industrial Clients</div>
+        </div>
+
+        <div className={styles.counterCell}>
+          <div className={styles.counterVal}>
+            <span className={styles.counter}>2015</span>
           </div>
+          <div className={styles.counterLbl}>Delivering Excellence Since</div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
 
 export default CountersSection;

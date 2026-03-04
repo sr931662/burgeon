@@ -39,16 +39,19 @@ const ProductsPage = () => {
   }, [filters]);
 
   const categories = [
-    'Hydraulic Presses',
-    'CNC Machines',
+    'Paint Booth Systems',
+    'Industrial Ovens',
+    'Industrial Washing Machines',
+    'Powder Coating Systems',
     'Conveyor Systems',
-    'Industrial Robots',
-    'Packaging Equipment'
+    'SPM Machines & Automation',
+    'Conveyorised Painting Lines',
+    'Surface Treatment Systems'
   ];
 
   return (
     <div>
-      <h1>Our Products</h1>
+      <h1>Industrial Systems & Equipment</h1>
 
       {/* Category Filter */}
       <div style={{ marginBottom: '20px' }}>

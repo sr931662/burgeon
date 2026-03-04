@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import managingdirector from '../assets/images/MD.png'
 
 // Icon URLs from the HTML
 const targetIcon = "https://cdn-icons-png.flaticon.com/512/1040/1040244.png";
@@ -58,17 +59,17 @@ const AboutPage = () => {
     {
       icon: targetIcon,
       title: "Management Vision",
-      description: "Total satisfaction of customers by understanding their requirements, delivering with highest value addition possible — establishing strong, long-standing relations for mutual benefit."
+      description: "To achieve total customer satisfaction by understanding client requirements and delivering engineering solutions with the highest value addition while building long-term trusted partnerships."
     },
     {
       icon: microscopeIcon,
       title: "Business Vision",
-      description: "Design engineering and manufacturing of high-end products by adopting global standards. Zero-defect products, on time — with continuous improvement in all areas of operations."
+      description: "To be a trusted leader in the design, engineering, fabrication, and integration of industrial machines by adopting global standards and advanced technologies."
     },
     {
       icon: handshakeIcon,
       title: "Company Policy",
-      description: "Safety and environment compliance, high respect and trust among all members, and working in harmony — contributing to the society and providing joy to all employees."
+      description: "All projects are executed with strict safety practices, quality assurance, and continuous improvement to ensure reliable performance and customer satisfaction."
     }
   ];
 
@@ -76,15 +77,15 @@ const AboutPage = () => {
   const certifications = [
     {
       title: "ISO 9001:2015",
-      description: "Quality Management System"
+      description: "Quality Management System Certification"
     },
     {
-      title: "CE Ready Systems",
-      description: "European Compliance Ready"
+      title: "Industrial Safety Standards",
+      description: "Equipment designed with strict safety practices"
     },
     {
-      title: "Environmental Compliance",
-      description: "Emission & Waste Standards"
+      title: "Process Quality Assurance",
+      description: "Continuous quality control across engineering and manufacturing"
     }
   ];
 
@@ -100,7 +101,7 @@ const AboutPage = () => {
             Engineering precision<br /><span className={styles.accent}>since 2015</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            A fast-growing industrial systems firm driven by experienced professionals. We exist to deliver world-class paint finishing and surface treatment systems — cost-effectively and on time.
+            A fast-growing engineering organization specializing in industrial automation systems, paint finishing equipment, and surface treatment solutions. We deliver reliable, high-performance production systems tailored to the needs of modern manufacturing industries.
           </p>
         </div>
       </section>
@@ -114,27 +115,30 @@ const AboutPage = () => {
           >
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter}>500</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>3</span><span className={styles.suf}>+</span>
               </div>
-              <div className={styles.counterLbl}>Projects completed</div>
+              <div className={styles.counterLbl}>Manufacturing Units</div>
             </div>
+
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter}>45</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>22</span><span className={styles.suf}>+</span>
               </div>
-              <div className={styles.counterLbl}>Specialist engineers</div>
+              <div className={styles.counterLbl}>Years of Engineering Expertise</div>
             </div>
+
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
                 <span className={styles.counter}>20</span><span className={styles.suf}>+</span>
               </div>
-              <div className={styles.counterLbl}>States served</div>
+              <div className={styles.counterLbl}>Major Industrial Clients</div>
             </div>
+
             <div className={styles.counterCell}>
               <div className={styles.counterVal}>
-                <span className={styles.counter}>10</span><span className={styles.suf}>+</span>
+                <span className={styles.counter}>2015</span>
               </div>
-              <div className={styles.counterLbl}>Years of excellence</div>
+              <div className={styles.counterLbl}>Delivering Excellence Since</div>
             </div>
           </div>
         </div>
@@ -145,7 +149,7 @@ const AboutPage = () => {
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Certifications & Compliance</h2>
           <p className={styles.sectionLead}>
-            All systems are engineered following ISO quality standards and industrial safety regulations.
+            Our engineering and manufacturing processes follow strict quality management standards to ensure reliable performance, safety, and long-term operational efficiency.
           </p>
           <div className={styles.projectsGrid}>
             {certifications.map((cert, index) => (
@@ -172,13 +176,15 @@ const AboutPage = () => {
                 Company with tradition
               </h2>
               <p className={styles.sectionLead} style={{ marginBottom: '20px' }}>
-                We are a fast-growing organization driven by experienced professionals providing cost-effective and customized solutions to meet our clients' requirements.
+                Burgeon Engineering Pvt. Ltd. is a fast-growing engineering organization delivering cost-effective and customized industrial solutions for modern manufacturing facilities.
               </p>
+
               <p className={styles.sectionLead} style={{ marginBottom: '20px' }}>
-                Our team has rich experience in the paint shop industry of more than 18 years. We've built our reputation on three pillars: safety, quality, and on-time delivery.
+                With more than 22 years of engineering expertise within our team, we specialize in the design, fabrication, and integration of industrial automation systems including ovens, paint booths, washing machines, and conveyorised production lines.
               </p>
+
               <p className={styles.sectionLead}>
-                Our vision is to deliver quality work with the best performance of equipment — every single project, without exception.
+                Our commitment is to deliver reliable equipment, superior performance, and complete turnkey solutions — executed safely, efficiently, and on schedule.
               </p>
             </div>
 
@@ -212,18 +218,18 @@ const AboutPage = () => {
             <div className={styles.leaderCard}>
               <div className={styles.leaderImage}>
                 <img 
-                  src="https://ui-avatars.com/api/?name=Kunal+Kapoor&size=200&background=2b8c3e&color=fff&bold=true" 
-                  alt="Kunal Kapoor" 
+                  src={managingdirector}
+                  alt="Mr. Amit Arora" 
                 />
               </div>
               <div className={styles.leaderContent}>
-                <div className={styles.leaderYear}>Director</div>
-                <div className={styles.leaderName}>Kunal Kapoor</div>
+                <div className={styles.leaderYear}>Managing Director</div>
+                <div className={styles.leaderName}>Mr. Amit Arora</div>
                 <div className={styles.leaderDesc}>
-                  18+ years in industrial finishing systems. Specialist in CED plants and complete paint shop design.
+                  Experienced industrial engineering professional with deep expertise in paint finishing systems, automation equipment, and turnkey manufacturing line integration.
                 </div>
                 <div className={styles.leaderEmail}>
-                  <a href="mailto:kunalkapoor@burgeonengineering.com">kunalkapoor@burgeonengineering.com</a>
+                  <a href="mailto:amit@burgeonengineering.com">amit@burgeonengineering.com</a>
                 </div>
               </div>
             </div>
@@ -241,6 +247,9 @@ const AboutPage = () => {
                 <div className={styles.leaderName}>Rajeev Mehta</div>
                 <div className={styles.leaderDesc}>
                   Specialist in pretreatment and CED plant design. Oversees all technical project delivery from fabrication through commissioning.
+                </div>
+                <div className={styles.leaderEmail}>
+                  <a href="mailto:atul@burgeonengineering.com">atul@burgeonengineering.com</a>
                 </div>
               </div>
             </div>

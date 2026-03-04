@@ -12,11 +12,9 @@ const BakeOvenPage = () => {
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    // Page load reveal
     setTimeout(() => document.body.classList.add('loaded'), 50);
   }, []);
 
-  // Intersection Observer for fade-up animations
   useEffect(() => {
     const observers = [];
 
@@ -45,78 +43,81 @@ const BakeOvenPage = () => {
     };
   }, []);
 
-  // Feature list
   const features = [
-    "Temperature uniformity ±5°C across the work zone",
-    "High-efficiency multi-layer mineral wool insulation",
-    "PLC temperature control with touchscreen HMI and data logging",
-    "Multi-zone temperature profiles for complex cure schedules",
-    "Fast heat-up and recovery after door opening",
-    "Recirculation fan design: horizontal or vertical airflow",
-    "Explosion-proof construction for solvent-containing atmospheres"
+    "Complete powder coating line including pretreatment, coating booth, and curing oven",
+    "High-efficiency powder recovery systems with cyclone and cartridge filtration",
+    "Uniform powder application for consistent coating thickness",
+    "Electrostatic powder spray guns for high transfer efficiency",
+    "Conveyorised systems for automated continuous production",
+    "Energy-efficient curing ovens with precise temperature control",
+    "PLC-based automation with production monitoring",
+    "Modular plant design allowing easy expansion of production capacity"
   ];
 
-  // Technical specifications
   const specifications = [
-    { label: "Temperature range", value: "50°C – 300°C" },
-    { label: "Heating options", value: "Electric, gas, oil, steam" },
-    { label: "Uniformity", value: "±5°C across work zone" },
-    { label: "Air circulation", value: "Horizontal / vertical" },
-    { label: "Control", value: "PID with touchscreen HMI" },
-    { label: "Construction", value: "MS insulated panels, SS interior optional" }
+    { label: "Coating thickness", value: "40 – 120 microns typical" },
+    { label: "Powder recovery efficiency", value: "> 95%" },
+    { label: "Curing temperature", value: "160°C – 220°C" },
+    { label: "Application system", value: "Electrostatic powder spray guns" },
+    { label: "Line configuration", value: "Batch or conveyorised system" },
+    { label: "Control system", value: "PLC based automation" }
   ];
 
-  // Application areas
   const applications = [
-    "Automotive OEM paint lines",
-    "General metal fabrication",
-    "Powder coating curing",
-    "Rubber & plastics",
+    "Automotive components",
     "Electrical enclosures",
+    "Industrial machinery",
+    "Metal furniture",
+    "Architectural aluminium",
     "Agricultural equipment"
   ];
 
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className={styles.container}>
           <div className={styles.pageHeroEyebrow}>
             <Link to="/">Home</Link> <span className={styles.sep}>/</span> 
             <Link to="/services">Services</Link> <span className={styles.sep}>/</span> 
-            Bake Oven
+            Powder Coating Systems
           </div>
           <h1 className={styles.pageTitle}>
-            Industrial <span className={styles.accent}>Bake Ovens</span>
+            Powder Coating <span className={styles.accent}>Systems</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            Uniform curing for perfect, consistent finishes.
+            Complete industrial powder coating lines engineered for consistent finishes and high production efficiency.
           </p>
         </div>
       </section>
 
-      {/* PRODUCT DETAIL SECTION */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
             ref={detailRef}
             className={`${styles.productDetailGrid} ${styles.fadeUp} ${isVisible.detail ? styles.fadeUpVisible : ''}`}
           >
-            {/* Left Column - Overview */}
             <div>
               <span className={styles.sectionEyebrow}>Overview</span>
               <h2 className={styles.sectionTitle} style={{ fontSize: '1.8rem', marginTop: '16px', marginBottom: '24px' }}>
-                What we deliver
+                Complete powder coating solutions
               </h2>
+
               <p className={styles.productOverview}>
-                Burgeon bake ovens deliver precise temperature uniformity across the entire work zone, ensuring consistent cure quality for painted or powder-coated components. Available as batch (box) ovens for flexible production or continuous conveyor ovens for high-volume lines. Gas, electric, oil-fired, or steam options are available, all with PLC temperature control and full data logging capability.
+                Powder coating systems provide a durable and environmentally friendly finishing process for metal components. The electrostatic powder application process creates uniform coatings with excellent corrosion resistance and long service life.
               </p>
+
+              <p className={styles.productOverview}>
+                Burgeon designs complete powder coating plants including pretreatment systems, powder spray booths, curing ovens, and conveyorised material handling systems. Each system is engineered around your production volume, component size, and plant layout to deliver reliable performance and consistent coating quality.
+              </p>
+
               <p className={styles.productFeaturesTitle}>Key features</p>
+
               <ul className={styles.featureList}>
                 {features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
+
               <div className={styles.appChips}>
                 {applications.map((app, index) => (
                   <Link 
@@ -130,7 +131,6 @@ const BakeOvenPage = () => {
               </div>
             </div>
 
-            {/* Right Column - Specs & CTA */}
             <div className={styles.productAside}>
               <div className={styles.specTableWrap}>
                 <div className={styles.specTableHead}>Technical specifications</div>
@@ -145,23 +145,25 @@ const BakeOvenPage = () => {
                   </tbody>
                 </table>
               </div>
+
               <div className={styles.productCta}>
-                <h3>Request oven specification</h3>
-                <p>Our engineers will design the perfect system for your requirements.</p>
+                <h3>Design your powder coating line</h3>
+                <p>Our engineers will configure the optimal system for your manufacturing requirements.</p>
+
                 <Link 
-                  to="/contact?product=bake-oven" 
+                  to="/contact?product=powder-coating-system" 
                   className={`${styles.btn} ${styles.btnPrimary}`}
                   style={{ marginTop: 0 }}
                 >
-                  Get a quote →
+                  Request quotation →
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA BAND */}
       <section className={`${styles.section} ${styles.bgSurface}`}>
         <div className={styles.container}>
           <div 
@@ -169,29 +171,38 @@ const BakeOvenPage = () => {
             className={`${styles.ctaBand} ${styles.fadeUp} ${isVisible.cta ? styles.fadeUpVisible : ''}`}
           >
             <div className={styles.ctaBandPattern} aria-hidden="true"></div>
+
             <div>
-              <h2 className={styles.ctaBandTitle}>Ready to start<br />your project?</h2>
-              <p className={styles.ctaBandSub}>Talk to our engineers — response within 24 hours.</p>
+              <h2 className={styles.ctaBandTitle}>Planning a powder<br />coating plant?</h2>
+              <p className={styles.ctaBandSub}>
+                Our engineering team will design a system tailored to your production requirements.
+              </p>
+
               <div style={{ marginTop: '32px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <Link to="/contact" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>
-                  Contact us →
+                  Contact our engineers →
                 </Link>
+
                 <Link to="/turnover" className={`${styles.btn} ${styles.btnOutline} ${styles.btnLg}`}>
-                  See our installations
+                  View installations
                 </Link>
               </div>
             </div>
+
             <div className={styles.ctaBandActions}>
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+918527754455">+91 8527754455</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+919999688621">+91 9999688621</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 ✉️ <a href="mailto:info@burgeonengineering.com">info@burgeonengineering.com</a>
               </div>
             </div>
+
           </div>
         </div>
       </section>

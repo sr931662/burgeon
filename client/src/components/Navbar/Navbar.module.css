@@ -184,7 +184,7 @@
 .hasDropdown > a::after {
   content: '▾';
   font-size: 0.7rem;
-  opacity: 0.6;
+  opacity: 1;
   transition: transform 0.2s;
 }
 
@@ -195,18 +195,24 @@
 .dropdown {
   box-sizing: border-box;
   position: absolute;
+  z-index: 100;
   top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
-  background: var(--surface2); /* Pure white dropdown */
+
+  background: #FFFFFF; /* FORCE SOLID WHITE */
   border: 1px solid var(--border);
   border-radius: 16px;
+
   padding: 8px;
   min-width: 240px;
+
   opacity: 0;
   pointer-events: none;
+
   transition: opacity 0.2s, transform 0.2s;
-  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.15); /* Shadow tinted with navy blue */
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12); /* cleaner shadow */
 }
 
 /* Invisible bridge to fix the hover gap */

@@ -12,11 +12,9 @@ const CEDPlantPage = () => {
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    // Page load reveal
     setTimeout(() => document.body.classList.add('loaded'), 50);
   }, []);
 
-  // Intersection Observer for fade-up animations
   useEffect(() => {
     const observers = [];
 
@@ -45,78 +43,84 @@ const CEDPlantPage = () => {
     };
   }, []);
 
-  // Feature list
   const features = [
-    "Pretreatment integration: degrease, phosphate, DI rinse stages",
-    "CED dip tank with precision circulation and temperature control",
-    "Ultrafiltration (UF) rinse system for paint recovery and quality",
-    "High-efficiency DC rectifier system (50–400V, custom amperage)",
-    "Curing oven sized to throughput requirements",
-    "PLC automation with complete process monitoring and data logging",
-    "Full electrical and automation panel integration"
+    "Overhead conveyor systems for paint shop and assembly lines",
+    "Chain, power & free, and skid conveyor configurations",
+    "Designed for continuous material handling in automated production",
+    "Integration with paint booths, ovens, washing systems, and robotics",
+    "Heavy-duty construction for industrial environments",
+    "Variable speed drives and PLC-controlled operation",
+    "Modular layouts allowing easy expansion of production lines"
   ];
 
-  // Technical specifications
   const specifications = [
-    { label: "Tank volume", value: "5,000 – 50,000 L" },
-    { label: "DC voltage", value: "50–400 V" },
-    { label: "Film thickness", value: "15–30 μm" },
-    { label: "Salt spray resistance", value: "500+ hours" },
-    { label: "Process automation", value: "Full PLC control" },
-    { label: "Production rate", value: "Custom designed" }
+    { label: "Conveyor type", value: "Overhead / Floor mounted" },
+    { label: "Load capacity", value: "Custom engineered" },
+    { label: "Drive system", value: "Motorized chain / variable speed drive" },
+    { label: "Control system", value: "PLC controlled automation" },
+    { label: "Operating mode", value: "Continuous or indexed movement" },
+    { label: "Integration", value: "Paint shops, assembly lines, ovens" }
   ];
 
-  // Application areas
   const applications = [
-    "Automotive chassis",
-    "Suspension components",
-    "Brackets & fasteners",
-    "Agricultural machinery",
-    "Electrical enclosures",
-    "General engineering"
+    "Paint shop production lines",
+    "Automotive component assembly",
+    "Powder coating plants",
+    "Industrial manufacturing lines",
+    "Material handling automation",
+    "Heavy fabrication industries"
   ];
 
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className={styles.container}>
           <div className={styles.pageHeroEyebrow}>
             <Link to="/">Home</Link> <span className={styles.sep}>/</span> 
             <Link to="/services">Services</Link> <span className={styles.sep}>/</span> 
-            CED Plant
+            Industrial Conveyor Systems
           </div>
+
           <h1 className={styles.pageTitle}>
-            CED <span className={styles.accent}>Plants</span>
+            Industrial <span className={styles.accent}>Conveyor Systems</span>
           </h1>
+
           <p className={styles.pageSubtitle}>
-            Cataphoretic coating for ultimate, uniform corrosion protection.
+            Reliable material handling solutions designed for automated manufacturing and paint shop production lines.
           </p>
         </div>
       </section>
 
-      {/* PRODUCT DETAIL SECTION */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
             ref={detailRef}
             className={`${styles.productDetailGrid} ${styles.fadeUp} ${isVisible.detail ? styles.fadeUpVisible : ''}`}
           >
-            {/* Left Column - Overview */}
             <div>
+
               <span className={styles.sectionEyebrow}>Overview</span>
+
               <h2 className={styles.sectionTitle} style={{ fontSize: '1.8rem', marginTop: '16px', marginBottom: '24px' }}>
-                What we deliver
+                Efficient material handling
               </h2>
+
               <p className={styles.productOverview}>
-                Burgeon CED (Cathodic Electrodeposition) plants apply a uniform, pinhole-free primer to every surface — including deep recesses and complex geometries that spray painting cannot reach. The process is fully automated: parts are immersed in the paint bath, DC voltage is applied, and the coating deposits uniformly. The result is unrivalled corrosion resistance with consistent 15–30μm film build. Ideal for automotive chassis, suspension components, agricultural machinery, and any part requiring long-term protection.
+                Industrial conveyor systems form the backbone of modern automated production lines. They transport components efficiently between process stations such as washing, coating, curing, assembly, and inspection.
               </p>
+
+              <p className={styles.productOverview}>
+                Burgeon designs conveyor systems tailored to each production layout. From overhead conveyors used in paint shops to heavy-duty floor conveyors for large components, every system is engineered for reliability, smooth operation, and seamless integration with the rest of the manufacturing process.
+              </p>
+
               <p className={styles.productFeaturesTitle}>Key features</p>
+
               <ul className={styles.featureList}>
                 {features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
+
               <div className={styles.appChips}>
                 {applications.map((app, index) => (
                   <Link 
@@ -128,12 +132,14 @@ const CEDPlantPage = () => {
                   </Link>
                 ))}
               </div>
+
             </div>
 
-            {/* Right Column - Specs & CTA */}
             <div className={styles.productAside}>
+
               <div className={styles.specTableWrap}>
                 <div className={styles.specTableHead}>Technical specifications</div>
+
                 <table className={styles.specTable}>
                   <tbody>
                     {specifications.map((spec, index) => (
@@ -145,54 +151,78 @@ const CEDPlantPage = () => {
                   </tbody>
                 </table>
               </div>
+
               <div className={styles.productCta}>
-                <h3>Engineer your CED line</h3>
-                <p>Our engineers will design the perfect system for your requirements.</p>
+                <h3>Design your conveyor system</h3>
+
+                <p>
+                  Our engineers will design the ideal conveyor layout for your production line.
+                </p>
+
                 <Link 
-                  to="/contact?product=ced-plant" 
+                  to="/contact?product=industrial-conveyor" 
                   className={`${styles.btn} ${styles.btnPrimary}`}
                   style={{ marginTop: 0 }}
                 >
-                  Get a quote →
+                  Request consultation →
                 </Link>
+
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA BAND */}
       <section className={`${styles.section} ${styles.bgSurface}`}>
         <div className={styles.container}>
+
           <div 
             ref={ctaRef}
             className={`${styles.ctaBand} ${styles.fadeUp} ${isVisible.cta ? styles.fadeUpVisible : ''}`}
           >
+
             <div className={styles.ctaBandPattern} aria-hidden="true"></div>
+
             <div>
-              <h2 className={styles.ctaBandTitle}>Ready to start<br />your project?</h2>
-              <p className={styles.ctaBandSub}>Talk to our engineers — response within 24 hours.</p>
+
+              <h2 className={styles.ctaBandTitle}>
+                Planning an automated<br />production line?
+              </h2>
+
+              <p className={styles.ctaBandSub}>
+                Our team will design the optimal conveyor system for your facility.
+              </p>
+
               <div style={{ marginTop: '32px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <Link to="/contact" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>
                   Contact us →
                 </Link>
+
                 <Link to="/turnover" className={`${styles.btn} ${styles.btnOutline} ${styles.btnLg}`}>
-                  See our installations
+                  See installations
                 </Link>
               </div>
+
             </div>
+
             <div className={styles.ctaBandActions}>
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+918527754455">+91 8527754455</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+919999688621">+91 9999688621</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 ✉️ <a href="mailto:info@burgeonengineering.com">info@burgeonengineering.com</a>
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
     </>

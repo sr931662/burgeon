@@ -7,13 +7,13 @@ const ProductsList = ({
   accentWord = 'deliver',
   products = [
     {
-      href: '/services/liquid-paint-booth',
+      href: '/services/industrial-paint-booth-systems',
       number: '01',
       name: 'Liquid Paint Booth',
       tags: 'Downdraft · Semi-downdraft · Crossflow',
     },
     {
-      href: '/services/wet-dry-booth.html',
+      href: '/services/industrial-washing-machines.html',
       number: '02',
       name: 'Wet & Dry Paint Booth',
       tags: 'Water wash · Dry filter configurations',
@@ -25,25 +25,25 @@ const ProductsList = ({
       tags: 'Space-saving · Modular · Bench-top or walk-in',
     },
     {
-      href: '/services/bake-oven.html',
+      href: '/services/powder-coating-systems.html',
       number: '04',
       name: 'Industrial Bake Oven',
       tags: 'Batch & continuous · 50–300°C · Gas, electric, oil',
     },
     {
-      href: '/services/dry-off-oven.html',
+      href: '/services/industrial-ovens.html',
       number: '05',
       name: 'Dry-off Oven',
       tags: 'Post-pretreatment moisture removal · 80–150°C',
     },
     {
-      href: '/services/pretreatment-system.html',
+      href: '/services/spm-machines.html',
       number: '06',
       name: 'Pretreatment System',
       tags: '3–9 stages · Spray or immersion',
     },
     {
-      href: '/services/ced-plant.html',
+      href: '/services/industrial-conveyor-systems.html',
       number: '07',
       name: 'CED Plant',
       tags: 'Cataphoretic coating · 5,000–50,000L · 15–30μm film',
@@ -55,13 +55,13 @@ const ProductsList = ({
       tags: 'Rectifiers · UF modules · Anodes · Heat exchangers',
     },
     {
-      href: '/services/powder-coating-plant.html',
+      href: '/services/automation-and-control-systems.html',
       number: '09',
       name: 'Powder Coating Plant',
       tags: 'Complete turnkey line · Pretreatment to curing',
     },
     {
-      href: '/services/powder-coating-booth.html',
+      href: '/services/surface-treatment-lines.html',
       number: '10',
       name: 'Powder Coating Booth',
       tags: 'Cartridge & cyclone recovery · >98% efficiency',

@@ -42,36 +42,27 @@ const Navbar = () => {
 
   // Service dropdown items
   const serviceItems = [
-    { name: 'Paint Shop Systems', path: '/services/paint-shop' },
-    { name: 'Liquid Paint Booth', path: '/services/liquid-paint-booth' },
-    { name: 'Wet & Dry Booth', path: '/services/wet-dry-booth' },
-    { name: 'Bake Oven', path: '/services/bake-oven' },
-    { name: 'Dry-off Oven', path: '/services/dry-off-oven' },
-    { name: 'Pretreatment System', path: '/services/pretreatment-system' },
-    { name: 'CED Plant', path: '/services/ced-plant' },
-    { name: 'Powder Coating Plant', path: '/services/powder-coating-plant' },
-    { name: 'Powder Coating Booth', path: '/services/powder-coating-booth' },
-    { name: 'Component Washing Machine', path: '/services/component-washing-machine' },
-    { name: 'Compact Paint Booth', path: '/services/compact-paint-booth' },
-    { name: 'ED Equipment', path: '/services/ed-equipment' },
-    { name: 'Utility & Process Piping', path: '/services/utility-process-piping' },
+    { name: 'Conveyorised Painting Lines', path: '/services/conveyorised-painting-lines' },
+    { name: 'Industrial Paint Booth Systems', path: '/services/industrial-paint-booth-systems' },
+    { name: 'Industrial Washing Machines', path: '/services/industrial-washing-machines' },
+    { name: 'Powder Coating Systems', path: '/services/powder-coating-systems' },
+    { name: 'Industrial Ovens', path: '/services/industrial-ovens' },
+    { name: 'SPM Machines', path: '/services/spm-machines' },
+    { name: 'Industrial Conveyor Systems', path: '/services/industrial-conveyor-systems' },
+    { name: 'Automation & Control Systems', path: '/services/automation-and-control-systems' },
+    { name: 'Surface Treatment Lines', path: '/services/surface-treatment-lines' }
   ];
-
   // Mobile sub-menu items (condensed for mobile)
   const mobileServiceItems = [
-    { name: 'Paint Shop Systems', path: '/services/paint-shop' },
-    { name: 'Liquid Paint Booth', path: '/services/liquid-paint-booth' },
-    { name: 'Wet & Dry Booth', path: '/services/wet-dry-booth' },
-    { name: 'Bake Oven', path: '/services/bake-oven' },
-    { name: 'Dry-off Oven', path: '/services/dry-off-oven' },
-    { name: 'Pretreatment System', path: '/services/pretreatment-system' },
-    { name: 'CED Plant', path: '/services/ced-plant' },
-    { name: 'Powder Coating Plant', path: '/services/powder-coating-plant' },
-    { name: 'Powder Coating Booth', path: '/services/powder-coating-booth' },
-    { name: 'Component Washing Machine', path: '/services/component-washing-machine' },
-    { name: 'Compact Paint Booth', path: '/services/compact-paint-booth' },
-    { name: 'ED Equipment', path: '/services/ed-equipment' },
-    { name: 'Utility & Process Piping', path: '/services/utility-process-piping' },
+    { name: 'Conveyorised Painting Lines', path: '/services/conveyorised-painting-lines' },
+    { name: 'Industrial Paint Booth Systems', path: '/services/industrial-paint-booth-systems' },
+    { name: 'Industrial Washing Machines', path: '/services/industrial-washing-machines' },
+    { name: 'Powder Coating Systems', path: '/services/powder-coating-systems' },
+    { name: 'Industrial Ovens', path: '/services/industrial-ovens' },
+    { name: 'SPM Machines', path: '/services/spm-machines' },
+    { name: 'Industrial Conveyor Systems', path: '/services/industrial-conveyor-systems' },
+    { name: 'Automation & Control Systems', path: '/services/automation-and-control-systems' },
+    { name: 'Surface Treatment Lines', path: '/services/surface-treatment-lines' }
   ];
 
   return (

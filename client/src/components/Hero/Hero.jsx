@@ -19,7 +19,7 @@ const Hero = () => {
               <span className={styles.line}><span>engineering</span></span>
             </h1>
             <p className={styles.heroDesc}>
-              We design and manufacture complete surface treatment and coating systems — from pretreatment to final curing — engineered for automotive and industrial production lines.
+              We design, fabricate, and integrate industrial automation systems including paint booths, industrial ovens, washing machines, and conveyorised painting lines for automotive and manufacturing industries.
             </p>
             <div className={styles.heroActions}>
               <Link to="/contact" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>
@@ -33,31 +33,31 @@ const Hero = () => {
               </Link>
             </div>
             <div className={styles.heroTags}>
-              <span className={styles.heroTag}>Paint Booths</span>
-              <span className={styles.heroTag}>CED Plants</span>
-              <span className={styles.heroTag}>Pretreatment</span>
-              <span className={styles.heroTag}>Powder Coating</span>
-              <span className={styles.heroTag}>Process Piping</span>
-              <span className={styles.heroTag}>Bake Ovens</span>
+              <span className={styles.heroTag}>Paint Booth Systems</span>
+              <span className={styles.heroTag}>Industrial Ovens</span>
+              <span className={styles.heroTag}>Industrial Washing Machines</span>
+              <span className={styles.heroTag}>Powder Coating Lines</span>
+              <span className={styles.heroTag}>Conveyor Systems</span>
+              <span className={styles.heroTag}>Automation Solutions</span>
             </div>
           </div>
           <div className={styles.heroVisual}>
             <div className={styles.heroStatsCard}>
               <div className={styles.statBlock}>
-                <div className={styles.statNum}>500<span className={styles.plus}>+</span></div>
-                <div className={styles.statLabel}>Projects Delivered</div>
+                <div className={styles.statNum}>3<span className={styles.plus}>+</span></div>
+                <div className={styles.statLabel}>Manufacturing Units</div>
               </div>
               <div className={styles.statBlock}>
-                <div className={styles.statNum}>45<span className={styles.plus}>+</span></div>
-                <div className={styles.statLabel}>Specialist Engineers</div>
+                <div className={styles.statNum}>22<span className={styles.plus}>+</span></div>
+                <div className={styles.statLabel}>Years Engineering Expertise</div>
               </div>
               <div className={styles.statBlock}>
-                <div className={styles.statNum}>20+</div>
-                <div className={styles.statLabel}>States Served</div>
+                <div className={styles.statNum}>2015</div>
+                <div className={styles.statLabel}>Established</div>
               </div>
               <div className={styles.statBlock}>
-                <div className={styles.statNum}>9<span className={styles.plus}>+</span></div>
-                <div className={styles.statLabel}>Years Experience</div>
+                <div className={styles.statNum}>ISO</div>
+                <div className={styles.statLabel}>9001:2015 Certified</div>
               </div>
             </div>
           </div>

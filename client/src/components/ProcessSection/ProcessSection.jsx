@@ -8,25 +8,25 @@ const ProcessSection = ({
   steps = [
     {
       number: '01',
-      title: 'Consult & Design',
-      description: 'Our engineers assess your part geometry, production volume, and space constraints to design the optimal system — no overengineering, no waste.',
+      title: 'Consult & Engineering Design',
+      description: 'Our engineering team studies your production requirements, component specifications, and plant layout to design efficient industrial systems tailored to your manufacturing process.',
     },
     {
       number: '02',
-      title: 'Fabricate',
-      description: 'Everything is fabricated in our 25,000 sq ft IMT Manesar facility. CNC cutting, press braking, MIG/TIG welding — all in-house with strict QC.',
+      title: 'Engineering & Fabrication',
+      description: 'All equipment is engineered and fabricated using high-quality materials and precision manufacturing practices to ensure reliable performance and long service life.',
     },
     {
       number: '03',
-      title: 'Install & Commission',
-      description: 'Our team handles full site installation, electrical integration, and commissioning. We don\'t leave until the system runs flawlessly.',
+      title: 'Installation & Commissioning',
+      description: 'Our team manages on-site installation, system integration, and commissioning to ensure every machine and production line operates efficiently and safely.',
     },
     {
       number: '04',
-      title: 'Support & AMC',
-      description: 'Long-term Annual Maintenance Contracts and rapid-response support keep your production running at peak performance, year after year.',
+      title: 'Service & Technical Support',
+      description: 'We provide ongoing technical support, maintenance assistance, and system optimization to keep your production lines operating at peak efficiency.',
     },
-  ],
+  ]
 }) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const sectionRef = useRef(null);

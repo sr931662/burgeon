@@ -27,41 +27,41 @@ const GallerySection = () => {
   const galleryItems = [
     {
       id: 1,
-      tag: "Automotive",
-      title: "CED Plant Installation",
-      desc: "Full-scale 50,000L tank setup for major automotive OEM.",
-      size: "large", // Left tall image
+      tag: "Production Lines",
+      title: "Conveyorised Painting Line",
+      desc: "Fully integrated painting line combining washing, coating, curing ovens, and automated material handling.",
+      size: "large",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
     },
     {
       id: 2,
-      tag: "Fabrication",
-      title: "Precision Sheet Metal",
-      desc: "Custom CNC laser cut enclosures with zero-defect standards.",
+      tag: "Surface Treatment",
+      title: "Industrial Washing System",
+      desc: "Heavy-duty washing machines designed for effective cleaning and surface preparation of industrial components.",
       size: "standard",
       image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80"
     },
     {
       id: 3,
-      tag: "Coating",
-      title: "Powder Coating Line",
-      desc: "Automated recovery booth for high-volume production efficiency.",
+      tag: "Coating Systems",
+      title: "Powder Coating Setup",
+      desc: "Complete powder coating system with spray booths, curing ovens, and conveyorised production flow.",
       size: "standard",
       image: "https://industrialcoatingsltd.com/cdn/shop/files/spraying_paint_banner_image.jpg?v=1669201684&width=1500"
     },
     {
       id: 4,
       tag: "Automation",
-      title: "PLC Control Systems",
-      desc: "Smart HMI integration for real-time process monitoring.",
+      title: "Industrial Conveyor System",
+      desc: "Material handling conveyors integrated with automated manufacturing lines for efficient production flow.",
       size: "standard",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80"
     },
     {
       id: 5,
-      tag: "Energy",
-      title: "Industrial Bake Ovens",
-      desc: "Multi-zone curing systems with high-efficiency heat exchangers.",
+      tag: "Thermal Systems",
+      title: "Industrial Curing Ovens",
+      desc: "Electric heater and IR lamp type ovens engineered for drying and curing processes in coating applications.",
       size: "standard",
       image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Industrial_oven.jpg"
     }

@@ -12,11 +12,9 @@ const LiquidPaintBoothPage = () => {
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    // Page load reveal
     setTimeout(() => document.body.classList.add('loaded'), 50);
   }, []);
 
-  // Intersection Observer for fade-up animations
   useEffect(() => {
     const observers = [];
 
@@ -45,79 +43,82 @@ const LiquidPaintBoothPage = () => {
     };
   }, []);
 
-  // Feature list
   const features = [
-    "Perforated ceiling plenum for uniform airflow distribution",
-    "Multistage filtration: pre-filter, bag filter, HEPA optional",
-    "Explosion-proof LED lighting (800 lux minimum) and motors",
-    "Modular panel construction for fast, precise site installation",
-    "Stainless steel water wash options for high-volume operation",
-    "Integrated exhaust fan and damper controls",
-    "PLC-ready control panel with safety interlocks"
+    "Optimised airflow design ensuring uniform paint distribution and minimal overspray",
+    "Downdraft, semi-downdraft, and crossflow booth configurations",
+    "Multi-stage filtration system for clean exhaust and environmental compliance",
+    "Explosion-proof lighting and electrical components for operator safety",
+    "Integrated exhaust and ventilation system maintaining stable airflow",
+    "Modular steel panel construction enabling quick installation and expansion",
+    "Compatible with manual, robotic, or automatic spray applications",
+    "PLC-ready control systems for automation integration"
   ];
 
-  // Technical specifications
   const specifications = [
-    { label: "Air velocity", value: "0.3 – 0.6 m/s" },
-    { label: "Filtration efficiency", value: "98% @ 5 microns" },
-    { label: "Lighting", value: "LED, 800 lux minimum" },
-    { label: "Construction", value: "MS/SS powder coated panels" },
-    { label: "Airflow type", value: "Downdraft / Semi-downdraft / Crossflow" },
-    { label: "Electrical", value: "As per site requirements" }
+    { label: "Air velocity", value: "0.3 – 0.5 m/s controlled airflow" },
+    { label: "Filtration system", value: "Multi-stage filtration up to 98% efficiency" },
+    { label: "Lighting level", value: "LED lighting, 800–1000 lux" },
+    { label: "Construction material", value: "MS / SS modular panel structure" },
+    { label: "Booth types", value: "Downdraft · Semi-downdraft · Crossflow" },
+    { label: "Control system", value: "PLC-ready electrical panel" }
   ];
 
-  // Application areas
   const applications = [
-    "Automotive components",
-    "Agricultural machinery",
-    "General engineering",
-    "Heavy equipment",
-    "Aerospace parts",
-    "Fabricated metal",
-    "Job shops"
+    "Automotive component coating",
+    "Industrial machinery parts",
+    "Heavy fabrication structures",
+    "Agricultural equipment",
+    "Metal furniture production",
+    "Engineering job-work units",
+    "OEM component manufacturing"
   ];
 
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className={styles.container}>
           <div className={styles.pageHeroEyebrow}>
             <Link to="/">Home</Link> <span className={styles.sep}>/</span> 
             <Link to="/services">Services</Link> <span className={styles.sep}>/</span> 
-            Liquid Paint Booth
+            Industrial Paint Booth Systems
           </div>
           <h1 className={styles.pageTitle}>
-            Liquid Paint <span className={styles.accent}>Booth</span>
+            Industrial Paint <span className={styles.accent}>Booth Systems</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            Precision airflow engineering for flawless industrial finishes.
+            Controlled airflow environments engineered for high-quality industrial coating and finishing.
           </p>
         </div>
       </section>
 
-      {/* PRODUCT DETAIL SECTION */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
             ref={detailRef}
             className={`${styles.productDetailGrid} ${styles.fadeUp} ${isVisible.detail ? styles.fadeUpVisible : ''}`}
           >
-            {/* Left Column - Overview */}
             <div>
               <span className={styles.sectionEyebrow}>Overview</span>
               <h2 className={styles.sectionTitle} style={{ fontSize: '1.8rem', marginTop: '16px', marginBottom: '24px' }}>
-                What we deliver
+                Industrial coating environments engineered for precision
               </h2>
+
               <p className={styles.productOverview}>
-                Burgeon liquid paint booths are engineered for optimal operator comfort and superior coating quality. Available in downdraft, semi-downdraft, and crossflow configurations to match your part geometry, production volume, and environmental requirements. Every booth features modular panel construction for rapid installation and future expansion.
+                Industrial paint booth systems provide a controlled environment for applying liquid coatings on metal components, fabricated structures, and industrial assemblies. Proper airflow management ensures consistent paint film thickness, improved surface finish, and reduced contamination during the coating process.
               </p>
+
+              <p className={styles.productOverview}>
+                Burgeon designs custom paint booth systems tailored to your production workflow. Our booths integrate advanced airflow engineering, high-efficiency filtration, and durable modular construction to deliver reliable performance across demanding manufacturing environments.
+              </p>
+
               <p className={styles.productFeaturesTitle}>Key features</p>
+
               <ul className={styles.featureList}>
                 {features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
+
               <div className={styles.appChips}>
                 {applications.map((app, index) => (
                   <Link 
@@ -131,7 +132,6 @@ const LiquidPaintBoothPage = () => {
               </div>
             </div>
 
-            {/* Right Column - Specs & CTA */}
             <div className={styles.productAside}>
               <div className={styles.specTableWrap}>
                 <div className={styles.specTableHead}>Technical specifications</div>
@@ -146,23 +146,25 @@ const LiquidPaintBoothPage = () => {
                   </tbody>
                 </table>
               </div>
+
               <div className={styles.productCta}>
-                <h3>Configure your paint booth</h3>
-                <p>Our engineers will design the perfect system for your requirements.</p>
+                <h3>Design your paint booth</h3>
+                <p>Our engineers will configure the optimal booth system for your production requirements.</p>
+
                 <Link 
-                  to="/contact?product=liquid-paint-booth" 
+                  to="/contact?product=paint-booth-system" 
                   className={`${styles.btn} ${styles.btnPrimary}`}
                   style={{ marginTop: 0 }}
                 >
-                  Get a quote →
+                  Request quotation →
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA BAND */}
       <section className={`${styles.section} ${styles.bgSurface}`}>
         <div className={styles.container}>
           <div 
@@ -171,28 +173,34 @@ const LiquidPaintBoothPage = () => {
           >
             <div className={styles.ctaBandPattern} aria-hidden="true"></div>
             <div>
-              <h2 className={styles.ctaBandTitle}>Ready to start<br />your project?</h2>
-              <p className={styles.ctaBandSub}>Talk to our engineers — response within 24 hours.</p>
+              <h2 className={styles.ctaBandTitle}>Planning a coating line?</h2>
+              <p className={styles.ctaBandSub}>Our engineering team will help design the right paint booth system for your facility.</p>
+
               <div style={{ marginTop: '32px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <Link to="/contact" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>
-                  Contact us →
+                  Contact our engineers →
                 </Link>
+
                 <Link to="/turnover" className={`${styles.btn} ${styles.btnOutline} ${styles.btnLg}`}>
-                  See our installations
+                  View completed projects
                 </Link>
               </div>
             </div>
+
             <div className={styles.ctaBandActions}>
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+918527754455">+91 8527754455</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 📞 <a href="tel:+919999688621">+91 9999688621</a>
               </div>
+
               <div className={styles.ctaContactItem}>
                 ✉️ <a href="mailto:info@burgeonengineering.com">info@burgeonengineering.com</a>
               </div>
             </div>
+
           </div>
         </div>
       </section>

@@ -7,14 +7,14 @@ const MarqueeStrip = () => {
       <div className={styles.marqueeTrack}>
         {[...Array(2)].map((_, idx) => (
           <React.Fragment key={idx}>
-            <span className={styles.marqueeItem}>Paint Shop Systems <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>CED / Cataphoretic Coating <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Pretreatment Lines <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Powder Coating Plants <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Bake Ovens & Dry-off Ovens <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Process & Utility Piping <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Turnkey Industrial Systems <span className={styles.sep}>✦</span></span>
-            <span className={styles.marqueeItem}>Sheet Metal Fabrication <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Paint Booth Systems <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Industrial Ovens <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Industrial Washing Machines <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Powder Coating Systems <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Conveyorised Painting Lines <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>SPM Machines <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Industrial Conveyor Systems <span className={styles.sep}>✦</span></span>
+            <span className={styles.marqueeItem}>Automation Solutions <span className={styles.sep}>✦</span></span>
           </React.Fragment>
         ))}
       </div>

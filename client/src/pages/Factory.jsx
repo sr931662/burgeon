@@ -54,36 +54,36 @@ const Factory = () => {
 
   // Capability list items
   const capabilities = [
-    "CNC laser and plasma cutting — up to 25mm plate",
-    "Press braking — up to 6 metre length",
-    "MIG and TIG welding — certified welders",
-    "Overhead cranes — up to 10 tonne capacity",
-    "Sandblasting and primer coating",
-    "Electrical panel assembly and wiring",
-    "In-house quality control laboratory"
+    "Fabrication of industrial equipment and machine structures",
+    "Assembly of paint booths, ovens, and washing systems",
+    "Integration of conveyor and automation systems",
+    "Electrical control panel assembly and system wiring",
+    "Industrial equipment testing before dispatch",
+    "Engineering inspection and quality assurance",
+    "Preparation of systems for site installation and commissioning"
   ];
 
   // Process steps
   const processSteps = [
     {
       number: "①",
-      title: "Cutting & Forming",
-      description: "CNC laser and plasma cutting to ±0.5mm tolerance. 6-metre press brake forming. Sheet metal and structural steel sections."
+      title: "Engineering Design",
+      description: "Our engineers design industrial systems based on production requirements, component specifications, and plant layout."
     },
     {
       number: "②",
-      title: "Welding & Assembly",
-      description: "Certified MIG and TIG welding. Stainless steel, carbon steel, and aluminium. Structural and pressure-tested assemblies."
+      title: "Fabrication & Assembly",
+      description: "Industrial equipment and system components are fabricated and assembled at our manufacturing facilities."
     },
     {
       number: "③",
-      title: "Surface Finishing",
-      description: "In-house sandblasting and primer coating. External finishing as required. All surfaces prepared to specification before dispatch."
+      title: "System Integration",
+      description: "Mechanical equipment, conveyors, and control systems are integrated and prepared for installation."
     },
     {
       number: "④",
-      title: "Electrical Integration",
-      description: "Panel building, wiring, and PLC programming done in-house. Factory acceptance testing before delivery ensures zero surprises on site."
+      title: "Testing & Dispatch",
+      description: "All systems are inspected and tested before being dispatched for installation and commissioning at client facilities."
     }
   ];
 
@@ -99,7 +99,7 @@ const Factory = () => {
             Where precision<br /><span className={styles.accent}>meets fabrication</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            Our 25,000 sq ft facility at IMT Manesar is where every system is built, assembled, and tested before it ever reaches your site.
+            Our manufacturing units in Gurugram and MET City Jhajjar support the fabrication, assembly, and testing of industrial automation systems before installation at client facilities.
           </p>
         </div>
       </section>
@@ -116,10 +116,11 @@ const Factory = () => {
               <span className={styles.sectionEyebrow}>Manufacturing excellence</span>
               <h2 className={styles.sectionTitle}>Built in-house,<br />tested before delivery</h2>
               <p className={styles.sectionLead}>
-                Located in IMT Manesar, our 25,000 sq ft facility is equipped with modern fabrication technology. Every system is fabricated, assembled, and tested before dispatch — we believe problems should be found at the factory, not at your site.
+                Our manufacturing facilities support the fabrication and assembly of industrial equipment including paint booths, industrial ovens, washing machines, conveyor systems, and automation solutions.
               </p>
+
               <p className={styles.sectionLead}>
-                Our 45 skilled fabricators and fitters bring decades of combined experience in industrial sheet metal, structural steel, and precision assembly. Our in-house quality control lab ensures every component meets our exacting standards before it leaves the gate.
+                Every system is engineered, assembled, and inspected before dispatch to ensure reliable performance and seamless installation at the client’s production facility.
               </p>
               <ul className={styles.capabilityList}>
                 {capabilities.map((capability, index) => (
@@ -133,20 +134,23 @@ const Factory = () => {
             {/* Right Column - Specs Grid */}
             <div className={styles.factorySpecs}>
               <div className={styles.specCell}>
-                <div className={styles.specCellVal}>25,<span>000</span></div>
-                <div className={styles.specCellKey}>Sq ft production area</div>
+                <div className={styles.specCellVal}>3<span>+</span></div>
+                <div className={styles.specCellKey}>Manufacturing Units</div>
               </div>
+
               <div className={styles.specCell}>
-                <div className={styles.specCellVal}>45<span>+</span></div>
-                <div className={styles.specCellKey}>Skilled fabricators</div>
+                <div className={styles.specCellVal}>22<span>+</span></div>
+                <div className={styles.specCellKey}>Years Engineering Expertise</div>
               </div>
+
               <div className={styles.specCell}>
-                <div className={styles.specCellVal}>10<span>T</span></div>
-                <div className={styles.specCellKey}>Overhead crane capacity</div>
+                <div className={styles.specCellVal}>ISO</div>
+                <div className={styles.specCellKey}>9001:2015 Certified</div>
               </div>
+
               <div className={styles.specCell}>
-                <div className={styles.specCellVal}>6<span>m</span></div>
-                <div className={styles.specCellKey}>Press brake length</div>
+                <div className={styles.specCellVal}>2015</div>
+                <div className={styles.specCellKey}>Established</div>
               </div>
             </div>
           </div>
@@ -216,7 +220,7 @@ const Factory = () => {
                 📞 <a href="tel:+918527754455">+91 8527754455</a>
               </div>
               <div className={styles.ctaContactItem}>
-                📍 IMT Manesar, Gurgaon-122052
+                📍 Sector-83, Gurugram, Haryana
               </div>
               <div className={styles.ctaContactItem}>
                 🕒 Mon–Fri: 9:00–18:00

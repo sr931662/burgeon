@@ -136,20 +136,17 @@ const Contact = () => {
 
   // Product options for dropdown
   const productOptions = [
-    { value: '', label: 'Select a product (optional)' },
-    { value: 'paint-booth', label: 'Liquid Paint Booth' },
-    { value: 'wet-dry-booth', label: 'Wet / Dry Paint Booth' },
-    { value: 'compact-booth', label: 'Compact Paint Booth' },
-    { value: 'bake-oven', label: 'Bake Oven' },
-    { value: 'dry-off-oven', label: 'Dry-off Oven' },
-    { value: 'pretreatment', label: 'Pretreatment System' },
-    { value: 'ced-plant', label: 'CED Plant' },
-    { value: 'ed-equipment', label: 'ED Equipment' },
-    { value: 'powder-coating-plant', label: 'Powder Coating Plant' },
-    { value: 'powder-coating-booth', label: 'Powder Coating Booth' },
-    { value: 'component-washing', label: 'Component Washing Machine' },
-    { value: 'piping', label: 'Utility & Process Piping' },
-    { value: 'complete-system', label: 'Complete Paint Shop System' },
+    { value: '', label: 'Select a system (optional)' },
+    { value: 'paint-booth', label: 'Industrial Paint Booth Systems' },
+    { value: 'powder-coating', label: 'Powder Coating Systems' },
+    { value: 'industrial-oven', label: 'Industrial Ovens' },
+    { value: 'washing-machine', label: 'Industrial Washing Machines' },
+    { value: 'painting-line', label: 'Conveyorised Painting Lines' },
+    { value: 'automation', label: 'SPM Machines & Automation Systems' },
+    { value: 'conveyor-system', label: 'Industrial Conveyor Systems' },
+    { value: 'control-panels', label: 'Industrial Control Panels' },
+    { value: 'surface-treatment', label: 'Surface Treatment Lines' },
+    { value: 'complete-system', label: 'Complete Industrial Finishing Line' },
     { value: 'other', label: 'Other / Not sure' }
   ];
 
@@ -202,7 +199,7 @@ const Contact = () => {
                   <div className={styles.contactCardLabel}>Email</div>
                   <div className={styles.contactCardVal}>
                     <a href="mailto:info@burgeonengineering.com">info@burgeonengineering.com</a><br />
-                    <a href="mailto:kunalkapoor@burgeonengineering.com">kunalkapoor@burgeonengineering.com</a>
+                    <a href="mailto:amit@burgeonengineering.com">amit@burgeonengineering.com</a>
                   </div>
                 </div>
               </div>
@@ -215,9 +212,9 @@ const Contact = () => {
                 <div>
                   <div className={styles.contactCardLabel}>Office Address</div>
                   <div className={styles.contactCardVal}>
-                    Unit No.-510, Eros Corporate Park,<br />
-                    Sector-2, NH-8 IMT Manesar,<br />
-                    Gurgaon-122052, India
+                    1406, 14th Floor, 83 Metrostreet,<br />
+                    Sector-83, Gurugram – 122004,<br />
+                    Haryana, India
                   </div>
                 </div>
               </div>

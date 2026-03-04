@@ -19,7 +19,7 @@ const PaintShopPage = () => {
   useEffect(() => {
     const loadProduct = async () => {
       try {
-        const productSlug = slug || 'paint-shop';
+        const productSlug = slug || 'conveyorised-painting-lines';
         const response = await fetchProductBySlug(productSlug);
         setProduct(response.data.data);
       } catch (err) {
@@ -30,7 +30,6 @@ const PaintShopPage = () => {
     loadProduct();
   }, [slug]);
 
-  // Intersection Observer for fade-up animations
   useEffect(() => {
     const observers = [];
 
@@ -60,84 +59,80 @@ const PaintShopPage = () => {
     };
   }, []);
 
-  // Equipment list data
   const equipmentList = [
     {
       id: 1,
-      name: "Liquid Paint Booth",
-      tag: "Downdraft · Semi-downdraft · Crossflow",
-      slug: "/services/liquid-paint-booth"
+      name: "Overhead Conveyor System",
+      tag: "Power & free · Continuous chain · Load capacities up to 1 tonne",
+      slug: "/services/conveyor-systems"
     },
     {
       id: 2,
-      name: "Wet & Dry Paint Booth",
-      tag: "Water wash or dry filter — switchable configurations",
-      slug: "/services/wet-dry-booth"
+      name: "Industrial Washing Line",
+      tag: "Multi-stage degreasing · Phosphating · DI rinse",
+      slug: "/services/component-washing-machine"
     },
     {
       id: 3,
-      name: "Compact Paint Booth",
-      tag: "Space-saving · Bench-top and walk-in designs",
-      slug: "/services/compact-paint-booth"
+      name: "Surface Preparation Tunnel",
+      tag: "Spray treatment · Rust removal · Coating adhesion preparation",
+      slug: "/services/spm-machines"
     },
     {
       id: 4,
-      name: "Bake Oven",
-      tag: "Batch & continuous · 50–300°C · ±5°C uniformity",
-      slug: "/services/bake-oven"
+      name: "Automated Paint Booth",
+      tag: "Wet / dry filtration · Robotic or manual spray",
+      slug: "/services/industrial-paint-booth-systems"
     },
     {
       id: 5,
-      name: "Dry-off Oven",
-      tag: "Post-pretreatment moisture removal · 80–150°C",
-      slug: "/services/dry-off-oven"
+      name: "Curing & Bake Ovens",
+      tag: "Electric / gas heated · Continuous conveyor operation",
+      slug: "/services/powder-coating-systems"
     },
     {
       id: 6,
-      name: "Pretreatment System",
-      tag: "3–9 stages · Spray or immersion · SS or PP construction",
-      slug: "/services/pretreatment-system"
+      name: "Control & Automation System",
+      tag: "PLC control · Production synchronisation · HMI interface",
+      slug: "/services/automation-systems"
     }
   ];
 
-  // Industry applications
   const applications = [
-    "Automotive OEM",
-    "Agricultural machinery",
-    "General fabrication",
-    "Export projects"
+    "Automotive component manufacturing",
+    "Agricultural equipment",
+    "Heavy engineering fabrication",
+    "Industrial machinery production"
   ];
 
-  // Feature list
   const features = [
-    "Custom-designed for your exact part geometries and volumes",
-    "Energy-efficient oven and booth designs to reduce operating cost",
-    "Modular, expandable layouts for future capacity growth",
-    "PLC-controlled automation with touchscreen HMI",
-    "Full commissioning support and operator training"
+    "Fully automated conveyorised production flow from washing to curing",
+    "Consistent coating quality across high production volumes",
+    "Integrated conveyor movement eliminating manual handling",
+    "Energy-efficient oven and booth design reducing operating cost",
+    "PLC-controlled automation with real-time process monitoring",
+    "Expandable modular layouts for future production scaling"
   ];
 
   return (
     <>
-      {/* PAGE HERO */}
       <section className={styles.pageHero}>
         <div className={styles.container}>
           <div className={styles.pageHeroEyebrow}>
             <Link to="/">Home</Link> <span className={styles.sep}>/</span> 
             <Link to="/services">Services</Link> <span className={styles.sep}>/</span> 
-            Paint Shop Systems
+            Conveyorised Painting Lines
           </div>
           <h1 className={styles.pageTitle}>
-            Paint Shop <span className={styles.accent}>Systems</span>
+            Conveyorised <span className={styles.accent}>Painting Lines</span>
           </h1>
           <p className={styles.pageSubtitle}>
             {product?.shortDescription || 
-              "Complete, integrated paint finishing lines — designed around your parts, your volumes, and your space. 50+ installations delivered."}
+              "Automated painting lines engineered for high-volume industrial production — integrating washing, surface preparation, coating, and curing into a continuous conveyorised workflow."}
           </p>
         </div>
       </section>
 
-      {/* INTRO SECTION */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
@@ -145,15 +140,15 @@ const PaintShopPage = () => {
             className={`${styles.introGrid} ${styles.fadeUp} ${isVisible.intro ? styles.fadeUpVisible : ''}`}
           >
             <div>
-              <span className={styles.sectionEyebrow}>Integrated finishing</span>
+              <span className={styles.sectionEyebrow}>Automated production</span>
               <h2 className={styles.sectionTitle}>
-                End-to-end paint<br />finishing lines
+                Continuous conveyorised<br />painting systems
               </h2>
               <p className={styles.sectionLead}>
-                From pretreatment through curing, Burgeon designs and delivers fully integrated paint shop systems. Every component is sized, positioned, and controlled to work as one cohesive system — not a collection of separate machines.
+                Conveyorised painting lines are designed for manufacturers that require consistent coating quality across high production volumes. Components move automatically through washing, surface preparation, painting, and curing stages without manual handling.
               </p>
               <p className={styles.sectionLead}>
-                Our designs prioritise energy efficiency, operator safety, coating quality, and minimal footprint — with PLC automation and modular layouts that can expand as your production grows.
+                Burgeon designs complete conveyorised systems tailored to your component size, production throughput, and plant layout. Every stage of the process is synchronised through industrial automation to ensure efficiency, reliability, and repeatable finishing quality.
               </p>
               <ul className={styles.featureList}>
                 {features.map((feature, index) => (
@@ -163,9 +158,9 @@ const PaintShopPage = () => {
             </div>
             <div className={styles.statsCard}>
               <div className={styles.statsNumber}>
-                50<span>+</span>
+                100<span>+</span>
               </div>
-              <div className={styles.statsLabel}>Paint shop installations</div>
+              <div className={styles.statsLabel}>Industrial systems delivered</div>
               <div className={styles.statsList}>
                 {applications.map((app, index) => (
                   <div key={index} className={styles.statItem}>
@@ -179,15 +174,14 @@ const PaintShopPage = () => {
         </div>
       </section>
 
-      {/* EQUIPMENT SECTION */}
       <section className={`${styles.section} ${styles.bgSurface}`}>
         <div className={styles.container}>
           <div 
             ref={equipmentRef}
             className={`${styles.productsHeader} ${styles.fadeUp} ${isVisible.equipment ? styles.fadeUpVisible : ''}`}
           >
-            <span className={styles.sectionEyebrow}>Paint shop equipment</span>
-            <h2 className={styles.sectionTitle}>All equipment we supply</h2>
+            <span className={styles.sectionEyebrow}>Line components</span>
+            <h2 className={styles.sectionTitle}>Equipment in the system</h2>
           </div>
           <div 
             className={`${styles.productsList} ${styles.fadeUp} ${isVisible.equipment ? styles.fadeUpVisible : ''}`}
@@ -208,7 +202,6 @@ const PaintShopPage = () => {
         </div>
       </section>
 
-      {/* CTA BAND */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div 
@@ -217,16 +210,16 @@ const PaintShopPage = () => {
           >
             <div className={styles.ctaBandPattern} aria-hidden="true"></div>
             <div>
-              <h2 className={styles.ctaBandTitle}>Design your paint shop</h2>
+              <h2 className={styles.ctaBandTitle}>Plan your painting line</h2>
               <p className={styles.ctaBandSub}>
-                Tell us your parts, volumes, and space — we'll engineer the system.
+                Share your component size, throughput, and factory layout — our engineers will design the optimal conveyorised coating system.
               </p>
               <div style={{ marginTop: '32px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <Link to="/contact" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>
-                  Start planning →
+                  Request engineering consultation →
                 </Link>
                 <Link to="/turnover" className={`${styles.btn} ${styles.btnOutline} ${styles.btnLg}`}>
-                  See our installations
+                  View completed installations
                 </Link>
               </div>
             </div>

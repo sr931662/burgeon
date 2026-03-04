@@ -86,60 +86,79 @@ const Turnover = () => {
 
   const projects = [
     {
-      year: "2025 · Delhi NCR",
-      title: "Automotive CED Plant",
-      description: "50,000 L cataphoretic bath · Full 7-stage pretreatment · DC rectifier system · PLC automation · Curing oven"
+      year: "2025 · Haryana",
+      title: "Conveyorised Painting Line",
+      description: "7-stage surface treatment · Power-and-free conveyor · Liquid paint booth · Gas-fired curing oven · PLC automation"
     },
     {
-      year: "2024 · Gujarat",
-      title: "Powder Coating Line",
-      description: "6-stage pretreatment tunnel · High-efficiency cartridge recovery booth · Gas-fired curing oven · Overhead conveyor"
+      year: "2025 · Gujarat",
+      title: "Powder Coating System",
+      description: "6-stage spray pretreatment · Cyclone powder recovery booth · Continuous curing oven · Overhead conveyor system"
     },
     {
-      year: "2024 · Pune",
-      title: "Paint Shop Upgrade",
-      description: "4 downdraft paint booths · 2 batch bake ovens · Dry-off oven · Conveyor integration · PLC master control"
+      year: "2024 · Maharashtra",
+      title: "Industrial Washing Machine",
+      description: "Multi-stage component washing machine · Hot alkaline degreasing · High-pressure spray system · Closed-loop filtration"
     },
     {
-      year: "2023 · Rajasthan",
-      title: "Utility Piping — Chemical Plant",
-      description: "SS316L process piping · PPH chemical lines · Steam and condensate system · Pressure-tested and commissioned"
+      year: "2024 · Rajasthan",
+      title: "Surface Treatment Line",
+      description: "8-stage phosphating system · Spray tunnel · Chemical dosing automation · DI water rinse system"
     },
     {
-      year: "2023 · Haryana",
-      title: "8-Stage Pretreatment Line",
-      description: "Full immersion tunnel · Zinc phosphate · Chromate-free passivation · DI water final rinse · Automated dosing"
+      year: "2024 · Delhi NCR",
+      title: "Industrial Conveyor System",
+      description: "Overhead chain conveyor · Load capacity 500 kg per hanger · Variable speed drive · Integrated paint shop handling"
     },
     {
-      year: "2023 · Bangladesh",
-      title: "Export: Complete Paint Shop",
-      description: "International turnkey delivery · Pretreatment + booths + ovens · Full site commissioning and operator training"
+      year: "2023 · Punjab",
+      title: "Industrial Oven Installation",
+      description: "Gas-fired curing oven · Temperature uniformity ±5°C · Energy-efficient insulation · Automated temperature control"
     },
     {
-      year: "2023 · Maharashtra",
-      title: "Agricultural Equipment Finishing",
-      description: "5-stage spray pretreatment · 2 wet/dry booths · Continuous bake oven · Power-and-free overhead conveyor"
+      year: "2023 · Uttar Pradesh",
+      title: "Automation & Control System",
+      description: "PLC-based process control · HMI interface · Conveyor synchronization · Remote diagnostics capability"
     },
     {
-      year: "2022 · Punjab",
-      title: "Powder Coating Booth Retrofit",
-      description: "Cyclone recovery system upgrade · Reduced colour change time from 45 to 15 minutes · 98%+ recovery efficiency"
+      year: "2023 · Karnataka",
+      title: "SPM Machine Development",
+      description: "Custom special-purpose machine · Automated material handling · Precision control system · Integrated safety interlocks"
     },
     {
-      year: "2022 · Uttar Pradesh",
-      title: "CED Equipment Upgrade",
-      description: "New DC rectifier installation · UF membrane system replacement · PLC control system upgrade · Recommissioning"
+      year: "2022 · Export Project",
+      title: "Complete Paint Shop Installation",
+      description: "Pretreatment + paint booths + curing ovens · Conveyor integration · Full site commissioning and operator training"
     }
   ];
 
   const industries = [
-    { icon: autoIcon, title: "Automotive OEM & Tier 1", description: "Chassis, body components, suspension parts, brackets" },
-    { icon: agriIcon, title: "Agricultural Machinery", description: "Tractors, implements, structural components" },
-    { icon: fabIcon, title: "General Metal Fabrication", description: "Enclosures, panels, structural steel, sheet metal" },
-    { icon: chemIcon, title: "Chemical & Process Plants", description: "Utility piping, chemical-resistant systems" },
-    { icon: exportIcon, title: "International Export Projects", description: "Bangladesh, Middle East, Southeast Asia — complete turnkey delivery" }
+    {
+      icon: autoIcon,
+      title: "Automotive OEM & Tier Suppliers",
+      description: "Chassis parts, brackets, suspension components, structural assemblies"
+    },
+    {
+      icon: agriIcon,
+      title: "Agricultural Equipment",
+      description: "Tractors, implements, heavy-duty fabricated components"
+    },
+    {
+      icon: fabIcon,
+      title: "General Engineering & Fabrication",
+      description: "Electrical panels, sheet metal enclosures, structural fabrication"
+    },
+    {
+      icon: chemIcon,
+      title: "Industrial Manufacturing",
+      description: "Production equipment, material handling systems, process machinery"
+    },
+    {
+      icon: exportIcon,
+      title: "Export & Turnkey Projects",
+      description: "Complete finishing lines delivered with installation and commissioning support"
+    }
   ];
-
   return (
     <>
       <section className={styles.pageHero}>
@@ -151,41 +170,52 @@ const Turnover = () => {
             Delivered &amp; <span className={styles.accent}>commissioned</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            500+ industrial systems delivered across India and 20+ states. Every project listed below was designed, fabricated, installed, and commissioned by our team.
+            Industrial finishing systems delivered across automotive, fabrication, and heavy engineering sectors. From surface treatment lines to conveyorised paint shops — every project is engineered, installed, and commissioned by our team.
           </p>
         </div>
       </section>
 
       <section className={styles.section}>
-        <div className={styles.container}>
-          <div ref={countersRef} className={`${styles.countersRow} ${styles.fadeUp} ${isVisible.counters ? styles.fadeUpVisible : ''}`}>
-            <div className={styles.counterCell}>
-              <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="500">0</span><span className={styles.suf}>+</span>
-              </div>
-              <div className={styles.counterLbl}>Projects delivered</div>
-            </div>
-            <div className={styles.counterCell}>
-              <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="45">0</span><span className={styles.suf}>+</span>
-              </div>
-              <div className={styles.counterLbl}>Repeat clients</div>
-            </div>
-            <div className={styles.counterCell}>
-              <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="20">0</span>
-              </div>
-              <div className={styles.counterLbl}>States Served</div>
-            </div>
-            <div className={styles.counterCell}>
-              <div className={styles.counterVal}>
-                <span className={styles.counter} data-target="9">0</span><span className={styles.suf}>+</span>
-              </div>
-              <div className={styles.counterLbl}>Years of delivery</div>
-            </div>
-          </div>
+  <div className={styles.container}>
+    <div 
+      ref={countersRef} 
+      className={`${styles.countersRow} ${styles.fadeUp} ${isVisible.counters ? styles.fadeUpVisible : ''}`}
+    >
+
+      <div className={styles.counterCell}>
+        <div className={styles.counterVal}>
+          <span className={styles.counter} data-target="2015">0</span>
         </div>
-      </section>
+        <div className={styles.counterLbl}>Operating since</div>
+      </div>
+
+      <div className={styles.counterCell}>
+        <div className={styles.counterVal}>
+          <span className={styles.counter} data-target="22">0</span>
+          <span className={styles.suf}>+</span>
+        </div>
+        <div className={styles.counterLbl}>Years engineering experience</div>
+      </div>
+
+      <div className={styles.counterCell}>
+        <div className={styles.counterVal}>
+          <span className={styles.counter} data-target="9">0</span>
+          <span className={styles.suf}>+</span>
+        </div>
+        <div className={styles.counterLbl}>Major industrial clients</div>
+      </div>
+
+      <div className={styles.counterCell}>
+        <div className={styles.counterVal}>
+          <span className={styles.counter} data-target="5">0</span>
+          <span className={styles.suf}>+</span>
+        </div>
+        <div className={styles.counterLbl}>Core equipment categories</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <section className={`${styles.section} ${styles.bgSurface}`}>
         <div className={styles.container}>
