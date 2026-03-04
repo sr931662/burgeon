@@ -214,46 +214,64 @@ const AboutPage = () => {
             The team behind the work
           </h2>
           <div className={styles.leadershipGrid}>
-            {/* Kunal Kapoor */}
+
+            {/* Managing Director */}
             <div className={styles.leaderCard}>
-              <div className={styles.leaderImage}>
-                <img 
-                  src={managingdirector}
-                  alt="Mr. Amit Arora" 
-                />
+              <div className={styles.leaderPhoto}>
+                <img src={managingdirector} alt="Mr. Amit Arora" />
               </div>
-              <div className={styles.leaderContent}>
-                <div className={styles.leaderYear}>Managing Director</div>
-                <div className={styles.leaderName}>Mr. Amit Arora</div>
-                <div className={styles.leaderDesc}>
-                  Experienced industrial engineering professional with deep expertise in paint finishing systems, automation equipment, and turnkey manufacturing line integration.
-                </div>
-                <div className={styles.leaderEmail}>
-                  <a href="mailto:amit@burgeonengineering.com">amit@burgeonengineering.com</a>
-                </div>
+
+              <div className={styles.leaderInfo}>
+                <div className={styles.leaderRole}>Managing Director</div>
+
+                <h3 className={styles.leaderName}>Mr. Amit Arora</h3>
+
+                <p className={styles.leaderDesc}>
+                  Experienced industrial engineering professional with deep expertise in
+                  paint finishing systems, automation equipment, and turnkey manufacturing
+                  line integration.
+                </p>
+
+                <a
+                  href="mailto:amit@burgeonengineering.com"
+                  className={styles.leaderEmail}
+                >
+                  amit@burgeonengineering.com
+                </a>
               </div>
             </div>
 
-            {/* Rajeev Mehta */}
+
+            {/* Director */}
             <div className={styles.leaderCard}>
-              <div className={styles.leaderImage}>
-                <img 
-                  src="https://ui-avatars.com/api/?name=Rajeev+Mehta&size=200&background=fbbf24&color=000&bold=true" 
-                  alt="Rajeev Mehta" 
+              <div className={styles.leaderPhoto}>
+                <img
+                  src="https://ui-avatars.com/api/?name=Atul+Kumar&size=400&background=fbbf24&color=000&bold=true"
+                  alt="Mr. Atul Kumar"
                 />
               </div>
-              <div className={styles.leaderContent}>
-                <div className={styles.leaderYear}>Head of Engineering</div>
-                <div className={styles.leaderName}>Rajeev Mehta</div>
-                <div className={styles.leaderDesc}>
-                  Specialist in pretreatment and CED plant design. Oversees all technical project delivery from fabrication through commissioning.
-                </div>
-                <div className={styles.leaderEmail}>
-                  <a href="mailto:atul@burgeonengineering.com">atul@burgeonengineering.com</a>
-                </div>
+
+              <div className={styles.leaderInfo}>
+                <div className={styles.leaderRole}>Director</div>
+
+                <h3 className={styles.leaderName}>Mr. Atul Kumar</h3>
+
+                <p className={styles.leaderDesc}>
+                  Specialist in pretreatment and industrial finishing systems.
+                  Oversees technical engineering, fabrication coordination,
+                  and full project delivery from design to commissioning.
+                </p>
+
+                <a
+                  href="mailto:atul@burgeonengineering.com"
+                  className={styles.leaderEmail}
+                >
+                  atul@burgeonengineering.com
+                </a>
               </div>
             </div>
-          </div>
+
+</div>
         </div>
       </section>
 

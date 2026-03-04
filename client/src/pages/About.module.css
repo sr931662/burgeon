@@ -325,92 +325,109 @@
   line-height: 1.6;
 }
 
-/* ─── LEADERSHIP GRID ────────────────────────────────── */
+/* ─── LEADERSHIP SECTION ───────────────── */
+
 .leadershipGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 32px;
-  margin-top: 48px;
 }
 
 .leaderCard {
-  background: var(--surface); /* Pure white cards */
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
-  box-shadow: 0 5px 20px rgba(26, 54, 93, 0.03); /* Subtle Navy shadow */
+
+  padding: 32px;
+
+  align-items: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .leaderCard:hover {
   transform: translateY(-6px);
-  border-color: var(--accent-mustard);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-.leaderImage {
-  height: 240px;
-  background: var(--surface2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
+/* Photo */
+
+.leaderPhoto {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 16px;
   overflow: hidden;
+
+  background: var(--surface2);
 }
 
-.leaderImage img {
+.leaderPhoto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.leaderContent {
-  padding: 32px;
-}
+/* Info */
 
-.leaderYear {
-  display: inline-block;
-  font-size: 0.7rem;
+.leaderRole {
+  font-size: 12px;
   font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--accent-green); /* Forest Green tag text */
-  background: var(--accent-green-lo); /* Light Forest Green tag background */
-  border: 1px solid rgba(30, 86, 49, 0.2);
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 12px;
+
+  color: var(--accent-green);
+
+  margin-bottom: 6px;
 }
 
 .leaderName {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 26px;
   font-weight: 700;
-  color: var(--text);
-  margin-bottom: 8px;
+
+  margin-bottom: 12px;
 }
 
 .leaderDesc {
-  font-size: 0.85rem;
-  color: var(--muted);
+  font-size: 15px;
   line-height: 1.7;
+
+  color: var(--muted);
+
+  margin-bottom: 16px;
+
+  max-width: 520px;
 }
 
 .leaderEmail {
-  margin-top: 16px;
-}
-
-.leaderEmail a {
-  color: var(--text); /* Navy Text */
   font-weight: 600;
+  color: var(--text);
   text-decoration: none;
-  transition: color 0.2s;
 }
 
-.leaderEmail a:hover {
-  color: var(--accent-green); /* Hover shifts to Forest Green */
-  text-decoration: underline;
+.leaderEmail:hover {
+  color: var(--accent-green);
 }
 
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .leaderCard {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .leaderPhoto {
+    margin: auto;
+  }
+
+}
 /* ─── CTA BAND ────────────────────────────────────────── */
 .ctaBand {
   background: var(--surface);
