@@ -73,7 +73,7 @@ const Navbar = () => {
           <Link to="/" className={styles.logo}>
             <img src={logoImg} alt="Burgeon Engineering" className={styles.logoImg} />
             <span className={styles.logoText}>
-              BURGEON<span className={styles.logoDot}>.</span>
+              BURGEON
               <span className={styles.logoSub}>Engineering</span>
             </span>
           </Link>

@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FactoryGallery.module.css';
+import oven1 from "../../assets/images/oven1.png"
+import Bending from '../../assets/images/bending-machine.png'
+import LCM from '../../assets/images/LCM.png'
+import Shearing from '../../assets/images/shearing.png'
+import Notch from '../../assets/images/notch.png'
+import Facility from '../../assets/images/facility.png'
+import Duct from '../../assets/images/duct.png'
+import Heavy from '../../assets/images/heavy.png'
+import Expansion from '../../assets/images/expansion.png'
+
 
 const FactoryGallery = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,51 +34,75 @@ const FactoryGallery = () => {
   const galleryItems = [
     {
       id: 1,
-      tag: "Industrial Ovens",
-      title: "Curing & Drying Ovens",
-      desc: "Heavy-duty industrial ovens designed for curing paint, powder coatings, and heat treatment processes with precise temperature control.",
+      tag: "Factory Assembly",
+      title: "Booth & Oven Assembly Area",
+      desc: "Dedicated assembly section where industrial paint booths, curing ovens, and finishing systems are assembled and tested before installation.",
       size: "wide",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=85&w=1200"
+      image: oven1
     },
     {
       id: 2,
-      tag: "Material Handling",
-      title: "Industrial Conveyor Systems",
-      desc: "Overhead and floor-mounted conveyor systems engineered for reliable material handling in automated finishing and production lines.",
+      tag: "CNC Fabrication",
+      title: "CNC Bending Machine",
+      desc: "High-precision CNC bending machines used for forming sheet metal components required in paint booths, ducting systems, and enclosures.",
       size: "tall",
-      image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=85&w=800"
+      image: Bending
     },
     {
       id: 3,
-      tag: "Surface Preparation",
-      title: "Industrial Washing Machines",
-      desc: "Multi-stage component washing systems designed for degreasing, cleaning, and preparing metal parts before coating or finishing.",
+      tag: "Metal Processing",
+      title: "Laser Cutting Machine",
+      desc: "Advanced laser cutting technology enabling accurate and efficient cutting of industrial sheet metal parts for fabrication and assembly.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&q=85&w=800"
+      image: LCM
     },
     {
       id: 4,
-      tag: "Paint Booth Systems",
-      title: "Industrial Paint Booth",
-      desc: "Precision-engineered paint booth systems ensuring uniform airflow, efficient filtration, and high-quality industrial coating results.",
+      tag: "Fabrication",
+      title: "Shearing Machine",
+      desc: "Industrial shearing machines used for high-volume sheet metal cutting operations during fabrication of booths, ovens, and structures.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=85&w=800"
+      image: Shearing
     },
     {
       id: 5,
-      tag: "Automation & Controls",
-      title: "Electrical Control Panels",
-      desc: "Custom-built industrial control panels for PLC automation, process monitoring, and reliable operation of automated manufacturing systems.",
+      tag: "Manufacturing",
+      title: "Press, Welding & Notching",
+      desc: "Fabrication equipment including press machines, welding stations, and notching tools used for structural and mechanical assembly.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=85&w=800"
+      image: Notch
     },
     {
       id: 6,
-      tag: "Production Systems",
-      title: "Conveyorised Painting Line",
-      desc: "Complete automated finishing lines integrating washing, coating, curing ovens, and conveyor systems for high-volume production.",
+      tag: "Infrastructure",
+      title: "Factory Manufacturing Floor",
+      desc: "Modern fabrication and manufacturing facility designed for production of industrial automation equipment and paint shop systems.",
       size: "standard",
-      image: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&q=85&w=800"
+      image: Facility
+    },
+    {
+      id: 7,
+      tag: "Manufacturing Facility",
+      title: "Fabrication Workshop",
+      desc: "Dedicated workshop area for fabrication of ducts, conveyors, enclosures, and structural components for industrial finishing lines.",
+      size: "standard",
+      image: Duct
+    },
+    {
+      id: 8,
+      tag: "Production Capability",
+      title: "Heavy Equipment Fabrication",
+      desc: "Production infrastructure supporting fabrication of large industrial equipment including ovens, paint booths, and conveyors.",
+      size: "standard",
+      image: Heavy
+    },
+    {
+      id: 9,
+      tag: "Facility Expansion",
+      title: "Expansion of Factory Setup",
+      desc: "Continuous expansion of manufacturing infrastructure to support growing demand for automation systems and finishing equipment.",
+      size: "wide",
+      image: Expansion
     }
   ];
 

@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
 import managingdirector from '../assets/images/MD.png'
+import ISO from '../assets/images/iso9001.png'
+import GST from '../assets/images/gst-registration.png'
+import Import from '../assets/images/importer-exporter.png'
+import Udyam from '../assets/images/udyam-certificate.png'
 
 // Icon URLs from the HTML
 const targetIcon = "https://cdn-icons-png.flaticon.com/512/1040/1040244.png";
@@ -275,6 +279,43 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* CERTIFICATE GALLERY */}
+      <section className={styles.section}>
+        <div className={styles.container}>
+
+          <span className={styles.sectionEyebrow}>Certifications</span>
+
+          <h2 className={styles.sectionTitle} style={{ marginTop: "16px" }}>
+            Official Certificates
+          </h2>
+
+          <p className={styles.sectionLead}>
+            Our organization follows globally recognized standards for quality,
+            safety, and industrial engineering practices.
+          </p>
+
+          <div className={styles.certificatesGrid}>
+
+            <div className={styles.certificateCard}>
+              <img src={ISO} alt="ISO Certificate"/>
+            </div>
+
+            <div className={styles.certificateCard}>
+              <img src={GST} alt="Safety Compliance"/>
+            </div>
+
+            <div className={styles.certificateCard}>
+              <img src={Import} alt="Engineering Certification"/>
+            </div>
+
+            <div className={styles.certificateCard}>
+              <img src={Udyam} alt="Quality Certification"/>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
       {/* CTA BAND */}
       <section className={styles.section}>
         <div className={styles.container}>
