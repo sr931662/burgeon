@@ -74,7 +74,7 @@ const Navbar = () => {
             <img src={logoImg} alt="Burgeon Engineering" className={styles.logoImg} />
             <span className={styles.logoText}>
               BURGEON
-              <span className={styles.logoSub}>Engineering</span>
+              <span className={styles.logoSub}>Engineering Pvt. Ltd.</span>
             </span>
           </Link>
 
