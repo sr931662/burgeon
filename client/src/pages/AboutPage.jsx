@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
 import managingdirector from '../assets/images/MD.png'
+import atul from '../assets/images/atul.png'
 import ISO from '../assets/images/iso9001.png'
 import GST from '../assets/images/gst-registration.png'
 import Import from '../assets/images/importer-exporter.png'
@@ -250,7 +251,7 @@ const AboutPage = () => {
             <div className={styles.leaderCard}>
               <div className={styles.leaderPhoto}>
                 <img
-                  src="https://ui-avatars.com/api/?name=Atul+Kumar&size=400&background=fbbf24&color=000&bold=true"
+                  src={atul}
                   alt="Mr. Atul Kumar"
                 />
               </div>
